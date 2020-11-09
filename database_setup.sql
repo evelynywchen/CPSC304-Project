@@ -1,155 +1,3 @@
-Animals(
-	aID			integer,
-	age			integer, 	
-	amount		integer,
-species		char(40),		
-	PRIMARY KEY(aID))
-	
-Carnivores(
-	aID			integer,
-	cID			integer,
-PRIMARY KEY(aID),
-	FOREIGN KEY(aID) REFERENCES Animals)
-
-Omnivores(
-	aID			integer,
-	oID			integer,
-PRIMARY KEY(aID),
-	FOREIGN KEY(aID) REFERENCES Animals)
-	
-Herbivores(
-	aID			integer,
-	hID			integer,
-	PRIMARY KEY(aID),
-	FOREIGN KEY(aID) REFERENCES Animals)
-
-Eats_Animal_C(		
-cID			integer,
-aID 			integer,
-location 		char(40),
-	PRIMARY KEY (aID),
-FOREIGN KEY(cID) REFERENCES Carnivores,
-FOREIGN KEY(aID) REFERENCES Animals)
-
-Eats_Animal_O(		
-aID			integer,
-oID 			integer,
-location 		char(40),
-	PRIMARY KEY (aID),
-	FOREIGN KEY(oID) REFERENCES Omnivores,
-	FOREIGN KEY(aID) REFERENCES Animals)
-
-Eats_Plant(
-	aID			integer,
-	plantID		integer,
-	PRIMARY KEY (plantID),
-	FOREIGN KEY(aID) REFERENCES Animal,
-	FOREIGN KEY(plantID) REFERENCES Plants)
-
-	consume(
-		aID 			integer,
-		resID			integer,
-		species		char(40),
-		qty			integer,
-		PRIMARY KEY(aID, resID),
-		FOREIGN KEY(aID) REFERENCES Animals,
-		FOREIGN KEY(resID) REFERENCES Resources)
-
-	Plants(
-		plantID 		integer,
-		species		char(40),
-		population		integer,
-		PRIMARY KEY(plantID))
-
-	Lives_Plant(
-		plantID		integer,
-		habID			integer,
-		location		char(40),
-		PRIMARY KEY(plantID),
-		FOREIGN KEY(habID) REFERENCES Habitat
-ON DELETE NO ACTION
-ON UPDATE CASCADE))
-	
-	Lives_A(
-		aID			integer,
-		habID			integer,
-		PRIMARY KEY(aID),
-		FOREIGN KEY(habID) REFERENCES Habitat
-ON DELETE NO ACTION
-ON UPDATE CASCADE))
-
-	Habitat(
-		habID			integer,
-		location		char(40),
-		type			char(40),
-		temperature	integer,
-		PRIMARY KEY(habID))
-
-ArtificialStructures(
-		asID			integer,
-		type			char(40),
-		size			char(20),		
-qty			integer,	
-		PRIMARY KEY(asID, type))
-
-	Builds_AS(
-		completionYear 	integer,
-		cost			integer,
-		asID			integer,
-		habID 		integer,
-org_name		char(40),
-sub_name		char(40),
-		PRIMARY KEY(asID),
-		FOREIGN KEY(habID, org_name) REFERENCES Habitat,
-		FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary,
-		FOREIGN KEY(org_name) REFERENCES Organization,
-ON DELETE NO ACTION
-ON UPDATE CASCADE))
-
-	Extracts(
-		resID 		integer,
-		asID			integer,
-		qty			integer,
-		PRIMARY KEY(resID,asID),
-		FOREIGN KEY(resID) REFERENCES Resources,
-		FOREIGN KEY(asID) REFERENCES ArtificialStructures)
-		
-	Resources(
-		resID			integer,
-		type			char(40),
-		location		char(40),
-		PRIMARY KEY(resID))
-
-    	Organization(
-org_name     	char(40),
-oID			integer UNIQUE,
-funds     	 	integer, 	
-founded     	integer,
-size			integer,
-PRIMARY KEY(org_name))
-    	People(
-name    		 char(40),
-pID			integer,
-age    	 	 integer,
-PRIMARY KEY(pid),
-    	Has_Subsidiary (
-		org_name		char(40),
-sub_name    	char(40),
-sID			integer UNIQUE,
-funds     	 	integer, 	
-founded     	integer,
-size			integer,
-PRIMARY KEY(sub_name),
-FOREIGN KEY(org_name) REFERENCES Organization)
-
-Owns(
-pID			integer,
-	org_name		char(40),
-	ownership_percentage integer,
-	PRIMARY KEY(pID, org_name),
-	FOREIGN KEY(pID) REFERENCES People,
-	FOREIGN KEY(org_name) REFERENCES Organization)
-	
 create table Animals(
 	aID int not null,
 	species char(40) not null,
@@ -161,7 +9,7 @@ create table Carnivores(
 	aID int,
 	cID int,
 	primary key (aID)
-	foreign key (aID) references Animals);
+	foreign key (aID) references Animals ON DELETE CASCADE);
 
 create table Omnivores(
 	aID int,
@@ -198,10 +46,10 @@ create table Eats_Plant(
 	FOREIGN KEY(aID) REFERENCES Animals,
 	FOREIGN KEY(plantID) REFERENCES Plants);
 
-create consume(
+create table Consume(
 	aID 			integer,
 	resID			integer,
-species		char(40),
+    species		char(40),
 	qty			integer,
 	PRIMARY KEY(aID, resID),
 	FOREIGN KEY(aID) REFERENCES Animals,
@@ -253,10 +101,9 @@ org_name		char(40),
 sub_name		char(40),
 	PRIMARY KEY(asID),
 	FOREIGN KEY(habID) REFERENCES Habitat, 
-FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary,
-FOREIGN KEY(org_name) REFERENCES Organization,
-ON DELETE NO ACTION
-ON UPDATE CASCADE))
+FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary ON DELETE NO ACTION,
+FOREIGN KEY(org_name) REFERENCES Organization ON UPDATE CASCADE,
+))
 
 create table Extracts(
 	resID 		integer,
@@ -297,7 +144,7 @@ size			integer,
     	primary key (sub_name),
     	foreign key (org_name) references Organization);	
 
-create Owns(
+create table Owns(
 	pID			char(40),
 	org_name		char(40),
 	ownership_percentage integer,
@@ -306,49 +153,49 @@ create Owns(
 	FOREIGN KEY(org_name) REFERENCES Organization)
 
 insert into Herbivores
-values(0, 0, “Ailuropoda melanoleuca”, 6, 2070);
+values(0, 0, 'Ailuropoda melanoleuca', 6, 2070);
 
 insert into Herbivores
-values(1, 1, “Phascolarctos cinereus”, 3, 6370);
+values(1, 1, 'Phascolarctos cinereus', 3, 6370);
 
 insert into Herbivores
-values(2, 2, “Brachiosaurus altithorax”, 21, 459);
+values(2, 2, 'Brachiosaurus altithorax', 21, 459);
 
 insert into Herbivores
-values(3, 3, “Hydrochoerus hydrochaeris”, 35, 2349);
+values(3, 3, 'Hydrochoerus hydrochaeris', 35, 2349);
 
 insert into Herbivores
-values(4, 4, “Erethizon dorsatum”, 30, 2594);
+values(4, 4, 'Erethizon dorsatum', 30, 2594);
 
 insert into Carnivore
-values(5, 0, “Notaden bennettii”, 7, 1000);
+values(5, 0, 'Notaden bennettii', 7, 1000);
 
 insert into Carnivore
-values(6, 1, “Otocolobus manul ”, 4, 8000);
+values(6, 1, 'Otocolobus manul ', 4, 8000);
 
 insert into Carnivore
-values(7, 2, “Ursus maritimus ”, 3, 500);
+values(7, 2, 'Ursus maritimus ', 3, 500);
 
 insert into Carnivore
-values(8, 3, “atelopus zeteki”, 3, 2000);
+values(8, 3, 'atelopus zeteki', 3, 2000);
 
 insert into Carnivore
-values(9, 4, “Ambystoma mexicanum”, 8, 100);
+values(9, 4, 'Ambystoma mexicanum', 8, 100);
 
 insert into Omnivore
-values(10, 0, “mola mola”, 3, 5000);
+values(10, 0, 'mola mola', 3, 5000);
 
 insert into Omnivore
-values(11, 1, “gorilla gorilla gorilla”, 21, 400);
+values(11, 1, 'gorilla gorilla gorilla', 21, 400);
 
 insert into Omnivores
-values(12, 2, “pica pica pica”, 2, 1200);
+values(12, 2, 'pica pica pica', 2, 1200);
 
 insert into Omnivores
-values(13, 3, “boops boops”, 11, 200);
+values(13, 3, 'boops boops', 11, 200);
 
 insert into Omnivores
-values(14, 4, “Chlamyphorus truncatus”, 4, 1204);
+values(14, 4, 'Chlamyphorus truncatus', 4, 1204);
 
 insert into Eats_Animal_C
 values(0, 1, Vancouver);
