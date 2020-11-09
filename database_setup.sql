@@ -1,3 +1,24 @@
+drop table Animals
+drop table Carnivores
+drop table Omnivores
+drop table Herbivores
+drop table Eats_Animal_C
+drop table Eats_Animal_O
+drop table Eats_Plant
+drop table Consume
+drop table Plants
+drop table Lives_Plant
+drop table Lives_A
+drop table Habitat
+drop table ArtificialStructures
+drop table Builds_AS
+drop table Extracts
+drop table Resources
+drop table Organization
+drop table People
+drop table Has_Subsidiary
+drop table Owns
+
 create table Animals(
 	aID int not null,
 	species char(40) not null,
