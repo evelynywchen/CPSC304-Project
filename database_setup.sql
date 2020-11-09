@@ -169,50 +169,95 @@ create table Owns(
     FOREIGN KEY(pID) REFERENCES People,
 	FOREIGN KEY(org_name) REFERENCES Organization);
 
-insert into Herbivores
-values(0, 0, 'Ailuropoda melanoleuca', 6, 2070);
+insert into Animals
+values(0,'Ailuropoda melanoleuca', 6, 2070);
+
+insert into Animals
+values(1, 'Phascolarctos cinereus', 3, 6370);
+
+insert into Animals
+values(2, 'Brachiosaurus altithorax', 21, 459);
+
+insert into Animals
+values(3, 'Hydrochoerus hydrochaeris', 35, 2349);
+
+insert into Animals
+values(4, 'Erethizon dorsatum', 30, 2594);
+
+insert into Animals
+values(5, 'Notaden bennettii', 7, 1000);
+
+insert into Animals
+values(6, 'Otocolobus manul', 4, 8000);
+
+insert into Animals
+values(7, 'Ursus maritimus', 3, 500);
+
+insert into Animals
+values(8, 'atelopus zeteki', 3, 2000);
+
+insert into Animals
+values(9, 'Ambystoma mexicanum', 8, 100);
+
+insert into Animals
+values(10, 'mola mola', 3, 5000);
+
+insert into Animals
+values(11, 'gorilla gorilla gorilla', 21, 400);
+
+insert into Animals
+values(12, 'pica pica pica', 2, 1200);
+
+insert into Animals
+values(13, 'boops boops', 11, 200);
+
+insert into Animals
+values(14, 'Chlamyphorus truncatus', 4, 1204);
 
 insert into Herbivores
-values(1, 1, 'Phascolarctos cinereus', 3, 6370);
+values(0, 0);
 
 insert into Herbivores
-values(2, 2, 'Brachiosaurus altithorax', 21, 459);
+values(1, 1);
 
 insert into Herbivores
-values(3, 3, 'Hydrochoerus hydrochaeris', 35, 2349);
+values(2, 2);
 
 insert into Herbivores
-values(4, 4, 'Erethizon dorsatum', 30, 2594);
+values(3, 3);
+
+insert into Herbivores
+values(4, 4);
 
 insert into Carnivore
-values(5, 0, 'Notaden bennettii', 7, 1000);
+values(5, 0);
 
 insert into Carnivore
-values(6, 1, 'Otocolobus manul', 4, 8000);
+values(6, 1);
 
 insert into Carnivore
-values(7, 2, 'Ursus maritimus', 3, 500);
+values(7, 2);
 
 insert into Carnivore
-values(8, 3, 'atelopus zeteki', 3, 2000);
+values(8, 3);
 
 insert into Carnivore
-values(9, 4, 'Ambystoma mexicanum', 8, 100);
+values(9, 4);
 
 insert into Omnivore
-values(10, 0, 'mola mola', 3, 5000);
+values(10, 0);
 
 insert into Omnivore
-values(11, 1, 'gorilla gorilla gorilla', 21, 400);
+values(11, 1);
 
 insert into Omnivores
-values(12, 2, 'pica pica pica', 2, 1200);
+values(12, 2);
 
 insert into Omnivores
-values(13, 3, 'boops boops', 11, 200);
+values(13, 3);
 
 insert into Omnivores
-values(14, 4, 'Chlamyphorus truncatus', 4, 1204);
+values(14, 4);
 
 insert into Eats_Animal_C
 values(0, 1, 'Vancouver');
