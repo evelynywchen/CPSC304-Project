@@ -229,25 +229,25 @@ values(3, 3);
 insert into Herbivores
 values(4, 4);
 
-insert into Carnivore
+insert into Carnivores
 values(5, 0);
 
-insert into Carnivore
+insert into Carnivores
 values(6, 1);
 
-insert into Carnivore
+insert into Carnivores
 values(7, 2);
 
-insert into Carnivore
+insert into Carnivores
 values(8, 3);
 
-insert into Carnivore
+insert into Carnivores
 values(9, 4);
 
-insert into Omnivore
+insert into Omnivores
 values(10, 0);
 
-insert into Omnivore
+insert into Omnivores
 values(11, 1);
 
 insert into Omnivores
