@@ -1,23 +1,24 @@
-drop table Animals;
-drop table Carnivores;
-drop table Omnivores;
-drop table Herbivores;
+drop table Builds_AS;
+drop table Extracts;
+drop table Has_Subsidiary;
+drop table Owns;
+drop table Organization;
+drop table People;
+drop table ArtificialStructures;
 drop table Eats_Animal_C;
 drop table Eats_Animal_O;
 drop table Eats_Plant;
 drop table Consume;
+drop table Carnivores;
+drop table Omnivores;
+drop table Herbivores;
 drop table Plants;
 drop table Lives_Plant;
 drop table Lives_A;
 drop table Habitat;
-drop table ArtificialStructures;
-drop table Builds_AS;
-drop table Extracts;
+drop table Animals;
 drop table Resources;
-drop table Organization;
-drop table People;
-drop table Has_Subsidiary;
-drop table Owns;
+
 
 create table Animals(
 	aID     int not null,
@@ -35,7 +36,7 @@ create table Carnivores(
 create table Omnivores(
     aID int,
     oID int,
-	PRIMARY KEY (aID)
+	PRIMARY KEY (aID),
 	FOREIGN KEY (aID) references Animals);
 
 create table Herbivores(
