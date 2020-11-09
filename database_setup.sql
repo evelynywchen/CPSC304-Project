@@ -20,158 +20,153 @@ drop table Has_Subsidiary;
 drop table Owns;
 
 create table Animals(
-	aID int not null,
-	species char(40) not null,
-	age int,
-	amount int,
-	PRIMARY KEY(aID));
+	aID     int not null,
+    species char(40) not null,
+	age     int,
+	amount  int,
+    PRIMARY KEY(aID));
 
 create table Carnivores(
-	aID int,
-	cID int,
-	primary key (aID)
-	foreign key (aID) references Animals ON DELETE CASCADE);
+    aID int,
+    cID int,
+    PRIMARY KEY (aID),
+	FOREIGN KEY (aID) references Animals ON DELETE CASCADE);
 
 create table Omnivores(
-	aID int,
-	oID int,
-	primary key (aID)
-	foreign key (aID) references Animals);
+    aID int,
+    oID int,
+	PRIMARY KEY (aID)
+	FOREIGN KEY (aID) references Animals);
 
 create table Herbivores(
-	aID int,
-	hID int,
-	primary key (aID)
-	foreign key (aID) references Animals);
+    aID int,
+    hID int,
+	PRIMARY KEY (aID),
+	FOREIGN KEY (aID) references Animals);
 	
 create table Eats_Animal_C(
-	cID	int,
-	aID	int,
-	location	char(40),
-	PRIMARY KEY (aID),
-	FOREIGN KEY(cID) REFERENCES Carnivores,
-	FOREIGN KEY(aID) REFERENCES Animals);
+	cID	        int,
+	aID	        int,
+	location    char(40),
+    PRIMARY KEY (aID),
+    FOREIGN KEY(cID) REFERENCES Carnivores,
+    FOREIGN KEY(aID) REFERENCES Animals);
 	
 create table Eats_Animal_O(
-	oID	int,
-	aID	int,
-	location		char(40),
-	PRIMARY KEY (aID),
-	FOREIGN KEY(oID) REFERENCES Omnivores,
-	FOREIGN KEY(aID) REFERENCES Animals);
+	oID	        int,
+	aID	        int,
+	location	char(40),
+    PRIMARY KEY (aID),
+    FOREIGN KEY(oID) REFERENCES Omnivores,
+    FOREIGN KEY(aID) REFERENCES Animals);
 
 create table Eats_Plant(
-	aID int,
-	plantID int,
-	PRIMARY KEY (plantID),
-	FOREIGN KEY(aID) REFERENCES Animals,
-	FOREIGN KEY(plantID) REFERENCES Plants);
+	aID         int,
+	plantID     int,
+    PRIMARY KEY (plantID),
+    FOREIGN KEY(aID) REFERENCES Animals,
+    FOREIGN KEY(plantID) REFERENCES Plants);
 
 create table Consume(
-	aID 			integer,
-	resID			integer,
-    species		char(40),
-	qty			integer,
-	PRIMARY KEY(aID, resID),
-	FOREIGN KEY(aID) REFERENCES Animals,
-	FOREIGN KEY(resID) REFERENCES Resources)
+    aID 			integer,
+    resID			integer,
+    species		    char(40),
+	qty			    integer,
+    PRIMARY KEY(aID, resID),
+    FOREIGN KEY(aID) REFERENCES Animals,
+	FOREIGN KEY(resID) REFERENCES Resources);
 
 create table Plants(
-	plantID 		integer,
-	species		char(40),
-	population		integer,
-	PRIMARY KEY(plantID))
+    plantID 		integer,
+	species		    char(40),
+    population		integer,
+	PRIMARY KEY(plantID));
 
 create table Lives_Plant(
-	plantID		integer,
-	habID			integer,
-	PRIMARY KEY(plantID),
-	FOREIGN KEY(habID) REFERENCES Habitat
-ON DELETE NO ACTION
-ON UPDATE CASCADE))
+	plantID		    integer,
+    habID			integer,
+    PRIMARY KEY(plantID),
+	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);
 	
 create table Lives_A(
-	aID			integer,
-	habID			integer,
-	PRIMARY KEY(aID),
-	FOREIGN KEY(habID) REFERENCES Habitat
-ON DELETE NO ACTION
-ON UPDATE CASCADE))
+    aID			integer,
+    habID			integer,
+    PRIMARY KEY(aID),
+	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);
 
 create table Habitat(
-	habID			integer,
-	location		char(40),
-	type			char(40),
-	temperature	integer,
-	PRIMARY KEY(habID, type))
+    habID			integer,
+    location		char(40),
+    type			char(40),
+	temperature	    integer,
+	PRIMARY KEY(habID, type));
 
 create table ArtificialStructures(
-	asID			integer,
-	type			char(40),
-	size			char(20),		
-	location 		char(40),
-qty			integer,	
-	PRIMARY KEY(asID, type))
+    asID			integer,
+    type			char(40),
+    size			char(20),
+    location 		char(40),
+    qty			    integer,
+	PRIMARY KEY(asID, type));
 
 create table Builds_AS(
-	completionYear 	integer,
-	cost			integer,
-	asID			integer,
-	habID 		integer,
-org_name		char(40),
-sub_name		char(40),
-	PRIMARY KEY(asID),
-	FOREIGN KEY(habID) REFERENCES Habitat, 
-FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary ON DELETE NO ACTION,
-FOREIGN KEY(org_name) REFERENCES Organization ON UPDATE CASCADE,
-))
+    completionYear 	integer,
+    cost			integer,
+    asID			integer,
+	habID 		    integer,
+    org_name		char(40),
+    sub_name		char(40),
+    PRIMARY KEY(asID),
+    FOREIGN KEY(habID) REFERENCES Habitat,
+    FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary ON DELETE NO ACTION,
+    FOREIGN KEY(org_name) REFERENCES Organization ON UPDATE CASCADE);
 
 create table Extracts(
-	resID 		integer,
-	asID			integer,
-	qty			integer,
-	PRIMARY KEY(resID,asID),
-	FOREIGN KEY(resID) REFERENCES Resources,
-	FOREIGN KEY(asID) REFERENCES ArtificialStructures)
+	resID 		    integer,
+    asID			integer,
+	qty			    integer,
+    PRIMARY KEY(resID,asID),
+    FOREIGN KEY(resID) REFERENCES Resources,
+	FOREIGN KEY(asID) REFERENCES ArtificialStructures);
 		
 create table Resources(
-	resID			integer,
-	type			char(40),
-	location		char(40),
-	PRIMARY KEY(resID))
+    resID			integer,
+    type			char(40),
+    location		char(40),
+	PRIMARY KEY(resID));
 
 
-create table Organization
-   	(org_name char(40),
-oID			integer UNIQUE,
-funds     	 	integer, 	
-founded     	integer,
-size			integer,
-    	primary key (org_name));
+create table Organization(
+    org_name        char(40),
+    oID			    integer UNIQUE,
+    funds     	 	integer,
+    founded     	integer,
+    size			integer,
+    primary key (org_name));
  
-create table People
-(name 			char(40),
-pID				integer,
-age    	 	 	integer,
-    	primary key (pID))
+create table People(
+    name 			char(40),
+    pID				integer,
+    age    	 	 	integer,
+    primary key (pID));
  
-create table Has_Subsidiary
-    	(org_name char(40),
-sub_name char(40),
-	sID			integer UNIQUE,
-funds     	 	integer, 	
-founded     	integer,
-size			integer,
-    	primary key (sub_name),
-    	foreign key (org_name) references Organization);	
+create table Has_Subsidiary(
+    org_name        char(40),
+    sub_name        char(40),
+	sID			    integer UNIQUE,
+    funds     	 	integer,
+    founded     	integer,
+    size			integer,
+    primary key (sub_name),
+    foreign key (org_name) references Organization);
 
 create table Owns(
-	pID			char(40),
-	org_name		char(40),
-	ownership_percentage integer,
-	PRIMARY KEY(pID, org_name	),
-	FOREIGN KEY(pID) REFERENCES People,
-	FOREIGN KEY(org_name) REFERENCES Organization)
+	pID			            char(40),
+	org_name		        char(40),
+	ownership_percentage    integer,
+	PRIMARY KEY(pID, org_name),
+    FOREIGN KEY(pID) REFERENCES People,
+	FOREIGN KEY(org_name) REFERENCES Organization);
 
 insert into Herbivores
 values(0, 0, 'Ailuropoda melanoleuca', 6, 2070);
@@ -369,93 +364,93 @@ insert into Builds_AS
 values(2004, 100000, 4, 4, save the pandas ltd, save the axolotls ltd);
 
 insert into Organization
-values(dino oil ltd, 0, 10000000, 1945,10000) 
+values(dino oil ltd, 0, 10000000, 1945,10000);
 
 insert into Organization
-values(death to pandas ltd, 1, 8000000, 1976,7000) 
+values(death to pandas ltd, 1, 8000000, 1976,7000);
 
 insert into Organization
-values(roasted axolotls ltd, 2, 7000000, 1967,9000) 
+values(roasted axolotls ltd, 2, 7000000, 1967,9000);
 
 insert into Organization
-values(save the axolotls ltd, 3, 4000, 1968,100) 
+values(save the axolotls ltd, 3, 4000, 1968,100);
 
 insert into Organization
-values(kil kill killl ltd, 4, 12000000, 1865,30000) 
+values(kil kill killl ltd, 4, 12000000, 1865,30000);
 
 insert into Has_Subsidiary
-values(save the axolotls ltd, save the pandas ltd, 5, 1000, 1982, 40) 
+values(save the axolotls ltd, save the pandas ltd, 5, 1000, 1982, 40);
 
 insert into Has_Subsidiary
-values(kil kill killl ltd, mass extinction ltd, 6, 20000, 1970, 2000) 
+values(kil kill killl ltd, mass extinction ltd, 6, 20000, 1970, 2000);
 
 insert into Has_Subsidiary
-values(roasted axolotls ltd, roasted pandas ltd, 7, 30000, 1981, 1000) 
+values(roasted axolotls ltd, roasted pandas ltd, 7, 30000, 1981, 1000);
 
 insert into Has_Subsidiary
-values(roasted axolotls ltd, roasted pandas ltd, 8, 30000, 1981, 1000) 
+values(roasted axolotls ltd, roasted pandas ltd, 8, 30000, 1981, 1000);
 
 insert into Has_Subsidiary
-values(dino oil ltd, dino plastics ltd, 9, 30000, 1952, 3000) 
+values(dino oil ltd, dino plastics ltd, 9, 30000, 1952, 3000);
 
 insert into People
-values(John Doe, 0, 42) 
+values(John Doe, 0, 42);
 
 insert into People
-values(Li Shi Min, 1, 19) 
+values(Li Shi Min, 1, 19);
 
 insert into People
-values(Ying Zheng, 2, 19) 
+values(Ying Zheng, 2, 19);
 
 insert into People
-values(Mahatma Gandhi, 3, 19) 
+values(Mahatma Gandhi, 3, 19);
 
 insert into People
-values(Shaka kaSenzangakhona, 4, 37) 
+values(Shaka kaSenzangakhona, 4, 37);
 
 insert into Owns
-values(Shaka kaSenzangakhona, dino oil ltd, 20) 
+values(Shaka kaSenzangakhona, dino oil ltd, 20);
 
 insert into Owns
-values(Mahatma Gandhi, dino oil ltd, 10) 
+values(Mahatma Gandhi, dino oil ltd, 10);
 
 insert into Owns
-values(Mahatma Gandhi, kil kill killl ltd, 30) 
+values(Mahatma Gandhi, kil kill killl ltd, 30);
 
 insert into Owns
-values(Ying Zheng, save the axolotls ltd, 30) 
+values(Ying Zheng, save the axolotls ltd, 30);
 
 insert into Owns
-values(Ying Zheng, roasted axolotls ltd, 30) 
+values(Ying Zheng, roasted axolotls ltd, 30);
 
 insert into Consume
-values(13, 0, boops boops, 5) 
+values(13, 0, boops boops, 5);
 
 insert into Consume
-values(13, 1, boops boops, 2) 
+values(13, 1, boops boops, 2);
 
 insert into Consume
-values(2, 1, Brachiosaurus altithorax, 2) 
+values(2, 1, Brachiosaurus altithorax, 2);
 
 insert into Consume
-values(2, 0, Brachiosaurus altithorax, 10) 
+values(2, 0, Brachiosaurus altithorax, 10);
 
 insert into Consume
-values(9, 0, Ambystoma mexicanum, 3) 
+values(9, 0, Ambystoma mexicanum, 3);
 
 insert into Resources
-values(0, water, Deer Lake) 
+values(0, water, Deer Lake);
 
 insert into Resources
-values(1, water, Burnaby Lake) 
+values(1, water, Burnaby Lake);
 
 insert into Resources
-values(2, asbestos, Asbestos) 
+values(2, asbestos, Asbestos);
 
 insert into Resources
-values(3, oil, Ghawar Field) 
+values(3, oil, Ghawar Field);
 
 insert into Resources
-values(4, uranium, McArthur River) 
+values(4, uranium, McArthur River);
 
 
