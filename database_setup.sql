@@ -388,7 +388,6 @@ values('roasted axolotls ltd', 'roasted zebras ltd', 8, 30000, 1981, 1000);
 insert into Has_Subsidiary
 values('dino oil ltd', 'dino plastics ltd', 9, 30000, 1952, 3000);
 
-
 insert into People
 values('John Doe', 0, 42);
 
@@ -419,20 +418,27 @@ values(2, 'save the axolotls ltd', 30);
 insert into Owns
 values(2, 'roasted axolotls ltd', 30);
 
+    completionYear 	integer,
+    cost_AS			integer,
+    asID			integer,
+	habID 		    integer,
+    org_name		char(40),
+    sub_name		char(40),
+
 insert into Builds_AS
 values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
 
 insert into Builds_AS
-values(2001, 100000, 1, 1, 'dino oil ltd', 'null');
+values(2001, 100000, 1, 1, 'dino oil ltd', NULL);
 
 insert into Builds_AS
-values(2002, 100000, 2, 2, 'save the axolotls ltd', 'null');
+values(2002, 100000, 2, 2, 'save the axolotls ltd', NULL);
 
 insert into Builds_AS
-values(2003, 100000, 3, 3, 'roasted pandas ltd', 'roasted axolotls ltd');
+values(2003, 100000, 3, 3, 'roasted axolotls ltd', 'roasted pandas ltd');
 
 insert into Builds_AS
-values(2004, 100000, 4, 4, 'save the pandas ltd', 'save the axolotls ltd');
+values(2004, 100000, 4, 4, 'save the axolotls ltd', 'save the pandas ltd');
 
 insert into Resources
 values(0, 'water', 'Deer Lake');
