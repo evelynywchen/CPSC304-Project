@@ -90,7 +90,7 @@ create table Has_Subsidiary(
     foreign key (org_name) REFERENCES Organization);
 
 create table People(
-    name_people 			char(40),
+    name_people 	char(40),
     pID				integer,
     age    	 	 	integer,
     primary key (pID));
@@ -131,20 +131,18 @@ create table Builds_AS(
     FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
 create table Extracts(
-    eID             integer
 	resID 		    integer,
     asID			integer,
 	qty			    integer,
-    PRIMARY KEY(eID),
+    PRIMARY KEY(resID, asID),
     FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE,
 	FOREIGN KEY(asID) REFERENCES ArtificialStructures ON DELETE CASCADE);
 
 create table Owns(
-    oID                     integer
-	pID			            char(40),
+	pID			            integer,
 	org_name		        char(40),
 	ownership_percentage    integer,
-	PRIMARY KEY(oID),
+	PRIMARY KEY(pID, org_name),
     FOREIGN KEY(pID) REFERENCES People ON DELETE CASCADE,
 	FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
