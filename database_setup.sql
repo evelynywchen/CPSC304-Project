@@ -418,13 +418,6 @@ values(2, 'save the axolotls ltd', 30);
 insert into Owns
 values(2, 'roasted axolotls ltd', 30);
 
-    completionYear 	integer,
-    cost_AS			integer,
-    asID			integer,
-	habID 		    integer,
-    org_name		char(40),
-    sub_name		char(40),
-
 insert into Builds_AS
 values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
 
