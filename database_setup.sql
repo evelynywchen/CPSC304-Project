@@ -138,14 +138,14 @@ create table Lives_Plant(
 	plantID		    integer,
     habID			integer,
     PRIMARY KEY(plantID, habID),
-	FOREIGN KEY(plantID) REFERENCES Plants),
+	FOREIGN KEY(plantID) REFERENCES Plants,
 	FOREIGN KEY(habID) REFERENCES Habitat);
 
 create table Lives_A(
     aID			    integer,
     habID			integer,
     PRIMARY KEY(aID, habID),
-	FOREIGN KEY(aID) REFERENCES Animals),
+	FOREIGN KEY(aID) REFERENCES Animals,
 	FOREIGN KEY(habID) REFERENCES Habitat);
 
 insert into Animals
