@@ -45,16 +45,12 @@ create table Eats_Animal_O(
     FOREIGN KEY(oID) REFERENCES Omnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
 
-
-
 create table Eats_Plant(
 	aID         int,
 	plantID     int,
     PRIMARY KEY (plantID),
     FOREIGN KEY(aID) REFERENCES Animals,
     FOREIGN KEY(plantID) REFERENCES Plants);
-
-
 
 create table Habitat(
     habID			integer,

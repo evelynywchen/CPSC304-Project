@@ -1,6 +1,7 @@
 drop table Owns;
 drop table Extracts;
 drop table Builds_AS;
+drop table Consume;
 drop table Resources;
 drop table ArtificialStructures;
 drop table People;
@@ -9,7 +10,6 @@ drop table Organization;
 drop table Lives_Plant;
 drop table Lives_A;
 drop table Habitat;
-drop table Consume;
 drop table Eats_Animal_C;
 drop table Eats_Animal_O;
 drop table Eats_Plant;
