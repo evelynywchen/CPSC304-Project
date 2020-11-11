@@ -57,19 +57,19 @@ create table Habitat(
     location		char(40),
     type_H			char(40),
 	temperature	    integer,
-	PRIMARY KEY(habID, type));
+	PRIMARY KEY(habID, type_H));
 
 create table Lives_Plant(
 	plantID		    integer,
     habID			integer,
     PRIMARY KEY(plantID),
-	FOREIGN KEY(habID) REFERENCES Habitat);  --ON DELETE NO ACTION ON UPDATE CASCADE
+	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);  --ON DELETE NO ACTION ON UPDATE CASCADE
 
 create table Lives_A(
     aID			integer,
     habID			integer,
     PRIMARY KEY(aID),
-	FOREIGN KEY(habID) REFERENCES Habitat);  -- ON DELETE NO ACTION ON UPDATE CASCADE
+	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);  -- ON DELETE NO ACTION ON UPDATE CASCADE
 
 create table Organization(
     org_name        char(40),
@@ -82,7 +82,7 @@ create table Organization(
 create table Has_Subsidiary(
     org_name        char(40),
     sub_name        char(40),
-	hsID			    integer UNIQUE,
+	hsID			integer UNIQUE,
     funds     	 	integer,
     founded     	integer,
     size_sub			integer,
@@ -101,7 +101,7 @@ create table ArtificialStructures(
     size_AS			char(20),
     location 		char(40),
     qty			    integer,
-	PRIMARY KEY(asID, type));
+	PRIMARY KEY(asID, type_AS));
 
 create table Resources(
     resID			integer,
