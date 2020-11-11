@@ -1,8 +1,8 @@
 create table Animals(
-	aID     int not null,
+	  aID     int not null,
     species char(40) not null,
-	age     int,
-	amount  int,
+	  age     int,
+	  amount  int,
     PRIMARY KEY(aID));
 
 create table Carnivores(
@@ -263,7 +263,7 @@ insert into Eats_Animal_O
 values(2, 7, 'St. Petersburg');
 
 insert into Eats_Animal_O
-values(3, 8, 'Saigon');
+values(3, 8, 'Ho Chi Minh City');
 
 insert into Eats_Animal_O
 values(4, 9, 'Manilla');
