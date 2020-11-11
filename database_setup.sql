@@ -57,7 +57,7 @@ create table Habitat(
     location_H		char(40),
     type_H			char(40),
 	temperature	    integer,
-	PRIMARY KEY(habID, type_H));
+	PRIMARY KEY(habID));
 
 create table Lives_Plant(
 	plantID		    integer,
@@ -101,7 +101,7 @@ create table ArtificialStructures(
     size_AS			char(20),
     location_AS 	char(40),
     qty			    integer,
-	PRIMARY KEY(asID, type_AS));
+	PRIMARY KEY(asID));
 
 create table Resources(
     resID			integer,
