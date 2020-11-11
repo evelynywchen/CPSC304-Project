@@ -476,4 +476,4 @@ values(3, 'oil', 'Ghawar Field');
 insert into Resources
 values(4, 'uranium', 'McArthur River');
 
-
+select table_name from user_tables;
