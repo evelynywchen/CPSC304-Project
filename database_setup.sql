@@ -238,6 +238,21 @@ values(13, 3);
 insert into Omnivores
 values(14, 4);
 
+insert into Plants
+values(0, 'strawberry', 1000);
+
+insert into Plants
+values(1, 'banana', 1000);
+
+insert into Plants
+values(2, 'blueberry', 5000);
+
+insert into Plants
+values(3, 'blackberry', 1020);
+
+insert into Plants
+values(4, 'raspberry', 88050);
+
 insert into Eats_Animal_C
 values(8, 3, 'Vancouver');
 
@@ -283,20 +298,20 @@ values(3, 1);
 insert into Eats_Plant
 values(4, 0);
 
-insert into Plants
-values(0, 'strawberry', 1000);
+insert into Habitat
+values(0, 'Vancouver', 'Temperate Rainforest', 10);
 
-insert into Plants
-values(1, 'banana', 1000);
+insert into Habitat
+values(1, 'Iqaluit', 'Tundra', -10);
 
-insert into Plants
-values(2, 'blueberry', 5000);
+insert into Habitat
+values(2, 'Phoenix', 'Desert', 40);
 
-insert into Plants
-values(3, 'blackberry', 1020);
+insert into Habitat
+values(3, 'Calgary', 'Grassland', 17);
 
-insert into Plants
-values(4, 'raspberry', 88050);
+insert into Habitat
+values(4, 'Kota Kinabalu', 'Tropical Rainforest', 30);
 
 insert into Lives_A
 values(0, 0);
@@ -328,21 +343,6 @@ values(3, 4);
 insert into Lives_Plant
 values(4, 0);
 
-insert into Habitat
-values(0, 'Vancouver', 'Temperate Rainforest', 10);
-
-insert into Habitat
-values(1, 'Iqaluit', 'Tundra', -10);
-
-insert into Habitat
-values(2, 'Phoenix', 'Desert', 40);
-
-insert into Habitat
-values(3, 'Calgary', 'Grassland', 17);
-
-insert into Habitat
-values(4, 'Kota Kinabalu', 'Tropical Rainforest', 30);
-
 insert into ArtificialStructures
 values(0, 'bulldozer', 'not very big', 'Kuala Lumpur', 2);
 
@@ -358,35 +358,6 @@ values(3, 'mine', 'very very deep', 'Madagascar', 5);
 insert into ArtificialStructures
 values(4, 'utility pole', 'very tall', 'Chicago', 2);
 
-Insert into Extracts
-values(3, 1, 1000);
-
-Insert into Extracts
-values(0, 2, 1000000);
-
-Insert into Extracts
-values(1, 2, 1000000);
-
-Insert into Extracts
-values(2, 3, 1000);
-
-Insert into Extracts
-values(4, 3, 100);
-
-insert into Builds_AS
-values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
-
-insert into Builds_AS
-values(2001, 100000, 1, 1, 'dino oil ltd', 'null');
-
-insert into Builds_AS
-values(2002, 100000, 2, 2, 'save the axolotls ltd', 'null');
-
-insert into Builds_AS
-values(2003, 100000, 3, 3, 'roasted pandas ltd', 'roasted axolotls ltd');
-
-insert into Builds_AS
-values(2004, 100000, 4, 4, 'save the pandas ltd', 'save the axolotls ltd');
 
 insert into Organization
 values('dino oil ltd', 0, 10000000, 1945,10000);
@@ -418,6 +389,21 @@ values('roasted axolotls ltd', 'roasted zebras ltd', 8, 30000, 1981, 1000);
 insert into Has_Subsidiary
 values('dino oil ltd', 'dino plastics ltd', 9, 30000, 1952, 3000);
 
+insert into Builds_AS
+values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
+
+insert into Builds_AS
+values(2001, 100000, 1, 1, 'dino oil ltd', 'null');
+
+insert into Builds_AS
+values(2002, 100000, 2, 2, 'save the axolotls ltd', 'null');
+
+insert into Builds_AS
+values(2003, 100000, 3, 3, 'roasted pandas ltd', 'roasted axolotls ltd');
+
+insert into Builds_AS
+values(2004, 100000, 4, 4, 'save the pandas ltd', 'save the axolotls ltd');
+
 insert into People
 values('John Doe', 0, 42);
 
@@ -448,6 +434,21 @@ values('Ying Zheng', 'save the axolotls ltd', 30);
 insert into Owns
 values('Ying Zheng', 'roasted axolotls ltd', 30);
 
+insert into Resources
+values(0, 'water', 'Deer Lake');
+
+insert into Resources
+values(1, 'water', 'Burnaby Lake');
+
+insert into Resources
+values(2, 'asbestos', 'Asbestos');
+
+insert into Resources
+values(3, 'oil', 'Ghawar Field');
+
+insert into Resources
+values(4, 'uranium', 'McArthur River');
+
 insert into Consume
 values(13, 0, 'boops boops', 5);
 
@@ -463,19 +464,19 @@ values(2, 0, 'Brachiosaurus altithorax', 10);
 insert into Consume
 values(9, 0, 'Ambystoma mexicanum', 3);
 
-insert into Resources
-values(0, 'water', 'Deer Lake');
+Insert into Extracts
+values(3, 1, 1000);
 
-insert into Resources
-values(1, 'water', 'Burnaby Lake');
+Insert into Extracts
+values(0, 2, 1000000);
 
-insert into Resources
-values(2, 'asbestos', 'Asbestos');
+Insert into Extracts
+values(1, 2, 1000000);
 
-insert into Resources
-values(3, 'oil', 'Ghawar Field');
+Insert into Extracts
+values(2, 3, 1000);
 
-insert into Resources
-values(4, 'uranium', 'McArthur River');
+Insert into Extracts
+values(4, 3, 100);
 
 select table_name from user_tables;
