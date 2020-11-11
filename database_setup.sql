@@ -59,8 +59,6 @@ create table Habitat(
 	temperature	    integer,
 	PRIMARY KEY(habID));
 
-
-
 create table Organization(
     org_name        char(40),
     oID			    integer UNIQUE,
@@ -135,6 +133,20 @@ create table Owns(
 	PRIMARY KEY(pID, org_name),
     FOREIGN KEY(pID) REFERENCES People ON DELETE CASCADE,
 	FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
+
+create table Lives_Plant(
+	plantID		    integer,
+    habID			integer,
+    PRIMARY KEY(plantID, habID),
+	FOREIGN KEY(plantID) REFERENCES Plants),
+	FOREIGN KEY(habID) REFERENCES Habitat);
+
+create table Lives_A(
+    aID			    integer,
+    habID			integer,
+    PRIMARY KEY(aID, habID),
+	FOREIGN KEY(aID) REFERENCES Animals),
+	FOREIGN KEY(habID) REFERENCES Habitat);
 
 insert into Animals
 values(0,'Ailuropoda melanoleuca', 6, 2070);
