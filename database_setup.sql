@@ -55,7 +55,7 @@ create table Eats_Plant(
 create table Habitat(
     habID			integer,
     location		char(40),
-    type			char(40),
+    type_H			char(40),
 	temperature	    integer,
 	PRIMARY KEY(habID, type));
 
@@ -63,49 +63,49 @@ create table Lives_Plant(
 	plantID		    integer,
     habID			integer,
     PRIMARY KEY(plantID),
-	FOREIGN KEY(habID) REFERENCES Habitat);  --ON DELETE NO ACTION ON UPDATE CASCADE);
+	FOREIGN KEY(habID) REFERENCES Habitat);  --ON DELETE NO ACTION ON UPDATE CASCADE
 
 create table Lives_A(
     aID			integer,
     habID			integer,
     PRIMARY KEY(aID),
-	FOREIGN KEY(habID) REFERENCES Habitat);  -- ON DELETE NO ACTION ON UPDATE CASCADE);
+	FOREIGN KEY(habID) REFERENCES Habitat);  -- ON DELETE NO ACTION ON UPDATE CASCADE
 
 create table Organization(
     org_name        char(40),
     oID			    integer UNIQUE,
     funds     	 	integer,
     founded     	integer,
-    size			integer,
+    size_org			integer,
     primary key (org_name));
 
 create table Has_Subsidiary(
     org_name        char(40),
     sub_name        char(40),
-	sID			    integer UNIQUE,
+	hsID			    integer UNIQUE,
     funds     	 	integer,
     founded     	integer,
-    size			integer,
+    size_sub			integer,
     primary key (sub_name),
     foreign key (org_name) references Organization);
 
 create table People(
-    name 			char(40),
+    name_people 			char(40),
     pID				integer,
     age    	 	 	integer,
     primary key (pID));
 
 create table ArtificialStructures(
     asID			integer,
-    type			char(40),
-    size			char(20),
+    type_AS			char(40),
+    size_AS			char(20),
     location 		char(40),
     qty			    integer,
 	PRIMARY KEY(asID, type));
 
 create table Resources(
     resID			integer,
-    type			char(40),
+    type_R			char(40),
     location		char(40),
 	PRIMARY KEY(resID));
 
@@ -120,7 +120,7 @@ create table Consume(
 
 create table Builds_AS(
     completionYear 	integer,
-    cost			integer,
+    cost_AS			integer,
     asID			integer,
 	habID 		    integer,
     org_name		char(40),
