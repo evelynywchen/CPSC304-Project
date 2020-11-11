@@ -85,9 +85,9 @@ create table Has_Subsidiary(
 	hsID			integer UNIQUE,
     funds     	 	integer,
     founded     	integer,
-    size_sub			integer,
+    size_sub		integer,
     primary key (sub_name),
-    foreign key (org_name) references Organization);
+    foreign key (org_name) REFERENCES Organization);
 
 create table People(
     name_people 			char(40),
@@ -99,7 +99,7 @@ create table ArtificialStructures(
     asID			integer,
     type_AS			char(40),
     size_AS			char(20),
-    location_AS 		char(40),
+    location_AS 	char(40),
     qty			    integer,
 	PRIMARY KEY(asID, type_AS));
 
@@ -115,8 +115,8 @@ create table Consume(
     species		    char(40),
 	qty			    integer,
     PRIMARY KEY(aID, resID),
-    FOREIGN KEY(aID) REFERENCES Animals,
-	FOREIGN KEY(resID) REFERENCES Resources);
+    FOREIGN KEY(aID) REFERENCES Animals ON DELETE CASCADE,
+	FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE);
 
 create table Builds_AS(
     completionYear 	integer,
@@ -126,7 +126,7 @@ create table Builds_AS(
     org_name		char(40),
     sub_name		char(40),
     PRIMARY KEY(asID),
-    FOREIGN KEY(habID) REFERENCES Habitat,
+    FOREIGN KEY(habID) REFERENCES Habitat ON DELETE CASCADE,
     FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary ON DELETE CASCADE,
     FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
@@ -135,16 +135,16 @@ create table Extracts(
     asID			integer,
 	qty			    integer,
     PRIMARY KEY(resID,asID),
-    FOREIGN KEY(resID) REFERENCES Resources,
-	FOREIGN KEY(asID) REFERENCES ArtificialStructures);
+    FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE,
+	FOREIGN KEY(asID) REFERENCES ArtificialStructures ON DELETE CASCADE);
 
 create table Owns(
 	pID			            char(40),
 	org_name		        char(40),
 	ownership_percentage    integer,
 	PRIMARY KEY(pID, org_name),
-    FOREIGN KEY(pID) REFERENCES People,
-	FOREIGN KEY(org_name) REFERENCES Organization);
+    FOREIGN KEY(pID) REFERENCES People ON DELETE CASCADE,
+	FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
 insert into Animals
 values(0,'Ailuropoda melanoleuca', 6, 2070);
