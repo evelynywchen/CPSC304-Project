@@ -45,6 +45,12 @@ create table Herbivores(
 	PRIMARY KEY (aID),
 	FOREIGN KEY (aID) references Animals);
 
+create table Plants(
+    plantID 		integer,
+	species		    char(40),
+    population		integer,
+	PRIMARY KEY(plantID));
+
 create table Eats_Animal_C(
 	cID	        int,
 	aID	        int,
@@ -60,6 +66,8 @@ create table Eats_Animal_O(
     PRIMARY KEY (aID),
     FOREIGN KEY(oID) REFERENCES Omnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
+
+
 
 create table Eats_Plant(
 	aID         int,
@@ -77,11 +85,13 @@ create table Consume(
     FOREIGN KEY(aID) REFERENCES Animals,
 	FOREIGN KEY(resID) REFERENCES Resources);
 
-create table Plants(
-    plantID 		integer,
-	species		    char(40),
-    population		integer,
-	PRIMARY KEY(plantID));
+create table Habitat(
+    habID			integer,
+    location		char(40),
+    type			char(40),
+	temperature	    integer,
+	PRIMARY KEY(habID, type));
+
 
 create table Lives_Plant(
 	plantID		    integer,
@@ -95,12 +105,29 @@ create table Lives_A(
     PRIMARY KEY(aID),
 	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);
 
-create table Habitat(
-    habID			integer,
-    location		char(40),
-    type			char(40),
-	temperature	    integer,
-	PRIMARY KEY(habID, type));
+create table Organization(
+    org_name        char(40),
+    oID			    integer UNIQUE,
+    funds     	 	integer,
+    founded     	integer,
+    size			integer,
+    primary key (org_name));
+
+create table Has_Subsidiary(
+    org_name        char(40),
+    sub_name        char(40),
+	sID			    integer UNIQUE,
+    funds     	 	integer,
+    founded     	integer,
+    size			integer,
+    primary key (sub_name),
+    foreign key (org_name) references Organization);
+
+create table People(
+    name 			char(40),
+    pID				integer,
+    age    	 	 	integer,
+    primary key (pID));
 
 create table ArtificialStructures(
     asID			integer,
@@ -109,6 +136,12 @@ create table ArtificialStructures(
     location 		char(40),
     qty			    integer,
 	PRIMARY KEY(asID, type));
+
+create table Resources(
+    resID			integer,
+    type			char(40),
+    location		char(40),
+	PRIMARY KEY(resID));
 
 create table Builds_AS(
     completionYear 	integer,
@@ -129,37 +162,6 @@ create table Extracts(
     PRIMARY KEY(resID,asID),
     FOREIGN KEY(resID) REFERENCES Resources,
 	FOREIGN KEY(asID) REFERENCES ArtificialStructures);
-
-create table Resources(
-    resID			integer,
-    type			char(40),
-    location		char(40),
-	PRIMARY KEY(resID));
-
-
-create table Organization(
-    org_name        char(40),
-    oID			    integer UNIQUE,
-    funds     	 	integer,
-    founded     	integer,
-    size			integer,
-    primary key (org_name));
-
-create table People(
-    name 			char(40),
-    pID				integer,
-    age    	 	 	integer,
-    primary key (pID));
-
-create table Has_Subsidiary(
-    org_name        char(40),
-    sub_name        char(40),
-	sID			    integer UNIQUE,
-    funds     	 	integer,
-    founded     	integer,
-    size			integer,
-    primary key (sub_name),
-    foreign key (org_name) references Organization);
 
 create table Owns(
 	pID			            char(40),
