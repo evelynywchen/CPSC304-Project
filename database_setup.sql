@@ -420,19 +420,19 @@ insert into People
 values('Shaka kaSenzangakhona', 4, 37);
 
 insert into Owns
-values('Shaka kaSenzangakhona', 'dino oil ltd', 20);
+values(4, 'dino oil ltd', 20);
 
 insert into Owns
-values('Mahatma Gandhi', 'dino oil ltd', 10);
+values(3, 'dino oil ltd', 10);
 
 insert into Owns
-values('Mahatma Gandhi', 'kil kill killl ltd', 30);
+values(3, 'kil kill killl ltd', 30);
 
 insert into Owns
-values('Ying Zheng', 'save the axolotls ltd', 30);
+values(2, 'save the axolotls ltd', 30);
 
 insert into Owns
-values('Ying Zheng', 'roasted axolotls ltd', 30);
+values(2, 'roasted axolotls ltd', 30);
 
 insert into Resources
 values(0, 'water', 'Deer Lake');
