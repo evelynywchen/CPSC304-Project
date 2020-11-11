@@ -239,34 +239,34 @@ insert into Omnivores
 values(14, 4);
 
 insert into Eats_Animal_C
-values(0, 1, 'Vancouver');
+values(8, 3, 'Vancouver');
 
 insert into Eats_Animal_C
-values(1, 2, 'Berlin');
+values(9, 4, 'Berlin');
 
 insert into Eats_Animal_C
-values(2, 3, 'Brussels');
+values(7, 2, 'Brussels');
 
 insert into Eats_Animal_C
-values(3, 4, 'Seoul');
+values(5, 0, 'Seoul');
 
 insert into Eats_Animal_C
-values(4, 0, 'Madagascar');
+values(6, 1, 'Madagascar');
 
 insert into Eats_Animal_O
-values(0, 5, 'Kuala Lumpur');
+values(10, 0, 'Kuala Lumpur');
 
 insert into Eats_Animal_O
-values(1, 6, 'Chicago');
+values(11, 1, 'Chicago');
 
 insert into Eats_Animal_O
-values(2, 7, 'St. Petersburg');
+values(12, 2, 'St. Petersburg');
 
 insert into Eats_Animal_O
-values(3, 8, 'Ho Chi Minh City');
+values(13, 3, 'Ho Chi Minh City');
 
 insert into Eats_Animal_O
-values(4, 9, 'Manilla');
+values(14, 4, 'Manilla');
 
 insert into Eats_Plant
 values(0, 4);
