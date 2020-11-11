@@ -9,5 +9,5 @@ create table Lives_A(
     aID			integer,
     habID			integer,
     PRIMARY KEY(aID),
-	FOREIGN KEY(aID) REFERENCES Animals)
+	FOREIGN KEY(aID) REFERENCES Animals),
 	FOREIGN KEY(habID) REFERENCES Habitat);  -- ON DELETE NO ACTION ON UPDATE CASCADE
