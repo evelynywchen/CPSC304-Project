@@ -131,18 +131,20 @@ create table Builds_AS(
     FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
 create table Extracts(
+    eID             integer
 	resID 		    integer,
     asID			integer,
 	qty			    integer,
-    PRIMARY KEY(resID,asID),
+    PRIMARY KEY(eID),
     FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE,
 	FOREIGN KEY(asID) REFERENCES ArtificialStructures ON DELETE CASCADE);
 
 create table Owns(
+    oID                     integer
 	pID			            char(40),
 	org_name		        char(40),
 	ownership_percentage    integer,
-	PRIMARY KEY(pID, org_name),
+	PRIMARY KEY(oID),
     FOREIGN KEY(pID) REFERENCES People ON DELETE CASCADE,
 	FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
