@@ -1,8 +1,8 @@
 create table Animals(
-	  aID     int not null,
+	aID     int not null,
     species char(40) not null,
-	  age     int,
-	  amount  int,
+	age     int,
+	amount  int,
     PRIMARY KEY(aID));
 
 create table Carnivores(
