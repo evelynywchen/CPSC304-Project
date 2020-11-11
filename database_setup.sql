@@ -377,10 +377,10 @@ insert into Builds_AS
 values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
 
 insert into Builds_AS
-values(2001, 100000, 1, 1, 'dino oil ltd');
+values(2001, 100000, 1, 1, 'dino oil ltd', 'null');
 
 insert into Builds_AS
-values(2002, 100000, 2, 2, 'save the axolotls ltd');
+values(2002, 100000, 2, 2, 'save the axolotls ltd', 'null');
 
 insert into Builds_AS
 values(2003, 100000, 3, 3, 'roasted pandas ltd', 'roasted axolotls ltd');
@@ -413,7 +413,7 @@ insert into Has_Subsidiary
 values('roasted axolotls ltd', 'roasted pandas ltd', 7, 30000, 1981, 1000);
 
 insert into Has_Subsidiary
-values('roasted axolotls ltd', 'roasted pandas ltd', 8, 30000, 1981, 1000);
+values('roasted axolotls ltd', 'roasted zebras ltd', 8, 30000, 1981, 1000);
 
 insert into Has_Subsidiary
 values('dino oil ltd', 'dino plastics ltd', 9, 30000, 1952, 3000);
