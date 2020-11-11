@@ -22,7 +22,6 @@ create table Herbivores(
     hID int,
 	PRIMARY KEY (aID),
 	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
-	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Plants(
     plantID 		integer,
@@ -33,7 +32,7 @@ create table Plants(
 create table Eats_Animal_C(
 	cID	        int,
 	aID	        int,
-	location    char(40),
+	location_AC    char(40),
     PRIMARY KEY (aID),
     FOREIGN KEY(cID) REFERENCES Carnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
@@ -41,7 +40,7 @@ create table Eats_Animal_C(
 create table Eats_Animal_O(
 	oID	        int,
 	aID	        int,
-	location	char(40),
+	location_AO	char(40),
     PRIMARY KEY (aID),
     FOREIGN KEY(oID) REFERENCES Omnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
@@ -55,7 +54,7 @@ create table Eats_Plant(
 
 create table Habitat(
     habID			integer,
-    location		char(40),
+    location_H		char(40),
     type_H			char(40),
 	temperature	    integer,
 	PRIMARY KEY(habID, type_H));
@@ -100,14 +99,14 @@ create table ArtificialStructures(
     asID			integer,
     type_AS			char(40),
     size_AS			char(20),
-    location 		char(40),
+    location_AS 		char(40),
     qty			    integer,
 	PRIMARY KEY(asID, type_AS));
 
 create table Resources(
     resID			integer,
     type_R			char(40),
-    location		char(40),
+    location_R		char(40),
 	PRIMARY KEY(resID));
 
 create table Consume(
