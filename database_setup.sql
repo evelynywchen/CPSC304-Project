@@ -54,14 +54,7 @@ create table Eats_Plant(
     FOREIGN KEY(aID) REFERENCES Animals,
     FOREIGN KEY(plantID) REFERENCES Plants);
 
-create table Consume(
-    aID 			integer,
-    resID			integer,
-    species		    char(40),
-	qty			    integer,
-    PRIMARY KEY(aID, resID),
-    FOREIGN KEY(aID) REFERENCES Animals,
-	FOREIGN KEY(resID) REFERENCES Resources);
+
 
 create table Habitat(
     habID			integer,
@@ -70,18 +63,17 @@ create table Habitat(
 	temperature	    integer,
 	PRIMARY KEY(habID, type));
 
-
 create table Lives_Plant(
 	plantID		    integer,
     habID			integer,
     PRIMARY KEY(plantID),
-	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);
+	FOREIGN KEY(habID) REFERENCES Habitat);  --ON DELETE NO ACTION ON UPDATE CASCADE);
 
 create table Lives_A(
     aID			integer,
     habID			integer,
     PRIMARY KEY(aID),
-	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);
+	FOREIGN KEY(habID) REFERENCES Habitat);  -- ON DELETE NO ACTION ON UPDATE CASCADE);
 
 create table Organization(
     org_name        char(40),
@@ -120,6 +112,15 @@ create table Resources(
     type			char(40),
     location		char(40),
 	PRIMARY KEY(resID));
+
+create table Consume(
+    aID 			integer,
+    resID			integer,
+    species		    char(40),
+	qty			    integer,
+    PRIMARY KEY(aID, resID),
+    FOREIGN KEY(aID) REFERENCES Animals,
+	FOREIGN KEY(resID) REFERENCES Resources);
 
 create table Builds_AS(
     completionYear 	integer,
