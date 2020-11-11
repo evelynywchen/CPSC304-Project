@@ -344,19 +344,19 @@ insert into Habitat
 values(4, 'Kota Kinabalu', 'Tropical Rainforest', 30);
 
 insert into ArtificialStructures
-values(0, 'bulldozer', 'not very big', 2);
+values(0, 'bulldozer', 'not very big', 'Kuala Lumpur', 2);
 
 insert into ArtificialStructures
-values(1, 'oil platform', 'very big', 100);
+values(1, 'oil platform', 'very big', 'Vancouver',100);
 
 insert into ArtificialStructures
-values(2, 'water purification plant', 'very big', 2);
+values(2, 'water purification plant', 'very big', 'Berlin',2);
 
 insert into ArtificialStructures
-values(3, 'mine', 'very very deep', 5);
+values(3, 'mine', 'very very deep', 'Madagascar', 5);
 
 insert into ArtificialStructures
-values(4, 'utility pole', 'very tall', 2);
+values(4, 'utility pole', 'very tall', 'Chicago', 2);
 
 Insert into Extracts
 values(3, 1, 1000);
