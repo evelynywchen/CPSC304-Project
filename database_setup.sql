@@ -317,7 +317,7 @@ insert into Lives_A
 values(0, 0);
 
 insert into Lives_A
-values(1, 7);
+values(1, 1);
 
 insert into Lives_A
 values(2, 3);
@@ -326,7 +326,7 @@ insert into Lives_A
 values(3, 2);
 
 insert into Lives_A
-values(4, 8);
+values(4, 4);
 
 insert into Lives_Plant
 values(0, 1);
@@ -358,7 +358,6 @@ values(3, 'mine', 'very very deep', 'Madagascar', 5);
 insert into ArtificialStructures
 values(4, 'utility pole', 'very tall', 'Chicago', 2);
 
-
 insert into Organization
 values('dino oil ltd', 0, 10000000, 1945,10000);
 
@@ -389,20 +388,6 @@ values('roasted axolotls ltd', 'roasted zebras ltd', 8, 30000, 1981, 1000);
 insert into Has_Subsidiary
 values('dino oil ltd', 'dino plastics ltd', 9, 30000, 1952, 3000);
 
-insert into Builds_AS
-values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
-
-insert into Builds_AS
-values(2001, 100000, 1, 1, 'dino oil ltd', 'null');
-
-insert into Builds_AS
-values(2002, 100000, 2, 2, 'save the axolotls ltd', 'null');
-
-insert into Builds_AS
-values(2003, 100000, 3, 3, 'roasted pandas ltd', 'roasted axolotls ltd');
-
-insert into Builds_AS
-values(2004, 100000, 4, 4, 'save the pandas ltd', 'save the axolotls ltd');
 
 insert into People
 values('John Doe', 0, 42);
@@ -433,6 +418,21 @@ values(2, 'save the axolotls ltd', 30);
 
 insert into Owns
 values(2, 'roasted axolotls ltd', 30);
+
+insert into Builds_AS
+values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
+
+insert into Builds_AS
+values(2001, 100000, 1, 1, 'dino oil ltd', 'null');
+
+insert into Builds_AS
+values(2002, 100000, 2, 2, 'save the axolotls ltd', 'null');
+
+insert into Builds_AS
+values(2003, 100000, 3, 3, 'roasted pandas ltd', 'roasted axolotls ltd');
+
+insert into Builds_AS
+values(2004, 100000, 4, 4, 'save the pandas ltd', 'save the axolotls ltd');
 
 insert into Resources
 values(0, 'water', 'Deer Lake');
