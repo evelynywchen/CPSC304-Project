@@ -9,19 +9,20 @@ create table Carnivores(
     aID int,
     cID int,
     PRIMARY KEY (aID),
-	FOREIGN KEY (aID) references Animals ON DELETE CASCADE);
+	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Omnivores(
     aID int,
     oID int,
 	PRIMARY KEY (aID),
-	FOREIGN KEY (aID) references Animals);
+	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Herbivores(
     aID int,
     hID int,
 	PRIMARY KEY (aID),
-	FOREIGN KEY (aID) references Animals);
+	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
+	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Plants(
     plantID 		integer,
@@ -63,13 +64,13 @@ create table Lives_Plant(
 	plantID		    integer,
     habID			integer,
     PRIMARY KEY(plantID),
-	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);  --ON DELETE NO ACTION ON UPDATE CASCADE
+	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE CASCADE);  --ON DELETE NO ACTION ON UPDATE CASCADE
 
 create table Lives_A(
     aID			integer,
     habID			integer,
     PRIMARY KEY(aID),
-	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE NO ACTION ON UPDATE CASCADE);  -- ON DELETE NO ACTION ON UPDATE CASCADE
+	FOREIGN KEY(habID) REFERENCES Habitat ON DELETE CASCADE);  -- ON DELETE NO ACTION ON UPDATE CASCADE
 
 create table Organization(
     org_name        char(40),
@@ -127,8 +128,8 @@ create table Builds_AS(
     sub_name		char(40),
     PRIMARY KEY(asID),
     FOREIGN KEY(habID) REFERENCES Habitat,
-    FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary ON DELETE NO ACTION,
-    FOREIGN KEY(org_name) REFERENCES Organization ON UPDATE CASCADE);
+    FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary ON DELETE CASCADE,
+    FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
 create table Extracts(
 	resID 		    integer,
@@ -266,19 +267,19 @@ values(3, 8, 'Saigon');
 insert into Eats_Animal_O
 values(4, 9, 'Manilla');
 
-insert into Eats_Plants
+insert into Eats_Plant
 values(0, 4);
 
-insert into Eats_Plants
+insert into Eats_Plant
 values(1, 3);
 
-insert into Eats_Plants
+insert into Eats_Plant
 values(2, 2);
 
-insert into Eats_Plants
+insert into Eats_Plant
 values(3, 1);
 
-insert into Eats_Plants
+insert into Eats_Plant
 values(4, 0);
 
 insert into Plants
@@ -311,19 +312,19 @@ values(3, 2);
 insert into Lives_A
 values(4, 8);
 
-insert into Lives_Plants
+insert into Lives_Plant
 values(0, 1);
 
-insert into Lives_Plants
+insert into Lives_Plant
 values(1, 2);
 
-insert into Lives_Plants
+insert into Lives_Plant
 values(2, 3);
 
-insert into Lives_Plants
+insert into Lives_Plant
 values(3, 4);
 
-insert into Lives_Plants
+insert into Lives_Plant
 values(4, 0);
 
 insert into Habitat
