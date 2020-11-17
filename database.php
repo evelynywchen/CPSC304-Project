@@ -56,6 +56,23 @@
             <input type="submit" value="Submit">
         </form>
 
+        <hr />
+
+        <h2>Delete values from Database</h2>
+        <form action="/database.php">
+            <label for="table">Choose a table:</label>
+            <select name="table" id="cars">
+                <option value="Animals">Animals</option>
+                <option value="Plants">Plants</option>
+                <option value="Habitat">Habitat</option>
+                <option value="Organization">Organization</option>
+                <option value="People">People</option>
+                <option value="Resources">Resources</option>
+                <option value="AS">Artificial Structures</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
 
         <hr />
 
@@ -237,6 +254,23 @@
             OCICommit($db_conn);
         }
 
+        function handleDeleteRequest() {
+            global $db_conn;
+
+            //Getting the values from user and insert data into the table
+            $tuple = array (
+                ":bind1" => $_POST['insNo'],
+                ":bind2" => $_POST['insName']
+            );
+
+            $alltuples = array (
+                $tuple
+            );
+
+            //executeBoundSQL("DELETE FROM :bind1 WHERE :bind2 = :bind3)", $alltuples);
+            OCICommit($db_conn);
+        }
+
         function handleCountRequest() {
             global $db_conn;
 
@@ -265,6 +299,8 @@
                     handleUpdateRequest();
                 } else if (array_key_exists('insertQueryRequest', $_POST)) {
                     handleInsertRequest();
+                } else if (array_key_exists('insertQueryRequest', $_POST)) {
+                    handleDeleteRequest();
                 }
 
                 disconnectFromDB();
@@ -286,7 +322,7 @@
             }
         }
 
-		if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit'])) {
+        if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
             handlePOSTRequest();
         } else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest'])) {
             handleGETRequest();
