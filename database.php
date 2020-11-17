@@ -187,7 +187,7 @@
         function printResult($result) { //prints results from a select statement
             echo "<br>Retrieved data from table Animals:<br>";
             echo "<table>";
-            echo "<tr><th>ID</th><th>Name</th></tr>";
+            echo "<tr><th>aID</th><th>Species</th><th>Age</th></tr>";
 
             while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
                 echo "<tr><td>" . $row["aID"] . "</td><td>" . $row["Species"] . "</td><td>" . $row["age"] . "</td></tr>"; //or just use "echo $row[0]"
