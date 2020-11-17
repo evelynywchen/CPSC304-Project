@@ -25,7 +25,6 @@ create table Herbivores(
 create table Plants(
     plantID 		integer,
 	species		    char(40),
-    population		integer,
 	PRIMARY KEY(plantID));
 
 create table Eats_Animal_C(
@@ -238,19 +237,19 @@ insert into Omnivores
 values(14, 4);
 
 insert into Plants
-values(0, 'strawberry', 1000);
+values(0, 'strawberry');
 
 insert into Plants
-values(1, 'banana', 1000);
+values(1, 'banana');
 
 insert into Plants
-values(2, 'blueberry', 5000);
+values(2, 'blueberry');
 
 insert into Plants
-values(3, 'blackberry', 1020);
+values(3, 'blackberry');
 
 insert into Plants
-values(4, 'raspberry', 88050);
+values(4, 'raspberry');
 
 insert into Eats_Animal_C
 values(8, 3, 'Vancouver');
