@@ -218,7 +218,7 @@
                 OCICommit($db_conn);
                 break;
         }
-        echo "<br>Data successfully inserted.<br>";
+        echo "<br>Data successfully inserted! <br>";
     }
 
     // HANDLE ALL POST ROUTES
