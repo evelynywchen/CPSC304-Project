@@ -87,13 +87,12 @@
         <h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
         <p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
         <form method="GET" action="database.php"> <!--refresh page when submitted-->
-            <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
+            <input type="hidden" id="handleJoinRequest" name="handleJoinRequest">
             Resource Type: <label>
-                <input type="text" name="habID">
+                <input type="text" name="type_R">
             </label> <br /><br />
 
-
-            <input type="submit" value="Update" name="updateSubmit"></p>
+            <input type="submit" value="Join" name="updateSubmit"></p>
         </form>
 
         <hr />
@@ -237,8 +236,7 @@
         function handleJoinRequest() {
             global $db_conn;
 
-            $habitat_id = $_POST['habID'];
-            $new_temperature = $_POST['temperature'];
+            $type_R = $_POST['type_R'];
 
             // you need the wrap the old name and new name values with single quotations
             executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
