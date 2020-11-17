@@ -58,21 +58,15 @@
 
         <hr />
 
-        <h2>Delete values from Database</h2>
+        <h2>Delete an Animal</h2>
         <form action="/database.php">
-            <label for="table">Choose a table:</label>
-            <select name="table" id="cars">
-                <option value="Animals">Animals</option>
-                <option value="Plants">Plants</option>
-                <option value="Habitat">Habitat</option>
-                <option value="Organization">Organization</option>
-                <option value="People">People</option>
-                <option value="Resources">Resources</option>
-                <option value="AS">Artificial Structures</option>
-            </select>
+            Animal ID: <label>
+                <input type="number" name="aID">
+            </label> <br /><br />
             <br><br>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Delete" name = "deleteSubmit">
         </form>
+
 
         <hr />
 
@@ -263,15 +257,14 @@
 
             //Getting the values from user and insert data into the table
             $tuple = array (
-                ":bind1" => $_POST['insNo'],
-                ":bind2" => $_POST['insName']
+                ":bind1" => $_POST['deleteSubmit'],
             );
 
             $alltuples = array (
                 $tuple
             );
 
-            //executeBoundSQL("DELETE FROM :bind1 WHERE :bind2 = :bind3)", $alltuples);
+            executeBoundSQL("DELETE FROM Animals WHERE aID = :bind1)", $alltuples);
             OCICommit($db_conn);
         }
 
