@@ -280,7 +280,9 @@ function handleDeleteRequest() {
 
     $aID = $_POST['aID'];
 
-    executePlainSQL("DELETE FROM Animals WHERE aID ='" . $aID . "')");
+    // you need the wrap the old name and new name values with single quotations
+    executePlainSQL("DELETE FROM Animals WHERE aID='" . $aID . "'");
+
     OCICommit($db_conn);
 }
 
