@@ -181,36 +181,6 @@
             OCILogoff($db_conn);
         }
 
-        function runDropTables() {
-            $sql_file = 'droptables.sql';
-
-            $contents = file_get_contents($sql_file);
-
-            $comment_patterns = array('/\/\*.*(\n)*.*(\*\/)?/', //C comments
-                '/\s*--.*\n/', //inline comments start with --
-                '/\s*#.*\n/', //inline comments start with #
-            );
-            $contents = preg_replace($comment_patterns, "\n", $contents);
-
-            $statements = explode(";\n", $contents);
-            $statements = preg_replace("/\s/", ' ', $statements);
-
-            require_once 'MDB2.php';
-
-            $mdb2 =& MDB2::connect('mysql://usr:pw@localhost/dbnam');
-
-            foreach ($statements as $query) {
-                if (trim($query) != '') {
-                    echo 'Executing query: ' . $query . "\n";
-                    $res = $mdb2->exec($query);
-
-                    if (PEAR::isError($res)) {
-                        die($res->getMessage());
-                    }
-                }
-            }
-        }
-
         function handleUpdateRequest() {
             global $db_conn;
 
@@ -225,8 +195,8 @@
         function handleResetRequest() {
             global $db_conn;
             // Drop old table
-            // executePlainSQL("DROP TABLE demoTable");
-            runDropTables();
+            executePlainSQL("DROP TABLE demoTable");
+            //runDropTables();
 
             // Create new table
             echo "<br> creating new table <br>";
