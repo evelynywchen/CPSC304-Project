@@ -190,7 +190,7 @@
             echo "<tr><th>aID</th><th>Species</th><th>Age</th></tr>";
 
             while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-                echo "<tr><td>" . $row["aID"] . "</td><td>" . $row["Species"] . "</td><td>" . $row["age"] . "</td></tr>"; //or just use "echo $row[0]"
+                echo "<tr><td>" . $row["aID"] . "</td><td>" . $row["species"] . "</td><td>" . $row["age"] . "</td></tr>"; //or just use "echo $row[0]"
             }
 
             echo "</table>";
