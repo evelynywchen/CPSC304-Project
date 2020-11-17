@@ -25,7 +25,7 @@
         <h2>Reset</h2>
         <p>If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
 
-        <form method="POST" action="oracle-test-display.php">
+        <form method="POST" action="database.php">
             <!-- if you want another page to load after the button is clicked, you have to specify that page in the action parameter -->
             <input type="hidden" id="resetTablesRequest" name="resetTablesRequest">
             <p><input type="submit" value="Reset" name="reset"></p>
@@ -34,7 +34,7 @@
         <hr />
 
         <h2>Insert Values into DemoTable</h2>
-        <form method="POST" action="oracle-test-display.php"> <!--refresh page when submitted-->
+        <form method="POST" action="database.php"> <!--refresh page when submitted-->
             <input type="hidden" id="insertQueryRequest" name="insertQueryRequest">
             Number: <input type="text" name="insNo"> <br /><br />
             Name: <input type="text" name="insName"> <br /><br />
@@ -47,7 +47,7 @@
         <h2>Update Name in DemoTable</h2>
         <p>The values are case sensitive and if you enter in the wrong case, the update statement will not do anything.</p>
 
-        <form method="POST" action="oracle-test-display.php"> <!--refresh page when submitted-->
+        <form method="POST" action="database.php"> <!--refresh page when submitted-->
             <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
             Old Name: <input type="text" name="oldName"> <br /><br />
             New Name: <input type="text" name="newName"> <br /><br />
@@ -58,13 +58,13 @@
         <hr />
 
         <h2>Count the Tuples in DemoTable</h2>
-        <form method="GET" action="oracle-test-display.php"> <!--refresh page when submitted-->
+        <form method="GET" action="database.php"> <!--refresh page when submitted-->
             <input type="hidden" id="countTupleRequest" name="countTupleRequest">
             <input type="submit" name="countTuples"></p>
         </form>
 		
 		<h2>Display the Tuples in DemoTable</h2>
-        <form method="GET" action="oracle-test-display.php"> <!--refresh page when submitted-->
+        <form method="GET" action="database.php"> <!--refresh page when submitted-->
 			<input type="hidden" id="displayTupleRequest" name="displayTupleRequest">
 			<input type="submit" name="displayTuples"></p>
         </form>
@@ -181,6 +181,36 @@
             OCILogoff($db_conn);
         }
 
+        function runDropTables() {
+            $sql_file = 'droptables.sql';
+
+            $contents = file_get_contents($sql_file);
+
+            $comment_patterns = array('/\/\*.*(\n)*.*(\*\/)?/', //C comments
+                '/\s*--.*\n/', //inline comments start with --
+                '/\s*#.*\n/', //inline comments start with #
+            );
+            $contents = preg_replace($comment_patterns, "\n", $contents);
+
+            $statements = explode(";\n", $contents);
+            $statements = preg_replace("/\s/", ' ', $statements);
+
+            require_once 'MDB2.php';
+
+            $mdb2 =& MDB2::connect('mysql://usr:pw@localhost/dbnam');
+
+            foreach ($statements as $query) {
+                if (trim($query) != '') {
+                    echo 'Executing query: ' . $query . "\n";
+                    $res = $mdb2->exec($query);
+
+                    if (PEAR::isError($res)) {
+                        die($res->getMessage());
+                    }
+                }
+            }
+        }
+
         function handleUpdateRequest() {
             global $db_conn;
 
@@ -195,11 +225,13 @@
         function handleResetRequest() {
             global $db_conn;
             // Drop old table
-            executePlainSQL("DROP TABLE demoTable");
+            // executePlainSQL("DROP TABLE demoTable");
+            runDropTables();
 
             // Create new table
             echo "<br> creating new table <br>";
-            executePlainSQL("CREATE TABLE demoTable (id int PRIMARY KEY, name char(30))");
+            executePlainSQL("create table Animals(aID int PRIMARY KEY, species char(40) not null, age int, amount int");
+            //(id int PRIMARY KEY, name char(30))")
             OCICommit($db_conn);
         }
 
