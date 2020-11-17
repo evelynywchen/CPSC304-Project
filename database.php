@@ -104,7 +104,7 @@
             <input type="submit" name="countTuples"></p>
         </form>
 		
-		<h2>Display the Tuples in DemoTable</h2>
+		<h2>Display the Animals in Database</h2>
         <form method="GET" action="database.php"> <!--refresh page when submitted-->
 			<input type="hidden" id="displayTupleRequest" name="displayTupleRequest">
 			<input type="submit" name="displayTuples"></p>
@@ -297,7 +297,7 @@
 	    function handleDisplayRequest() {
             global $db_conn;
 
-            $result = executePlainSQL("SELECT * FROM demoTable");
+            $result = executePlainSQL("SELECT * FROM Animals");
 			printResult($result);
 
         }
