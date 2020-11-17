@@ -299,7 +299,7 @@
                     handleUpdateRequest();
                 } else if (array_key_exists('insertQueryRequest', $_POST)) {
                     handleInsertRequest();
-                } else if (array_key_exists('insertQueryRequest', $_POST)) {
+                } else if (array_key_exists('deleteQueryRequest', $_POST)) {
                     handleDeleteRequest();
                 }
 

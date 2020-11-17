@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad530636-40e3-4d23-9135-1c80c457c6f7" name="Default Changelist" comment="remove animal amount">
-      <change beforePath="$PROJECT_DIR$/database_setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/database_setup.sql" afterDir="false" />
+    <list default="true" id="ad530636-40e3-4d23-9135-1c80c457c6f7" name="Default Changelist" comment="Added delete section (functionality not there yet though)">
+      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +71,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605584374149</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added delete section (functionality not there yet though)">
+      <created>1605585236268</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1605585236268</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,7 +97,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="remove animal amount" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove animal amount" />
+    <MESSAGE value="Added delete section (functionality not there yet though)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added delete section (functionality not there yet though)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -101,9 +109,14 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="184" y="87" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605582921785" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605584376396">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="368" y="121" key="Vcs.Push.Dialog.v2" timestamp="1605585238439">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
+    <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605585238439" />
     <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605584376396" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605585550644">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605585550644" />
   </component>
 </project>
