@@ -2,7 +2,6 @@ create table Animals(
 	aID     int not null,
     species char(40) not null,
 	age     int,
-	amount  int,
     PRIMARY KEY(aID));
 
 create table Carnivores(
@@ -149,49 +148,49 @@ create table Lives_A(
 	FOREIGN KEY(habID) REFERENCES Habitat);
 
 insert into Animals
-values(0,'Ailuropoda melanoleuca', 6, 2070);
+values(0,'Ailuropoda melanoleuca', 6);
 
 insert into Animals
-values(1, 'Phascolarctos cinereus', 3, 6370);
+values(1, 'Phascolarctos cinereus', 3);
 
 insert into Animals
-values(2, 'Brachiosaurus altithorax', 21, 459);
+values(2, 'Brachiosaurus altithorax', 21);
 
 insert into Animals
-values(3, 'Hydrochoerus hydrochaeris', 35, 2349);
+values(3, 'Hydrochoerus hydrochaeris', 35);
 
 insert into Animals
-values(4, 'Erethizon dorsatum', 30, 2594);
+values(4, 'Erethizon dorsatum', 30);
 
 insert into Animals
-values(5, 'Notaden bennettii', 7, 1000);
+values(5, 'Notaden bennettii', 7);
 
 insert into Animals
-values(6, 'Otocolobus manul', 4, 8000);
+values(6, 'Otocolobus manul', 4);
 
 insert into Animals
-values(7, 'Ursus maritimus', 3, 500);
+values(7, 'Ursus maritimus', 3);
 
 insert into Animals
-values(8, 'atelopus zeteki', 3, 2000);
+values(8, 'atelopus zeteki', 3);
 
 insert into Animals
-values(9, 'Ambystoma mexicanum', 8, 100);
+values(9, 'Ambystoma mexicanum', 8);
 
 insert into Animals
-values(10, 'mola mola', 3, 5000);
+values(10, 'mola mola', 3);
 
 insert into Animals
-values(11, 'gorilla gorilla gorilla', 21, 400);
+values(11, 'gorilla gorilla gorilla', 21);
 
 insert into Animals
-values(12, 'pica pica pica', 2, 1200);
+values(12, 'pica pica pica', 2);
 
 insert into Animals
-values(13, 'boops boops', 11, 200);
+values(13, 'boops boops', 11);
 
 insert into Animals
-values(14, 'Chlamyphorus truncatus', 4, 1204);
+values(14, 'Chlamyphorus truncatus', 4);
 
 insert into Herbivores
 values(0, 0);
