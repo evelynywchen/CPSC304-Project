@@ -86,6 +86,20 @@
 
         <hr />
 
+        <h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
+        <p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
+        <form method="GET" action="database.php"> <!--refresh page when submitted-->
+            <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
+            Resource Type: <label>
+                <input type="text" name="habID">
+            </label> <br /><br />
+
+
+            <input type="submit" value="Update" name="updateSubmit"></p>
+        </form>
+
+        <hr />
+
         <h2>Count the Tuples in DemoTable</h2>
         <form method="GET" action="database.php"> <!--refresh page when submitted-->
             <input type="hidden" id="countTupleRequest" name="countTupleRequest">
@@ -212,6 +226,17 @@
 
 
         function handleUpdateRequest() {
+            global $db_conn;
+
+            $habitat_id = $_POST['habID'];
+            $new_temperature = $_POST['temperature'];
+
+            // you need the wrap the old name and new name values with single quotations
+            executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
+            OCICommit($db_conn);
+        }
+
+        function handleJoinRequest() {
             global $db_conn;
 
             $habitat_id = $_POST['habID'];
