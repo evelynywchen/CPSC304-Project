@@ -34,27 +34,28 @@
         <hr />
 
         <h2>Insert Values into Database</h2>
-<!--        <form method="POST" action="database.php"> <!--refresh page when submitted-->-->
-<!--            <input type="hidden" id="insertQueryRequest" name="insertQueryRequest">-->
-<!--            Number: <input type="text" name="insNo"> <br /><br />-->
-<!--            Name: <input type="text" name="insName"> <br /><br />-->
-<!---->
-<!--            <input type="submit" value="Insert" name="insertSubmit"></p>-->
-<!--        </form>-->
-        <form action="/database.php">
+        <!--        <form method="POST" action="database.php"> refresh page when submitted-->
+        <!--            <input type="hidden" id="insertQueryRequest" name="insertQueryRequest">-->
+        <!--            Number: <input type="text" name="insNo"> <br /><br />-->
+        <!--            Name: <input type="text" name="insName"> <br /><br />-->
+        <!---->
+        <!--            <input type="submit" value="Insert" name="insertSubmit"></p>-->
+        <!--        </form>-->
+        <form method="POST" action="database.php">
             <label for="table">Choose a table:</label>
-            <select name="table" id="cars">
-                <option value="Animals">Animals</option>
-                <option value="Plants">Plants</option>
-                <option value="Habitat">Habitat</option>
-                <option value="Organization">Organization</option>
-                <option value="People">People</option>
-                <option value="Resources">Resources</option>
-                <option value="AS">Artificial Structures</option>
+            <select name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
+                <option value="animals.php">Animals</option>
+                <option value="plants.php">Plants</option>
+                <option value="hab.php">Habitat</option>
+                <option value="org.php">Organization</option>
+                <option value="people.php">People</option>
+                <option value="res.php">Resources</option>
+                <option value="AS.php">Artificial Structures</option>
             </select>
-            <br><br>
-            <input type="submit" value="Submit">
+            <!-- <br><br> -->
+            <!-- <input type="submit" value="Submit"> -->
         </form>
+
 
         <hr />
 
