@@ -76,13 +76,16 @@
 
         <hr />
 
-        <h2>Update Name in DemoTable</h2>
-        <p>The values are case sensitive and if you enter in the wrong case, the update statement will not do anything.</p>
+        <h2>Update Temperature in Habitat</h2>
 
         <form method="POST" action="database.php"> <!--refresh page when submitted-->
             <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
-            Old Name: <input type="text" name="oldName"> <br /><br />
-            New Name: <input type="text" name="newName"> <br /><br />
+            Habitat ID: <label>
+                <input type="number" name="habID">
+            </label> <br /><br />
+            New Temperature: <label>
+                <input type="number" name="temperature">
+            </label> <br /><br />
 
             <input type="submit" value="Update" name="updateSubmit"></p>
         </form>
@@ -213,14 +216,15 @@
             OCILogoff($db_conn);
         }
 
+
         function handleUpdateRequest() {
             global $db_conn;
 
-            $old_name = $_POST['oldName'];
-            $new_name = $_POST['newName'];
+            $habitat_id = $_POST['habID'];
+            $new_temperature = $_POST['temperature'];
 
             // you need the wrap the old name and new name values with single quotations
-            executePlainSQL("UPDATE demoTable SET name='" . $new_name . "' WHERE name='" . $old_name . "'");
+            executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
             OCICommit($db_conn);
         }
 
