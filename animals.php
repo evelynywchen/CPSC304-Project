@@ -56,12 +56,7 @@
 <hr />
 
 <h2>
-    <button onclick="goBack()">Back</button>
-
-    <script>
-        function goBack() {
-            window.history.back();}
-    </script>
+    <a href="https://www.students.cs.ubc.ca/~evelyncn/CPSC304-Project/database.php"><button>Back</button></a>
     <hr/>
 
     <?php
