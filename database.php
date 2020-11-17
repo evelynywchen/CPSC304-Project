@@ -280,7 +280,7 @@ function handleDeleteRequest() {
 
     $aID = $_POST['aID'];
 
-    executeBoundSQL("DELETE FROM Animals WHERE aID ='" . $aID . "')");
+    executePlainSQL("DELETE FROM Animals WHERE aID ='" . $aID . "')");
     OCICommit($db_conn);
 }
 
