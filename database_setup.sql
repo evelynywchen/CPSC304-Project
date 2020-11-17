@@ -86,7 +86,6 @@ create table ArtificialStructures(
     type_AS			char(40),
     size_AS			char(20),
     location_AS 	char(40),
-    qty			    integer,
 	PRIMARY KEY(asID));
 
 create table Resources(
@@ -99,7 +98,6 @@ create table Consume(
     aID 			integer,
     resID			integer,
     species		    char(40),
-	qty			    integer,
     PRIMARY KEY(aID, resID),
     FOREIGN KEY(aID) REFERENCES Animals ON DELETE CASCADE,
 	FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE);
@@ -119,7 +117,6 @@ create table Builds_AS(
 create table Extracts(
 	resID 		    integer,
     asID			integer,
-	qty			    integer,
     PRIMARY KEY(resID, asID),
     FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE,
 	FOREIGN KEY(asID) REFERENCES ArtificialStructures ON DELETE CASCADE);
@@ -342,19 +339,19 @@ insert into Lives_Plant
 values(4, 0);
 
 insert into ArtificialStructures
-values(0, 'bulldozer', 'not very big', 'Kuala Lumpur', 2);
+values(0, 'bulldozer', 'not very big', 'Kuala Lumpur');
 
 insert into ArtificialStructures
-values(1, 'oil platform', 'very big', 'Vancouver',100);
+values(1, 'oil platform', 'very big', 'Vancouver');
 
 insert into ArtificialStructures
-values(2, 'water purification plant', 'very big', 'Berlin',2);
+values(2, 'water purification plant', 'very big', 'Berlin');
 
 insert into ArtificialStructures
-values(3, 'mine', 'very very deep', 'Madagascar', 5);
+values(3, 'mine', 'very very deep', 'Madagascar');
 
 insert into ArtificialStructures
-values(4, 'utility pole', 'very tall', 'Chicago', 2);
+values(4, 'utility pole', 'very tall', 'Chicago');
 
 insert into Organization
 values('dino oil ltd', 0, 10000000, 1945,10000);
@@ -447,33 +444,33 @@ insert into Resources
 values(4, 'uranium', 'McArthur River');
 
 insert into Consume
-values(13, 0, 'boops boops', 5);
+values(13, 0, 'boops boops');
 
 insert into Consume
-values(13, 1, 'boops boops', 2);
+values(13, 1, 'boops boops');
 
 insert into Consume
-values(2, 1, 'Brachiosaurus altithorax', 2);
+values(2, 1, 'Brachiosaurus altithorax');
 
 insert into Consume
-values(2, 0, 'Brachiosaurus altithorax', 10);
+values(2, 0, 'Brachiosaurus altithorax');
 
 insert into Consume
-values(9, 0, 'Ambystoma mexicanum', 3);
+values(9, 0, 'Ambystoma mexicanum');
 
 Insert into Extracts
-values(3, 1, 1000);
+values(3, 1);
 
 Insert into Extracts
-values(0, 2, 1000000);
+values(0, 2);
 
 Insert into Extracts
-values(1, 2, 1000000);
+values(1, 2);
 
 Insert into Extracts
-values(2, 3, 1000);
+values(2, 3);
 
 Insert into Extracts
-values(4, 3, 100);
+values(4, 3);
 
 select table_name from user_tables;
