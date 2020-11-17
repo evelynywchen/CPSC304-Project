@@ -233,7 +233,7 @@
             executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
             OCICommit($db_conn);
         }
-
+ 
         function handleJoinRequest() {
             global $db_conn;
 
