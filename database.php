@@ -61,7 +61,7 @@
         <h2>Delete an Animal</h2>
         <form method="POST" action="database.php"> <!--refresh page when submitted-->
             <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-            Number: <input type="text" name="aID"> <br /><br />
+            Animal ID: <input type="text" name="aID"> <br /><br />
 
             <input type="submit" value="Delete" name="deleteSubmit"></p>
         </form>
@@ -278,16 +278,9 @@
         function handleDeleteRequest() {
             global $db_conn;
 
-            //Getting the values from user and insert data into the table
-            $tuple = array (
-                ":bind1" => $_POST['aID'],
-            );
+            $aID = $_POST['aID'];
 
-            $alltuples = array (
-                $tuple
-            );
-
-            executeBoundSQL("DELETE FROM Animals WHERE aID = :bind1)", $alltuples);
+            executeBoundSQL("DELETE FROM Animals WHERE aID ='" . $aID . "')");
             OCICommit($db_conn);
         }
 
