@@ -41,7 +41,7 @@
     Age: <input type="text" name="age"> <br /><br />
 
     <label for="diet">Choose the diet of the animal:</label>
-    <select name="pickDiet" id="tableForm" onchange="if (this.value) window.location.href=this.value">
+    <select name="pickDiet" id="tableForm">
         <option value="herb">Herbivore</option>
         <option value="carni">Carnivore</option>
         <option value="omni">Omnivore</option>
