@@ -20,11 +20,13 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad530636-40e3-4d23-9135-1c80c457c6f7" name="Default Changelist" comment="Added delete section (functionality not there yet though)" />
+    <list default="true" id="ad530636-40e3-4d23-9135-1c80c457c6f7" name="Default Changelist" comment="learnt about branches in calm way" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -122,7 +124,28 @@
       <option name="project" value="LOCAL" />
       <updated>1605593378638</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="readne">
+      <created>1605593673791</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1605593673791</updated>
+    </task>
+    <task id="LOCAL-00010" summary="readne">
+      <created>1605593726518</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1605593726518</updated>
+    </task>
+    <task id="LOCAL-00011" summary="learnt about branches in calm way">
+      <created>1605593836316</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1605593836316</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,9 +184,10 @@
     <MESSAGE value="Fixed typo on line 302" />
     <MESSAGE value="outline of join" />
     <MESSAGE value="Modified print result for debugging" />
-    <MESSAGE value="readne" />
     <MESSAGE value="Revert &quot;Added insert&quot;&#10;&#10;This reverts commit 20f115fb" />
-    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Added insert&quot;&#10;&#10;This reverts commit 20f115fb" />
+    <MESSAGE value="readne" />
+    <MESSAGE value="learnt about branches in calm way" />
+    <option name="LAST_COMMIT_MESSAGE" value="learnt about branches in calm way" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -186,11 +210,11 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="184" y="87" key="DiffContextDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1605582921785" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605593380784">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605593837881">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605589968088" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605593380784" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605593837881" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605590571950">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

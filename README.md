@@ -1,7 +1,7 @@
 # CPSC304-Project
 
-I wrote something - Evelyn
+Evelyn
 
-Hey Hey People - Rui Qi Zhang
+Rui Qi 
 
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAaaaA - hehe
+Jo-rene
