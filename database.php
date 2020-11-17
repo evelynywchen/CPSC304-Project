@@ -59,14 +59,12 @@
         <hr />
 
         <h2>Delete an Animal</h2>
-        <form action="/database.php">
-            Animal ID: <label>
-                <input type="number" name="aID">
-            </label> <br /><br />
-            <br><br>
-            <input type="submit" value="Delete" name = "deleteSubmit">
-        </form>
+        <form method="POST" action="database.php"> <!--refresh page when submitted-->
+            <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
+            Number: <input type="text" name="aID"> <br /><br />
 
+            <input type="submit" value="Delete" name="deleteSubmit"></p>
+        </form>
 
         <hr />
 
@@ -257,7 +255,7 @@
 
             //Getting the values from user and insert data into the table
             $tuple = array (
-                ":bind1" => $_POST['deleteSubmit'],
+                ":bind1" => $_POST['aID'],
             );
 
             $alltuples = array (
