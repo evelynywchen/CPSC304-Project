@@ -16,12 +16,18 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="Added print statement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/animals.php" beforeDir="false" afterPath="$PROJECT_DIR$/animals.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,13 +62,15 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ad530636-40e3-4d23-9135-1c80c457c6f7" name="Default Changelist" comment="" />
+      <changelist id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="Added print statement" />
       <created>1605577064071</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605577064071</updated>
       <workItem from="1605577065281" duration="21000" />
       <workItem from="1605577098800" duration="3483000" />
+      <workItem from="1605762932620" duration="1236000" />
+      <workItem from="1605768783162" duration="1840000" />
     </task>
     <task id="LOCAL-00001" summary="remove animal amount">
       <created>1605584099016</created>
@@ -159,7 +167,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

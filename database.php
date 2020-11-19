@@ -245,6 +245,18 @@ function handleJoinRequest() {
     OCICommit($db_conn);
 }
 
+function printJoinResult($result) { //prints results from a select statement
+    echo "<br>Retrieved data from table Newly Joined Table:<br>";
+    echo "<table>";
+    echo "<tr><th>Type</th><th>Animal ID</th><th>Animal Species</th></tr>";
+
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "<tr><td>" . $row["type_R"] . "</td><td>" . $row["aID"] . "</td></tr>" . $row["species"] . "</td></tr>";
+    }
+
+    echo "</table>";
+}
+
 function handleResetRequest() {
     global $db_conn;
     // Drop old table
