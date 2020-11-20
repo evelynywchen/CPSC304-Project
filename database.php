@@ -69,7 +69,7 @@
 <h2>Delete a Person</h2>
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    Person ID: <input type="number" name="pID"> <br /><br />
+    Person ID: <input type="text" name="pID"> <br /><br />
 
     <input type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
