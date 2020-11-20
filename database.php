@@ -81,7 +81,7 @@
         <input type="number" name="temperature">
     </label> <br /><br />
 
-    <input type="submit" value="Update" name="updateSubmit"></p>
+    <input type="submit" value="Update" name="displayTuples"></p>
 </form>
 
 <hr />
