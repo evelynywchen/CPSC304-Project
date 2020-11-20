@@ -323,10 +323,12 @@ function handleDeleteRequest() {
             OCICommit($db_conn);
             break;
         case "omni":
+            executePlainSQL("DELETE FROM Eats_Animal_O WHERE oID='" . $sID . "'");
             executePlainSQL("DELETE FROM Omnivores WHERE oID='" . $sID . "'");
             OCICommit($db_conn);
             break;
         case "carni":
+            executePlainSQL("DELETE FROM Eats_Animal_C WHERE cID='" . $sID . "'");
             executePlainSQL("DELETE FROM Carnivores WHERE cID='" . $sID . "'");
             OCICommit($db_conn);
             break;
