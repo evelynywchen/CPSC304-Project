@@ -22,6 +22,14 @@
 </head>
 
 <body>
+
+<hr />
+
+<iframe width="420" height="315"
+        src="https://www.youtube.com/watch?v=ut2KhcNtnm8">
+</iframe>
+
+<hr />
 <h2>Reset</h2>
 <p>If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
 
@@ -86,14 +94,10 @@
 
 <hr />
 
-<h2>Projection of</h2>
+<h2>Projection of Artificial Structures' Details</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
-    Resource Type: <label>
-        <input type="text" name="type_R">
-    </label> <br /><br />
-
-    <input type="submit" value="Join" name="updateSubmit"></p>
+    <input type="submit" value="Projection" name="updateSubmit"></p>
 </form>
 
 <hr />

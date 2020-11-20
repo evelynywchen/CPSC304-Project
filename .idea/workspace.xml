@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="Print join attempt">
+    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="Projection framework">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
     </list>
@@ -73,7 +73,7 @@
       <workItem from="1605762932620" duration="1236000" />
       <workItem from="1605768783162" duration="2050000" />
       <workItem from="1605835632067" duration="153000" />
-      <workItem from="1605838564380" duration="760000" />
+      <workItem from="1605838564380" duration="2339000" />
     </task>
     <task id="LOCAL-00001" summary="remove animal amount">
       <created>1605584099016</created>
@@ -173,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605835745904</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Projection framework">
+      <created>1605839335803</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1605839335803</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +221,8 @@
     <MESSAGE value="Corrected insert2" />
     <MESSAGE value="Added print statement" />
     <MESSAGE value="Print join attempt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Print join attempt" />
+    <MESSAGE value="Projection framework" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projection framework" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -238,12 +246,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605595428947" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605835749574">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605839337429">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605589968088" />
     <state x="442" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605595461619" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605835749574" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605839337429" />
     <state x="550" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605596646356">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
