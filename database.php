@@ -258,9 +258,9 @@ function handleJoinRequest() {
     global $db_conn;
 
     $type_R = $_POST['type_R'];
-
     // you need the wrap the old name and new name values with single quotations
-    printJoinResult(executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID"));
+    $result = executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID");
+    printResult($result);
     OCICommit($db_conn);
 }
 
@@ -271,16 +271,16 @@ function handleProjectionRequest() {
     OCICommit($db_conn);
 }
 
-function printJoinResult($result) { //prints results from a select statement
-    echo "<br>Retrieved data from table Newly Joined Table:<br>";
-    echo "<table>";
-    echo "<tr><th>Type</th><th>Animal ID</th><th>Animal Species</th></tr>";
-
-    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-        echo "<tr><td>" . $row["type_R"] . "</td><td>" . $row["aID"] . "</td></tr>" . $row["species"] . "</td></tr>";
-    }
-    echo "</table>";
-}
+//function printJoinResult($result) { //prints results from a select statement
+//    echo "<br>Retrieved data from table Newly Joined Table:<br>";
+//    echo "<table>";
+//    echo "<tr><th>Type</th><th>Animal ID</th><th>Animal Species</th></tr>";
+//
+//    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+//        echo "<tr><td>" . $row["type_R"] . "</td><td>" . $row["aID"] . "</td></tr>" . $row["species"] . "</td></tr>";
+//    }
+//    echo "</table>";
+//}
 
 function handleResetRequest() {
     global $db_conn;
