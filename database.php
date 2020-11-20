@@ -94,7 +94,7 @@
 
 <h2>Finding Organizations by Funds and Size</h2>
 <form method="GET" action="database.php">
-    <input type="hidden" id="handleSelectionRequest" name="handleSelectionRequest">
+    <input type="hidden" id="selectionRequest" name="selectionRequest">
     <label>Funds</label>
     <select name="operators" id="tableForm">
         <option value="greater">greater than</option>
@@ -112,7 +112,7 @@
     <input type="number" name="size">
     <br /><br />
 
-    <input type="submit" value="selection" name="updateSubmit"></p>
+    <input type="submit" value="Submit" name="selectSubmit"></p>
 </form>
 <hr />
 
@@ -320,6 +320,60 @@ function handleDisplayRequest() {
 
 }
 
+function handleSelectRequest() {
+    global $db_conn;
+    $result = 0;
+    $fundsOp = $_GET['operators'];
+    $sizeOp = $_GET['op2'];
+    $funds = $_GET['funds'];
+    $size = $_GET['size'];
+
+    switch($fundsOp) {
+        case "greater":
+            switch($sizeOp) {
+                case "greater":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds>($funds) AND size>($size)");
+                    break;
+                case "smaller":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds>($funds) AND size<($size)");
+                    break;
+                case "equals":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds>($funds) AND size=($size)");
+                    break;
+            }
+            break;
+        case "smaller":
+            switch($sizeOp) {
+                case "greater":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds<($funds) AND size>($size)");
+                    break;
+                case "smaller":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds<($funds) AND size<($size)");
+                    break;
+                case "equals":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds<($funds) AND size=($size)");
+                    break;
+            }
+            break;
+        case "equals":
+            switch($sizeOp) {
+                case "greater":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds=($funds) AND size>($size)");
+                    break;
+                case "smaller":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds=($funds) AND size<($size)");
+                    break;
+                case "equals":
+                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds=($funds) AND size=($size)");
+                    break;
+            }
+            break;
+    }
+
+    OCICommit($db_conn);
+    printResult($result);
+}
+
 // HANDLE ALL POST ROUTES
 // A better coding practice is to have one method that reroutes your requests accordingly. It will make it easier to add/remove functionality.
 function handlePOSTRequest() {
@@ -350,14 +404,16 @@ function handleGETRequest() {
         } else if (array_key_exists('handleProjectionRequest', $_GET)) {
             handleProjectionRequest();
         }
-
+        else if (array_key_exists('selectSubmit', $_GET)) {
+            handleSelectRequest();
+        }
         disconnectFromDB();
     }
 }
 
 if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest'])) {
     handleGETRequest();
 }
 ?>
