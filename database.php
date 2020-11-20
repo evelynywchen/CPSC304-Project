@@ -25,7 +25,7 @@
 
 <hr />
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
 <h2>Reset</h2>
@@ -66,19 +66,14 @@
 
 <hr />
 
-<h2>Delete an Animal</h2>
+<h2>Delete a Person</h2>
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    <label for="diet">Choose the diet of the animal:</label>
-    <select name="pickDiet" id="tableForm">
-        <option value="herb">Herbivore</option>
-        <option value="carni">Carnivore</option>
-        <option value="omni">Omnivore</option>
-    </select>
-    Sub-category ID: <input type="text" name="sID">
-    <input type="submit" value="Delete" name="deleteSubmit"> <br /><br />
-</form>
+    Person ID: <input type="text" name="pID"> <br /><br />
 
+    <input type="submit" value="Delete" name="deleteSubmit"></p>
+</form>
+ 
 <hr />
 
 <h2>Update Temperature in Habitat</h2>
@@ -95,6 +90,30 @@
     <input type="submit" value="Update" name="displayTuples"></p>
 </form>
 
+<hr />
+
+<h2>Finding Organizations by Funds and Size</h2>
+<form method="GET" action="database.php">
+    <input type="hidden" id="handleSelectionRequest" name="handleSelectionRequest">
+    <label>Funds</label>
+    <select name="operators" id="tableForm">
+        <option value="greater">greater than</option>
+        <option value="smaller">smaller than</option>
+        <option value="equals">equals</option>
+    </select>
+    <input type="number" name="funds">
+    <br /><br />
+    <label>Size of Organization</label>
+    <select name="op2" id="tableForm">
+        <option value="greater">greater than</option>
+        <option value="smaller">smaller than</option>
+        <option value="equals">equals</option>
+    </select>
+    <input type="number" name="size">
+    <br /><br />
+
+    <input type="submit" value="selection" name="updateSubmit"></p>
+</form>
 <hr />
 
 <h2>Projection of Artificial Structures' Details</h2>
@@ -237,6 +256,7 @@ function connectToDB() {
 
 function disconnectFromDB() {
     global $db_conn;
+
     debugAlertMessage("Disconnect from Database");
     OCILogoff($db_conn);
 }
@@ -244,29 +264,41 @@ function disconnectFromDB() {
 
 function handleUpdateRequest() {
     global $db_conn;
+
     $habitat_id = $_POST['habID'];
     $new_temperature = $_POST['temperature'];
+
+    // you need the wrap the old name and new name values with single quotations
     executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
     OCICommit($db_conn);
 }
 
-
 function handleJoinRequest() {
     global $db_conn;
+
     $type_R = $_POST['type_R'];
-    $string = "SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID";
-    $result = executePlainSQL($string);
+    $result = executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID");
     printResult($result);
     OCICommit($db_conn);
 }
 
 function handleProjectionRequest() {
     global $db_conn;
-    $string = "SELECT BUILD_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS";
-    $result = executePlainSQL($string);
+    $result = executePlainSQL("SELECT BUILD_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS");
     printResult($result);
     OCICommit($db_conn);
 }
+
+//function printJoinResult($result) { //prints results from a select statement
+//    echo "<br>Retrieved data from table Newly Joined Table:<br>";
+//    echo "<table>";
+//    echo "<tr><th>Type</th><th>Animal ID</th><th>Animal Species</th></tr>";
+//
+//    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+//        echo "<tr><td>" . $row["type_R"] . "</td><td>" . $row["aID"] . "</td></tr>" . $row["species"] . "</td></tr>";
+//    }
+//    echo "</table>";
+//}
 
 function handleResetRequest() {
     global $db_conn;
@@ -281,48 +313,13 @@ function handleResetRequest() {
     OCICommit($db_conn);
 }
 
-function handleInsertRequest() {
-    global $db_conn;
-
-    //Getting the values from user and insert data into the table
-    $tuple = array (
-        ":bind1" => $_POST['insNo'],
-        ":bind2" => $_POST['insName']
-    );
-    $alltuples = array (
-        $tuple
-    );
-
-    executeBoundSQL("insert into demoTable values (:bind1, :bind2)", $alltuples);
-    OCICommit($db_conn);
-}
-
 function handleDeleteRequest() {
     global $db_conn;
-    $animalDiet = $_POST['pickDiet'];
-    $sID = $_POST['sID'];
-    switch($animalDiet) {
-        case "herb":
-            executePlainSQL("DELETE FROM Herbivores WHERE hID='" . $sID . "'");
-            executePlainSQL("DELETE FROM Animals WHERE aID= 
-                                (SELECT aID from Herbivores WHERE hID='" . $sID . "')");
-            OCICommit($db_conn);
-            break;
-        case "omni":
-            executePlainSQL("DELETE FROM Eats_Animal_O WHERE oID='" . $sID . "'");
-            executePlainSQL("DELETE FROM Omnivores WHERE oID='" . $sID . "'");
-            executePlainSQL("DELETE FROM Animals WHERE aID= 
-                                (SELECT aID from Omnivores WHERE oID='" . $sID . "')");
-            OCICommit($db_conn);
-            break;
-        case "carni":
-            executePlainSQL("DELETE FROM Eats_Animal_C WHERE cID='" . $sID . "'");
-            executePlainSQL("DELETE FROM Carnivores WHERE cID='" . $sID . "'");
-            executePlainSQL("DELETE FROM Animals WHERE aID= 
-                                (SELECT aID from Carnivores WHERE cID='" . $sID . "')");
-            OCICommit($db_conn);
-            break;
-    }
+
+    $pID = $_POST['pID'];
+
+    executePlainSQL("DELETE FROM Owns WHERE pID ='" . $pID . "'");
+    executePlainSQL("DELETE FROM People WHERE pID ='" . $pID . "'");
 
     OCICommit($db_conn);
 }
@@ -341,6 +338,9 @@ function handleDisplayRequest() {
     global $db_conn;
 
     $result = executePlainSQL("SELECT * FROM Animals");
+    printResult($result);
+
+    $result = executePlainSQL("SELECT * FROM People");
     printResult($result);
 
 }
