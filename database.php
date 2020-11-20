@@ -66,17 +66,12 @@
 
 <hr />
 
-<h2>Delete an Animal</h2>
+<h2>Delete a Person</h2>
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    <label for="diet">Choose the diet of the animal:</label>
-    <select name="pickDiet" id="tableForm">
-        <option value="herb">Herbivore</option>
-        <option value="carni">Carnivore</option>
-        <option value="omni">Omnivore</option>
-    </select>
-    Sub-category ID: <input type="text" name="sID">
-    <input type="submit" value="Delete" name="deleteSubmit"> <br /><br />
+    Person ID: <input type="number" name="pID"> <br /><br />
+
+    <input type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
  
 <hr />
@@ -320,25 +315,11 @@ function handleResetRequest() {
 
 function handleDeleteRequest() {
     global $db_conn;
-    $animalDiet = $_POST['pickDiet'];
-    $sID = $_POST['sID'];
-    switch($animalDiet) {
-        case "herb":
-            executePlainSQL("DELETE FROM Herbivores WHERE hID='" . $sID . "'");
-            OCICommit($db_conn);
-            break;
-        case "omni":
-            executePlainSQL("DELETE FROM Eats_Animal_O WHERE oID='" . $sID . "'");
-            executePlainSQL("DELETE FROM Omnivores WHERE oID='" . $sID . "'");
-            OCICommit($db_conn);
-            break;
-        case "carni":
-            executePlainSQL("DELETE FROM Eats_Animal_C WHERE cID='" . $sID . "'");
-            executePlainSQL("DELETE FROM Carnivores WHERE cID='" . $sID . "'");
-            OCICommit($db_conn);
-            break;
-    }
 
+    $pID = $_POST['pID'];
+
+    executeBoundSQL("DELETE FROM Owns WHERE pID ='" . $pID . "')");
+    executeBoundSQL("DELETE FROM People WHERE pID ='" . $pID . "')");
     OCICommit($db_conn);
 }
 
