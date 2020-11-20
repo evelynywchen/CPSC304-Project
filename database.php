@@ -335,10 +335,6 @@ function handlePOSTRequest() {
             handleInsertRequest();
         } else if (array_key_exists('deleteQueryRequest', $_POST)) {
             handleDeleteRequest();
-        } else if (array_key_exists('handleJoinRequest', $_POST)) {
-            handleJoinRequest();
-        } else if (array_key_exists('handleProjectionRequest', $_POST)) {
-            handleProjectionRequest();
         }
         disconnectFromDB();
     }
@@ -350,9 +346,12 @@ function handleGETRequest() {
     if (connectToDB()) {
         if (array_key_exists('countTuples', $_GET)) {
             handleCountRequest();
-        }
-        if (array_key_exists('displayTuples', $_GET)) {
+        } else if (array_key_exists('displayTuples', $_GET)) {
             handleDisplayRequest();
+        } else if (array_key_exists('handleJoinRequest', $_GET)) {
+            handleJoinRequest();
+        } else if (array_key_exists('handleProjectionRequest', $_GET)) {
+            handleProjectionRequest();
         }
 
         disconnectFromDB();
@@ -361,7 +360,7 @@ function handleGETRequest() {
 
 if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest'])) {
     handleGETRequest();
 }
 ?>
