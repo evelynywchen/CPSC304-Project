@@ -358,6 +358,9 @@ function handleDisplayRequest() {
     $result = executePlainSQL("SELECT * FROM Animals");
     printResult($result);
 
+    $result = executePlainSQL("SELECT * FROM People");
+    printResult($result);
+
 }
 
 // HANDLE ALL POST ROUTES
