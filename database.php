@@ -26,7 +26,7 @@
 <hr />
 
 <iframe width="420" height="315"
-        src="https://www.youtube.com/watch?v=ut2KhcNtnm8">
+        src="https://www.youtube.com/watch?v=ut2KhcNtnm8?autoplay=1">
 </iframe>
 
 <hr />
@@ -264,10 +264,7 @@ function handleJoinRequest() {
 function handleProjectionRequest() {
     global $db_conn;
 
-    $XXXXXX = $_POST['XXXXX'];
-
-    // you need the wrap the old name and new name values with single quotations
-    executePlainSQL();
+    executePlainSQL("SELECT ");
     OCICommit($db_conn);
 }
 
