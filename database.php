@@ -335,8 +335,11 @@ function handlePOSTRequest() {
             handleInsertRequest();
         } else if (array_key_exists('deleteQueryRequest', $_POST)) {
             handleDeleteRequest();
+        } else if (array_key_exists('handleJoinRequest', $_POST)) {
+            handleJoinRequest();
+        } else if (array_key_exists('handleProjectionRequest', $_POST)) {
+            handleProjectionRequest();
         }
-
         disconnectFromDB();
     }
 }
