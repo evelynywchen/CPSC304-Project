@@ -266,16 +266,16 @@ function handleJoinRequest() {
     $type_R = $_POST['type_R'];
     $string = "SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID";
     $result = executePlainSQL($string);
-    printResult($result);
     OCICommit($db_conn);
+    printResult($result);
 }
 
 function handleProjectionRequest() {
     global $db_conn;
     $string = "SELECT BUILD_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS";
     $result = executePlainSQL($string);
-    printResult($result);
     OCICommit($db_conn);
+    printResult($result);
 }
 
 function handleResetRequest() {
