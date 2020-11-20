@@ -225,10 +225,6 @@ See the sample code below for how this function is used */
 }
 
 function printResult($result) { //prints results from a select statement
-    echo "<br>Retrieved data from table Animals:<br>";
-    echo "<table>";
-    echo "<tr><th>aID</th><th>Species</th><th>Age</th></tr>";
-
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr>"; //or just use "echo $row[0]"
     }
@@ -316,9 +312,9 @@ function handleDisplayRequest() {
     global $db_conn;
 
     $result = executePlainSQL("SELECT * FROM Animals");
-    printResult($result);
-
-    $result = executePlainSQL("SELECT * FROM People");
+    echo "<br>Retrieved data from table Animals:<br>";
+    echo "<table>";
+    echo "<tr><th>aID</th><th>Species</th><th>Age</th></tr>";
     printResult($result);
 
 }
