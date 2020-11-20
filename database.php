@@ -26,7 +26,7 @@
 <hr />
 
 <iframe width="420" height="315"
-        src="https://www.youtube.com/watch?v=ut2KhcNtnm8?autoplay=1">
+        src="https://www.youtube.com/watch?v=ut2KhcNtnm8">
 </iframe>
 
 <hr />
@@ -281,7 +281,6 @@ function printJoinResult($result) { //prints results from a select statement
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "<tr><td>" . $row["type_R"] . "</td><td>" . $row["aID"] . "</td></tr>" . $row["species"] . "</td></tr>";
     }
-
     echo "</table>";
 }
 
@@ -306,7 +305,6 @@ function handleInsertRequest() {
         ":bind1" => $_POST['insNo'],
         ":bind2" => $_POST['insName']
     );
-
     $alltuples = array (
         $tuple
     );
