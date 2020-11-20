@@ -226,7 +226,7 @@ See the sample code below for how this function is used */
 
 function printResult($result) { //prints results from a select statement
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr> </p>"; //or just use "echo $row[0]"
+        echo "</p> <tr><td>" . $row[0] . " </td><td> " . $row[1] . " </td><td> " . $row[2] . " </td></tr> </p>"; //or just use "echo $row[0]"
     }
 
     echo "</table>";
@@ -259,7 +259,7 @@ function disconnectFromDB() {
 
 function handleJoinRequest() {
     global $db_conn;
-    $type_R = $_POST['type_R'];
+    $type_R = $_GET['type_R'];
     print($type_R);
     $string = "SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID";
     $result = executePlainSQL($string);
