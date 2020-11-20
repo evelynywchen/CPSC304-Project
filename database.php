@@ -97,6 +97,30 @@
 
 <hr />
 
+<h2>Finding Organizations by Funds and Size</h2>
+<form method="GET" action="database.php">
+    <input type="hidden" id="handleSelectionRequest" name="handleSelectionRequest">
+    <label>Funds</label>
+    <select name="operators" id="tableForm">
+        <option value="greater">greater than</option>
+        <option value="smaller">smaller than</option>
+        <option value="equals">equals</option>
+    </select>
+    <input type="number" name="funds">
+    <br /><br />
+    <label>Size of Organization</label>
+    <select name="op2" id="tableForm">
+        <option value="greater">greater than</option>
+        <option value="smaller">smaller than</option>
+        <option value="equals">equals</option>
+    </select>
+    <input type="number" name="size">
+    <br /><br />
+
+    <input type="submit" value="selection" name="updateSubmit"></p>
+</form>
+<hr />
+
 <h2>Projection of Artificial Structures' Details</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
@@ -291,22 +315,6 @@ function handleResetRequest() {
     echo "<br> creating new table <br>";
     executePlainSQL("create table Animals(aID int PRIMARY KEY, species char(40) not null, age int, amount int");
     //(id int PRIMARY KEY, name char(30))")
-    OCICommit($db_conn);
-}
-
-function handleInsertRequest() {
-    global $db_conn;
-
-    //Getting the values from user and insert data into the table
-    $tuple = array (
-        ":bind1" => $_POST['insNo'],
-        ":bind2" => $_POST['insName']
-    );
-    $alltuples = array (
-        $tuple
-    );
-
-    executeBoundSQL("insert into demoTable values (:bind1, :bind2)", $alltuples);
     OCICommit($db_conn);
 }
 
