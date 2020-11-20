@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="Join display">
+    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="Projection">
       <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605843332554</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Projection">
+      <created>1605843548846</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1605843548846</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +280,8 @@
     <MESSAGE value="Youtube Video" />
     <MESSAGE value="Added deletion statement for eats animal c and o." />
     <MESSAGE value="Join display" />
-    <option name="LAST_COMMIT_MESSAGE" value="Join display" />
+    <MESSAGE value="Projection" />
+    <option name="LAST_COMMIT_MESSAGE" value="Projection" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -297,12 +305,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605595428947" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605843334052">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605843550099">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605842541238" />
     <state x="442" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605595461619" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605843334052" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605843550099" />
     <state x="550" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605596646356">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

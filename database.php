@@ -25,7 +25,7 @@
 
 <hr />
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
 <h2>Reset</h2>
@@ -237,7 +237,6 @@ function connectToDB() {
 
 function disconnectFromDB() {
     global $db_conn;
-
     debugAlertMessage("Disconnect from Database");
     OCILogoff($db_conn);
 }
@@ -245,18 +244,14 @@ function disconnectFromDB() {
 
 function handleUpdateRequest() {
     global $db_conn;
-
     $habitat_id = $_POST['habID'];
     $new_temperature = $_POST['temperature'];
-
-    // you need the wrap the old name and new name values with single quotations
     executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
     OCICommit($db_conn);
 }
 
 function handleJoinRequest() {
     global $db_conn;
-
     $type_R = $_POST['type_R'];
     $result = executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID");
     printResult($result);
