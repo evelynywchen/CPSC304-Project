@@ -211,7 +211,7 @@ function printResult($result) { //prints results from a select statement
     echo "<tr><th>aID</th><th>Species</th><th>Age</th></tr>";
 
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-        echo "<tr><td>" . $row["aID"] . "</td><td>" . $row["species"] . "</td><td>" . $row["age"] . "</td></tr>"; //or just use "echo $row[0]"
+        echo "<tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr>"; //or just use "echo $row[0]"
     }
 
     echo "</table>";
@@ -321,10 +321,12 @@ function handleDeleteRequest() {
             OCICommit($db_conn);
             break;
         case "omni":
+            executePlainSQL("DELETE FROM Eats_Animal_O WHERE oID='" . $sID . "'");
             executePlainSQL("DELETE FROM Omnivores WHERE oID='" . $sID . "'");
             OCICommit($db_conn);
             break;
         case "carni":
+            executePlainSQL("DELETE FROM Eats_Animal_C WHERE cID='" . $sID . "'");
             executePlainSQL("DELETE FROM Carnivores WHERE cID='" . $sID . "'");
             OCICommit($db_conn);
             break;
