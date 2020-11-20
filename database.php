@@ -71,9 +71,14 @@
 <h2>Delete an Animal</h2>
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    Animal ID: <input type="text" name="aID"> <br /><br />
-
-    <input type="submit" value="Delete" name="deleteSubmit"></p>
+    <label for="diet">Choose the diet of the animal:</label>
+    <select name="pickDiet" id="tableForm">
+        <option value="herb">Herbivore</option>
+        <option value="carni">Carnivore</option>
+        <option value="omni">Omnivore</option>
+    </select>
+    Sub-category ID: <input type="text" name="sID">
+    <input type="submit" value="Delete" name="deleteSubmit"> <br /><br />
 </form>
 
 <hr />
@@ -315,11 +320,22 @@ function handleInsertRequest() {
 
 function handleDeleteRequest() {
     global $db_conn;
-
-    $aID = $_POST['aID'];
-
-    // you need the wrap the old name and new name values with single quotations
-    executePlainSQL("DELETE FROM Animals WHERE aID='" . $aID . "'");
+    $animalDiet = $_POST['pickDiet'];
+    $sID = $_POST['sID'];
+    switch($animalDiet) {
+        case "herb":
+            executePlainSQL("DELETE FROM Herbivores WHERE hID='" . $sID . "'");
+            OCICommit($db_conn);
+            break;
+        case "omni":
+            executePlainSQL("DELETE FROM Omnivores WHERE oID='" . $sID . "'");
+            OCICommit($db_conn);
+            break;
+        case "carni":
+            executePlainSQL("DELETE FROM Carnivores WHERE cID='" . $sID . "'");
+            OCICommit($db_conn);
+            break;
+    }
 
     OCICommit($db_conn);
 }
