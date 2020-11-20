@@ -262,7 +262,7 @@ function handleJoinRequest() {
     $type_R = $_POST['type_R'];
 
     // you need the wrap the old name and new name values with single quotations
-    executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID");
+    printJoinResult(executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID"));
     OCICommit($db_conn);
 }
 
