@@ -317,16 +317,22 @@ function handleDeleteRequest() {
     switch($animalDiet) {
         case "herb":
             executePlainSQL("DELETE FROM Herbivores WHERE hID='" . $sID . "'");
+            executePlainSQL("DELETE FROM Animals WHERE aID= 
+                                (SELECT aID from Herbivores WHERE hID='" . $sID . "')");
             OCICommit($db_conn);
             break;
         case "omni":
             executePlainSQL("DELETE FROM Eats_Animal_O WHERE oID='" . $sID . "'");
             executePlainSQL("DELETE FROM Omnivores WHERE oID='" . $sID . "'");
+            executePlainSQL("DELETE FROM Animals WHERE aID= 
+                                (SELECT aID from Omnivores WHERE oID='" . $sID . "')");
             OCICommit($db_conn);
             break;
         case "carni":
             executePlainSQL("DELETE FROM Eats_Animal_C WHERE cID='" . $sID . "'");
             executePlainSQL("DELETE FROM Carnivores WHERE cID='" . $sID . "'");
+            executePlainSQL("DELETE FROM Animals WHERE aID= 
+                                (SELECT aID from Carnivores WHERE cID='" . $sID . "')");
             OCICommit($db_conn);
             break;
     }
