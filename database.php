@@ -318,8 +318,8 @@ function handleDeleteRequest() {
 
     $pID = $_POST['pID'];
 
-    executePlainSQL("DELETE FROM Owns WHERE pID ='" . $pID . "')");
-    executePlainSQL("DELETE FROM People WHERE pID ='" . $pID . "')");
+    executePlainSQL("DELETE FROM Owns WHERE pID ='" . $pID . "'");
+    executePlainSQL("DELETE FROM People WHERE pID ='" . $pID . "'");
 
     OCICommit($db_conn);
 }
