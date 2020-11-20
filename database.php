@@ -272,7 +272,7 @@ function handleJoinRequest() {
 
 function handleProjectionRequest() {
     global $db_conn;
-    $string = "SELECT BUILD_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS";
+    $string = "SELECT Builds_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS";
     $result = executePlainSQL($string);
     OCICommit($db_conn);
     printResult($result);
