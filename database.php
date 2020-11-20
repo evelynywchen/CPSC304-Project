@@ -86,6 +86,18 @@
 
 <hr />
 
+<h2>Projection of</h2>
+<form method="GET" action="database.php">
+    <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
+    Resource Type: <label>
+        <input type="text" name="type_R">
+    </label> <br /><br />
+
+    <input type="submit" value="Join" name="updateSubmit"></p>
+</form>
+
+<hr />
+
 <h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
 <p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
@@ -242,6 +254,16 @@ function handleJoinRequest() {
 
     // you need the wrap the old name and new name values with single quotations
     executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID");
+    OCICommit($db_conn);
+}
+
+function handleProjectionRequest() {
+    global $db_conn;
+
+    $XXXXXX = $_POST['XXXXX'];
+
+    // you need the wrap the old name and new name values with single quotations
+    executePlainSQL();
     OCICommit($db_conn);
 }
 
