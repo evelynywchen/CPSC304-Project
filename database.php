@@ -261,44 +261,22 @@ function disconnectFromDB() {
     OCILogoff($db_conn);
 }
 
-
-function handleUpdateRequest() {
-    global $db_conn;
-
-    $habitat_id = $_POST['habID'];
-    $new_temperature = $_POST['temperature'];
-
-    // you need the wrap the old name and new name values with single quotations
-    executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
-    OCICommit($db_conn);
-}
-
 function handleJoinRequest() {
     global $db_conn;
-
     $type_R = $_POST['type_R'];
-    $result = executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID");
+    $string = "SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID";
+    $result = executePlainSQL($string);
     printResult($result);
     OCICommit($db_conn);
 }
 
 function handleProjectionRequest() {
     global $db_conn;
-    $result = executePlainSQL("SELECT BUILD_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS");
+    $string = "SELECT BUILD_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS";
+    $result = executePlainSQL($string);
     printResult($result);
     OCICommit($db_conn);
 }
-
-//function printJoinResult($result) { //prints results from a select statement
-//    echo "<br>Retrieved data from table Newly Joined Table:<br>";
-//    echo "<table>";
-//    echo "<tr><th>Type</th><th>Animal ID</th><th>Animal Species</th></tr>";
-//
-//    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-//        echo "<tr><td>" . $row["type_R"] . "</td><td>" . $row["aID"] . "</td></tr>" . $row["species"] . "</td></tr>";
-//    }
-//    echo "</table>";
-//}
 
 function handleResetRequest() {
     global $db_conn;
