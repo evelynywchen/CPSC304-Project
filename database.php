@@ -25,9 +25,7 @@
 
 <hr />
 
-<iframe width="420" height="315"
-        src="https://www.youtube.com/watch?v=8myYyMg1fFE">
-</iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
 <h2>Reset</h2>
