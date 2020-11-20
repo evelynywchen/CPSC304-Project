@@ -25,7 +25,7 @@
 
 <hr />
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
 <h2>Reset</h2>
@@ -261,7 +261,6 @@ function connectToDB() {
 
 function disconnectFromDB() {
     global $db_conn;
-
     debugAlertMessage("Disconnect from Database");
     OCILogoff($db_conn);
 }
@@ -269,29 +268,29 @@ function disconnectFromDB() {
 
 function handleUpdateRequest() {
     global $db_conn;
-
     $habitat_id = $_POST['habID'];
     $new_temperature = $_POST['temperature'];
-
-    // you need the wrap the old name and new name values with single quotations
     executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
     OCICommit($db_conn);
 }
 
 function handleJoinRequest() {
     global $db_conn;
-
     $type_R = $_POST['type_R'];
     $result = executePlainSQL("SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID");
-    printResult($result);
+    DisplayRequest($result);
     OCICommit($db_conn);
 }
 
 function handleProjectionRequest() {
     global $db_conn;
     $result = executePlainSQL("SELECT BUILD_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS");
-    printResult($result);
+    DisplayRequest($result);
     OCICommit($db_conn);
+}
+
+function DisplayRequest($result) {
+    printResult($result);
 }
 
 //function printJoinResult($result) { //prints results from a select statement
@@ -325,16 +324,22 @@ function handleDeleteRequest() {
     switch($animalDiet) {
         case "herb":
             executePlainSQL("DELETE FROM Herbivores WHERE hID='" . $sID . "'");
+            executePlainSQL("DELETE FROM Animals WHERE aID= 
+                                (SELECT aID from Herbivores WHERE hID='" . $sID . "')");
             OCICommit($db_conn);
             break;
         case "omni":
             executePlainSQL("DELETE FROM Eats_Animal_O WHERE oID='" . $sID . "'");
             executePlainSQL("DELETE FROM Omnivores WHERE oID='" . $sID . "'");
+            executePlainSQL("DELETE FROM Animals WHERE aID= 
+                                (SELECT aID from Omnivores WHERE oID='" . $sID . "')");
             OCICommit($db_conn);
             break;
         case "carni":
             executePlainSQL("DELETE FROM Eats_Animal_C WHERE cID='" . $sID . "'");
             executePlainSQL("DELETE FROM Carnivores WHERE cID='" . $sID . "'");
+            executePlainSQL("DELETE FROM Animals WHERE aID= 
+                                (SELECT aID from Carnivores WHERE cID='" . $sID . "')");
             OCICommit($db_conn);
             break;
     }
