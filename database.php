@@ -18,14 +18,19 @@
 
 <html>
 <head>
-    <title>CPSC 304 Animal Database</title>
+    <title>CPSC 304 Habitat Database</title>
 </head>
 
 <body>
 
 <hr />
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<h1>Habitat Database</h1>
+<img src="Habitat.jpg">
+
+<hr />
+
+<iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
 <h2>Reset</h2>
