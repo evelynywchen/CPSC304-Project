@@ -21,15 +21,33 @@
     <title>CPSC 304 Habitat Database</title>
 </head>
 
-<body>
+<!--<body>-->
+
+<body style="background-color:powderblue;">
 
 <hr />
 
 <h1>Habitat Database</h1>
 <img src="Habitat.jpg">
+<img src="Habitat.gif">
+<p>I am normal</p>
+<p style="color:red;">I am red</p>
+<p style="color:blue;">I am blue</p>
+<p style="font-size:50px;">I am big</p>
+<h1 style="text-align:center;">Centered Heading</h1>
+<p style="font-family:'Lucida Console'"><b>This is another paragraph.</b></p>
+<div style="position:relative;">
+    <div style="opacity:0.5;position:absolute;left:50px;top:-30px;width:300px;height:150px;background-color:#40B3DF"></div>
+    <div style="opacity:0.3;position:absolute;left:120px;top:20px;width:100px;height:170px;background-color:#73AD21"></div>
+    <div style="margin-top:30px;width:360px;height:130px;padding:20px;border-radius:10px;border:10px solid #EE872A;font-size:120%;">
+        <h1>Habitat Database</h1>
+        <div style="letter-spacing:12px;font-size:15px;position:relative;left:25px;top:25px;">Manipulate Text</div>
+        <div style="color:#40B3DF;letter-spacing:12px;font-size:15px;position:relative;left:25px;top:30px;">Colors,
+            <span style="background-color:#B4009E;color:#ffffff;"> Boxes</span></div>
+    </div>
+</div>
 
 <hr />
-
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -231,11 +249,13 @@ See the sample code below for how this function is used */
 }
 
 function printResult($result) { //prints results from a select statement
+    echo "<table>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr> </p>"; //or just use "echo $row[0]"
     }
-
     echo "</table>";
+
+
 }
 
 function connectToDB() {
