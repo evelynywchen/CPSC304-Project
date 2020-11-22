@@ -16,13 +16,17 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="Finished handleSelectRequest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
-    </list>
+    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="buttons 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,12 +47,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kOgTxhtpGR0oqmoiUZXYibyhvf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
@@ -271,7 +278,91 @@
       <option name="project" value="LOCAL" />
       <updated>1605850032793</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Add image and title?">
+      <created>1605973762496</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1605973762496</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Add image and title?">
+      <created>1605973785673</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1605973785673</updated>
+    </task>
+    <task id="LOCAL-00032" summary="text format test">
+      <created>1605974351369</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1605974351369</updated>
+    </task>
+    <task id="LOCAL-00033" summary="text format test 2">
+      <created>1605975023553</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1605975023553</updated>
+    </task>
+    <task id="LOCAL-00034" summary="text format test 3 and printresult fix">
+      <created>1605976600503</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1605976600503</updated>
+    </task>
+    <task id="LOCAL-00035" summary="text format test 4">
+      <created>1605976901209</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1605976901209</updated>
+    </task>
+    <task id="LOCAL-00036" summary="text format test 5">
+      <created>1605977504082</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1605977504082</updated>
+    </task>
+    <task id="LOCAL-00037" summary="text format test 7">
+      <created>1606008772134</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1606008772134</updated>
+    </task>
+    <task id="LOCAL-00038" summary="text format test 8">
+      <created>1606009035324</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1606009035324</updated>
+    </task>
+    <task id="LOCAL-00039" summary="text format test 10">
+      <created>1606010316655</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1606010316655</updated>
+    </task>
+    <task id="LOCAL-00040" summary="text format test 11">
+      <created>1606010455608</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1606010455608</updated>
+    </task>
+    <task id="LOCAL-00041" summary="buttons">
+      <created>1606011213757</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1606011213757</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -302,13 +393,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="remove animal amount" />
-    <MESSAGE value="Added delete section (functionality not there yet though)" />
-    <MESSAGE value="Fixed typo on line 302" />
-    <MESSAGE value="outline of join" />
-    <MESSAGE value="Modified print result for debugging" />
-    <MESSAGE value="Added insert" />
-    <MESSAGE value="Corrected insert" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Corrected insert2" />
     <MESSAGE value="Added print statement" />
     <MESSAGE value="Print join attempt" />
@@ -323,7 +408,18 @@
     <MESSAGE value="youtube" />
     <MESSAGE value="OR" />
     <MESSAGE value="build-&gt;builds" />
-    <option name="LAST_COMMIT_MESSAGE" value="build-&gt;builds" />
+    <MESSAGE value="Add image and title?" />
+    <MESSAGE value="text format test" />
+    <MESSAGE value="text format test 2" />
+    <MESSAGE value="text format test 3 and printresult fix" />
+    <MESSAGE value="text format test 4" />
+    <MESSAGE value="text format test 5" />
+    <MESSAGE value="text format test 7" />
+    <MESSAGE value="text format test 8" />
+    <MESSAGE value="text format test 10" />
+    <MESSAGE value="text format test 11" />
+    <MESSAGE value="buttons" />
+    <option name="LAST_COMMIT_MESSAGE" value="buttons" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -347,16 +443,16 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605595428947" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1605850034025">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1606011215552">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605842541238" />
     <state x="442" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605595461619" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1605850034025" />
-    <state x="550" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605596646356">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606011215552" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606007334508">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605590571950" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606007334508" />
     <state x="550" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1605596646356" />
   </component>
 </project>
