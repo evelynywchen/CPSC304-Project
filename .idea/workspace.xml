@@ -16,17 +16,12 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="img again and join" />
+    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="Fixing handleSelectRequest">
+      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -424,9 +419,9 @@
     <MESSAGE value="text format test 10" />
     <MESSAGE value="text format test 11" />
     <MESSAGE value="buttons" />
-    <MESSAGE value="Fixing handleSelectRequest" />
     <MESSAGE value="img again and join" />
-    <option name="LAST_COMMIT_MESSAGE" value="img again and join" />
+    <MESSAGE value="Fixing handleSelectRequest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing handleSelectRequest" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
