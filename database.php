@@ -44,13 +44,16 @@
             z-index:1;
             animation-name: example;
             animation-duration: 4s;
+            animation-fill-mode: forwards;
         }
 
         @keyframes example {
             0%  {opacity: 1;}
             50%  {opacity: 1;}
             100%  {opacity: 0;}
-
+            0%  {z-index:1;}
+            50%  {z-index:1;}
+            100%  {z-index:-1;}
         }
 
     </style>
@@ -61,7 +64,7 @@
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <img src="https://imgur.com/X6inV5F.jpg">
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif">
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?rnd=<%=rnd()%>">
 
 
 <div style="position:relative;">
