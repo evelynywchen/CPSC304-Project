@@ -23,9 +23,8 @@
             position: fixed;
             width: 1000%;
             max-width: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            margin-left: auto;
+            margin-right: auto;
             z-index:10001;
             animation-name: example;
             animation-duration: 4s;
