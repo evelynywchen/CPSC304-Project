@@ -46,7 +46,6 @@
             animation-duration: 4s;
         }
 
-
         @keyframes example {
             0%  {opacity: 1;}
             50%  {opacity: 1;}
