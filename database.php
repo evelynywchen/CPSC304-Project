@@ -376,9 +376,7 @@ function handleCountRequest() {
                                                             GROUP BY a2.species 
                                                             HAVING a2.species ='". $species. "')");
 
-    if (($row = oci_fetch_row($result)) != false) {
-        echo "<br> Count: " . $row[0] . "<br>";
-    }
+    printResult($result);
 
     OCICommit($db_conn);
 }
