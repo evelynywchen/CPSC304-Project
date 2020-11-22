@@ -75,7 +75,7 @@
 <!--        </form>-->
 <form method="POST" action="database.php">
     <label class="btn" for="table">Choose a table:</label>
-    <select name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
+    <select class="btn" name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
         <option value="" selected disabled hidden>Pick a table</option>
         <option value="animals.php">Animals</option>
         <option value="plants.php">Plants</option>
