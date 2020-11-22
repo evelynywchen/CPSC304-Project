@@ -354,10 +354,29 @@ function handleDeleteRequest() {
 
     $pID = $_POST['pID'];
 
+    $result = executePlainSQL("SELECT name_people, pID FROM People");
+    echo "<br> A list of people before deleting<br>";
+    echo "<table>";
+    echo "<tr><th>Name</th><th>pID</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+
     executePlainSQL("DELETE FROM Owns WHERE pID ='" . $pID . "'");
     executePlainSQL("DELETE FROM People WHERE pID ='" . $pID . "'");
 
+    $result = executePlainSQL("SELECT name_people, pID FROM People");
+    echo "<br> A list of people after deleting<br>";
+    echo "<table>";
+    echo "<tr><th>Name</th><th>pID</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+
     OCICommit($db_conn);
+
 }
 
 function handleCountRequest() {
