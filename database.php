@@ -39,8 +39,12 @@
 </head>
 <body style="background-color:white;">
 
-<p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><img src="Habitat.jpg">
-<img src="Habitat.gif">
+<p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
+<iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<img src="https://imgur.com/X6inV5F">
+<img src="https://imgur.com/fJRicHj">
+
 
 <div style="position:relative;">
     <div style="opacity:0.5;position:absolute;left:50px;top:-30px;width:300px;height:150px;background-color:#40B3DF"></div>
@@ -294,7 +298,6 @@ function disconnectFromDB() {
 function handleJoinRequest() {
     global $db_conn;
     $type_R = $_GET['type_R'];
-    print($type_R);
     $string = "SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID";
     $result = executePlainSQL($string);
     OCICommit($db_conn);
