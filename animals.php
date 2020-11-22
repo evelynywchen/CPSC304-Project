@@ -35,6 +35,24 @@
             background-color: #3e8e41;
             color: white;
         }
+        .loadingScreen {
+            opacity: 1;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index:1;
+            animation-name: example;
+            animation-duration: 4s;
+        }
+
+        @keyframes example {
+            0%  {opacity: 1;}
+            50%  {opacity: 1;}
+            100%  {opacity: 0;}
+
+        }
+
     </style>
 </head>
 <body style="background-color:white;">
@@ -43,7 +61,7 @@
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <img src="https://imgur.com/X6inV5F.jpg">
-<img src="https://imgur.com/fJRicHj.gif">
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif">
 
 
 <div style="position:relative;">
@@ -56,16 +74,6 @@
             <span style="background-color:#B4009E;color:#ffffff;"> Boxes</span></div>
     </div>
 </div>
-
-<body>
-<h2>Reset</h2>
-<p>If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
-
-<form method="POST" action="animals.php">
-    <!-- if you want another page to load after the button is clicked, you have to specify that page in the action parameter -->
-    <input type="hidden" id="resetTablesRequest" name="resetTablesRequest">
-    <p><input type="submit" value="Reset" name="reset"></p>
-</form>
 
 <hr />
 

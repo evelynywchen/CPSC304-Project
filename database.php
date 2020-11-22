@@ -140,7 +140,7 @@
 
 <hr />
 
-<h2 >Finding Organizations by Funds and Size</h2>
+<h2 >Selection: Finding Organizations by Funds and Size</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="selectionRequest" name="selectionRequest">
     <label>Funds</label>
@@ -197,17 +197,15 @@
     <input class="btn" type="submit" name="Having"></p>
 </form>
 
-<h2>Count the Tuples in DemoTable</h2>
+<h2>Nested aggregation: Count the population of each species where the average age is above the average age of a certain species</h2>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="countTupleRequest" name="countTupleRequest">
+    Species: <label> <input class="btn" type="text" name="species"> </label>
+    <br/><br/>
     <input class="btn" type="submit" name="countTuples"></p>
 </form>
 
-<h2>Display the Animals in Database</h2>
-<form method="GET" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="displayTupleRequest" name="displayTupleRequest">
-    <input class="btn" type="submit" name="displayTuples"></p>
-</form>
+<hr />
 
 <?php
 //this tells the system that it's no longer just parsing html; it's now parsing PHP
@@ -287,7 +285,7 @@ See the sample code below for how this function is used */
 function printResult($result) { //prints results from a select statement
     echo "<table>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr> </p>"; //or just use "echo $row[0]"
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td></tr> </p>"; //or just use "echo $row[0]"
     }
     echo "</table>";
 
@@ -336,19 +334,6 @@ function handleProjectionRequest() {
     printResult($result);
 }
 
-function handleResetRequest() {
-    global $db_conn;
-    // Drop old table
-    executePlainSQL("DROP TABLE demoTable");
-    //runDropTables();
-
-    // Create new table
-    echo "<br> creating new table <br>";
-    executePlainSQL("create table Animals(aID int PRIMARY KEY, species char(40) not null, age int, amount int");
-    //(id int PRIMARY KEY, name char(30))")
-    OCICommit($db_conn);
-}
-
 function handleDeleteRequest() {
     global $db_conn;
 
@@ -360,14 +345,23 @@ function handleDeleteRequest() {
     OCICommit($db_conn);
 }
 
+//Nested aggregation: Count the population of each species where the average age is above the average age of a certain species
 function handleCountRequest() {
     global $db_conn;
+    $species = $_GET['species'];
 
-    $result = executePlainSQL("SELECT Count(*) FROM demoTable");
+    $result = executePlainSQL("SELECT Count(*) FROM Animals 
+                                        GROUP BY species
+                                        HAVING AVG(age) > (SELECT AVG(a2.age) 
+                                                            FROM Animals a2 
+                                                            GROUP BY a2.species 
+                                                            HAVING a2.species ='". $species. "')");
 
     if (($row = oci_fetch_row($result)) != false) {
-        echo "<br> The number of tuples in demoTable: " . $row[0] . "<br>";
+        echo "<br> Count: " . $row[0] . "<br>";
     }
+
+    OCICommit($db_conn);
 }
 
 function handleGroupByRequest() {
@@ -471,9 +465,7 @@ function handleSelectRequest() {
 // A better coding practice is to have one method that reroutes your requests accordingly. It will make it easier to add/remove functionality.
 function handlePOSTRequest() {
     if (connectToDB()) {
-        if (array_key_exists('resetTablesRequest', $_POST)) {
-            handleResetRequest();
-        } else if (array_key_exists('updateQueryRequest', $_POST)) {
+        if (array_key_exists('updateQueryRequest', $_POST)) {
             handleUpdateRequest();
         } else if (array_key_exists('insertQueryRequest', $_POST)) {
             handleInsertRequest();
@@ -507,7 +499,7 @@ function handleGETRequest() {
     }
 }
 
-if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
+if (isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
 } else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest']) || isset($_GET['handleHavingRequest'])) {
     handleGETRequest();
