@@ -43,6 +43,7 @@
 
         .loadingScreen2 {
             z-index:10001;
+            position: fixed;
             animation-name: example2;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -58,8 +59,8 @@
 
     </style>
 </head>
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" width="1080" height="810">
-<body class = loadingScreen2 style="background-color:black;">
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" >
+<body class = loadingScreen style="background-color:black;">
 
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
 
