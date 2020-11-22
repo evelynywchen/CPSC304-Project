@@ -30,12 +30,12 @@
             font-size: 16px;
             margin: 4px 2px;
             transition: 0.3s;
-            z-index:0
+            z-index:-1
         }
         .btn:hover {
             background-color: #3e8e41;
             color: white;
-            z-index:0
+            z-index:-1
         }
         .loadingScreen {
             opacity: 1;
@@ -75,6 +75,10 @@
             100%  {z-index:-1;}
         }
 
+        .iTest {
+            z-index:-1;
+        }
+
     </style>
 </head>
 <body class = loadingScreen2 style="background-color:black;">
@@ -83,7 +87,7 @@
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<img src="https://imgur.com/X6inV5F.jpg">
+<img class = iTest src="https://imgur.com/X6inV5F.jpg">
 <img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?rnd=<%=rnd()%>">
 
 <hr />
