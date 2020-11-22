@@ -16,17 +16,10 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="abouslute postion">
+    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="Added division query">
       <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,13 +71,6 @@
       <workItem from="1605768783162" duration="2050000" />
       <workItem from="1605835632067" duration="153000" />
       <workItem from="1605838564380" duration="3613000" />
-    </task>
-    <task id="LOCAL-00014" summary="Print join attempt">
-      <created>1605835745904</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1605835745904</updated>
     </task>
     <task id="LOCAL-00015" summary="Projection framework">
       <created>1605839335803</created>
@@ -422,7 +408,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606024147613</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Added division query">
+      <created>1606025953234</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1606025953235</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +447,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="youtube" />
     <MESSAGE value="OR" />
     <MESSAGE value="build-&gt;builds" />
     <MESSAGE value="Add image and title?" />
@@ -479,7 +471,8 @@
     <MESSAGE value="fix thing insert" />
     <MESSAGE value="zlevels" />
     <MESSAGE value="colour change to hide things" />
-    <option name="LAST_COMMIT_MESSAGE" value="colour change to hide things" />
+    <MESSAGE value="Added division query" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added division query" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -511,10 +504,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="757" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606023243279" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1606024148616">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="368" y="121" key="Vcs.Push.Dialog.v2" timestamp="1606025954801">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605842541238" />
+    <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606025954801" />
     <state x="442" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606014203128" />
     <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606024148616" />
     <state x="687" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606024111200">
