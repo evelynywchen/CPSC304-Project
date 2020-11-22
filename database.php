@@ -61,7 +61,7 @@
         }
 
         .loadingScreen2 {
-            z-index:1;
+            z-index:1001;
             animation-name: example2;
             animation-duration: 4s;
             animation-fill-mode: forwards;
