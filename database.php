@@ -376,8 +376,10 @@ function handleCountRequest() {
                                                             GROUP BY a2.species 
                                                             HAVING a2.species ='". $species. "')");
     OCICommit($db_conn);
+    echo "<table>";
     echo "<tr><th>Species</th><th>Count</th><th>Average age</th></tr>";
     printResult($result);
+    echo "</table>";
 }
 
 function handleGroupByRequest() {
@@ -474,8 +476,10 @@ function handleSelectRequest() {
 
     $result = executePlainSQL($statement);
     OCICommit($db_conn);
+    echo "<table>";
     echo "<tr><th>Name</th><th>ID</th><th>Funds</th><th>Founded</th><th>Size</th></tr>";
     printResult($result);
+    echo "</table>";
 }
 
 // HANDLE ALL POST ROUTES
