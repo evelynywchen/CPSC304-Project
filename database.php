@@ -296,7 +296,6 @@ function disconnectFromDB() {
 function handleJoinRequest() {
     global $db_conn;
     $type_R = $_GET['type_R'];
-    print($type_R);
     $string = "SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID";
     $result = executePlainSQL($string);
     OCICommit($db_conn);
