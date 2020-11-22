@@ -31,11 +31,11 @@
             margin: 4px 2px;
             transition: 0.3s;
             z-index:-1
+            position:relative
         }
         .btn:hover {
             background-color: #3e8e41;
             color: white;
-            z-index:-1
         }
         .loadingScreen {
             opacity: 1;
@@ -43,7 +43,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index:1;
+            z-index:1001;
             animation-name: example;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -55,8 +55,8 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1;}
-            50%  {z-index:1;}
+            0%  {z-index:1001;}
+            50%  {z-index:1001;}
             100%  {z-index:-1;}
         }
 
@@ -70,8 +70,8 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1;}
-            50%  {z-index:1;}
+            0%  {z-index:1001;}
+            50%  {z-index:1001;}
             100%  {z-index:-1;}
         }
 
@@ -83,7 +83,7 @@
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?rnd=<%=rnd()%>">
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
 
 <hr />
 
@@ -339,10 +339,29 @@ function handleDeleteRequest() {
 
     $pID = $_POST['pID'];
 
+    $result = executePlainSQL("SELECT name_people, pID FROM People");
+    echo "<br> A list of people before deleting<br>";
+    echo "<table>";
+    echo "<tr><th>Name</th><th>pID</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+
     executePlainSQL("DELETE FROM Owns WHERE pID ='" . $pID . "'");
     executePlainSQL("DELETE FROM People WHERE pID ='" . $pID . "'");
 
+    $result = executePlainSQL("SELECT name_people, pID FROM People");
+    echo "<br> A list of people after deleting<br>";
+    echo "<table>";
+    echo "<tr><th>Name</th><th>pID</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+
     OCICommit($db_conn);
+
 }
 
 //Nested aggregation: Count the population of each species where the average age is above the average age of a certain species
