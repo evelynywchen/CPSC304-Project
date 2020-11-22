@@ -42,8 +42,8 @@
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<img src="https://imgur.com/X6inV5F">
-<img src="https://imgur.com/fJRicHj">
+<img src="https://imgur.com/X6inV5F.jpg">
+<img src="https://imgur.com/fJRicHj.gif">
 
 
 <div style="position:relative;">
