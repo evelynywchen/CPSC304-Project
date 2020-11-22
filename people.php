@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Insert into Animals</title>
+    <title>Insert into People</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .btn {
@@ -52,22 +52,12 @@
 
 <hr />
 
-<h2>Insert Values into Animals</h2>
-<form method="POST" action="animals.php"> <!--refresh page when submitted-->
+<h2>Insert Values into People</h2>
+<form method="POST" action="people.php"> <!--refresh page when submitted-->
     <input class="btn" type="hidden" id="insertQueryRequest" name="insertQueryRequest">
-    Animal ID: <input class="btn" type="text" name="aID"> <br /><br />
-    Species: <input class="btn" type="text" name="species"> <br /><br />
+    Person ID: <input class="btn" type="text" name="ID"> <br /><br />
+    Name: <input class="btn" type="text" name="name"> <br /><br />
     Age: <input class="btn" type="text" name="age"> <br /><br />
-
-    <label for="diet">Choose the diet of the animal:</label>
-    <select name="pickDiet" id="tableForm">
-        <option value="herb">Herbivore</option>
-        <option value="carni">Carnivore</option>
-        <option value="omni">Omnivore</option>
-    </select>
-    <br /><br />
-    Sub-category ID: <input class="btn" type="text" name="sID"> <br /><br />
-
 
     <input class="btn" type="submit" value="Insert" name="insertSubmit"></p>
 </form>
@@ -153,18 +143,6 @@
         }
     }
 
-    function printResult($result) { //prints results from a select statement
-        echo "<br>Retrieved data from table demoTable:<br>";
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Name</th></tr>";
-
-        while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-            echo "<tr><td>" . $row["ID"] . "</td><td>" . $row["NAME"] . "</td></tr>"; //or just use "echo $row[0]"
-        }
-
-        echo "</table>";
-    }
-
     function connectToDB() {
         global $db_conn;
 
@@ -195,8 +173,8 @@
 
         //Getting the values from user and insert data into the table
         $tuple = array (
-            ":bind1" => $_POST['aID'],
-            ":bind2" => $_POST['species'],
+            ":bind1" => $_POST['name'],
+            ":bind2" => $_POST['ID'],
             ":bind3" => $_POST['age']
         );
 
@@ -204,34 +182,9 @@
             $tuple
         );
 
-        executeBoundSQL("insert into Animals values (:bind1, :bind2, :bind3)", $alltuples);
+        executeBoundSQL("insert into People values (:bind1, :bind2, :bind3)", $alltuples);
         OCICommit($db_conn);
 
-        $animalDiet = $_POST['pickDiet'];
-        $tuple = array (
-            ":bind1" => $_POST['aID'],
-            ":bind2" => $_POST['sID']
-        );
-
-        $alltuples = array (
-            $tuple
-        );
-
-
-        switch($animalDiet) {
-            case "herb":
-                executeBoundSQL("insert into Herbivores values (:bind1, :bind2)", $alltuples);
-                OCICommit($db_conn);
-                break;
-            case "omni":
-                executeBoundSQL("insert into Omnivores values (:bind1, :bind2)", $alltuples);
-                OCICommit($db_conn);
-                break;
-            case "carni":
-                executeBoundSQL("insert into Carnivores values (:bind1, :bind2)", $alltuples);
-                OCICommit($db_conn);
-                break;
-        }
         echo "<br>Data successfully inserted! <br>";
     }
 
@@ -239,11 +192,7 @@
     // A better coding practice is to have one method that reroutes your requests accordingly. It will make it easier to add/remove functionality.
     function handlePOSTRequest() {
         if (connectToDB()) {
-            if (array_key_exists('resetTablesRequest', $_POST)) {
-                handleResetRequest();
-            } else if (array_key_exists('updateQueryRequest', $_POST)) {
-                handleUpdateRequest();
-            } else if (array_key_exists('insertQueryRequest', $_POST)) {
+            if (array_key_exists('insertQueryRequest', $_POST)) {
                 handleInsertRequest();
             }
 
@@ -263,7 +212,7 @@
         }
     }
 
-    if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit'])) {
+    if (isset($_POST['insertSubmit'])) {
         handlePOSTRequest();
     } else if (isset($_GET['countTupleRequest'])) {
         handleGETRequest();

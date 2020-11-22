@@ -1,147 +1,147 @@
 create table Animals(
-	aID     int not null,
+    aID     int not null,
     species char(40) not null,
-	age     int,
+    age     int,
     PRIMARY KEY(aID));
 
 create table Carnivores(
     aID int,
     cID int,
     PRIMARY KEY (aID),
-	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
+    FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Omnivores(
     aID int,
     oID int,
-	PRIMARY KEY (aID),
-	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
+    PRIMARY KEY (aID),
+    FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Herbivores(
     aID int,
     hID int,
-	PRIMARY KEY (aID),
-	FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
+    PRIMARY KEY (aID),
+    FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Plants(
-    plantID 		integer,
-	species		    char(40),
-	PRIMARY KEY(plantID));
+    plantID         integer,
+    species         char(40),
+    PRIMARY KEY(plantID));
 
 create table Eats_Animal_C(
-	cID	        int,
-	aID	        int,
-	location_AC    char(40),
+    cID         int,
+    aID         int,
+    location_AC    char(40),
     PRIMARY KEY (aID),
     FOREIGN KEY(cID) REFERENCES Carnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
 
 create table Eats_Animal_O(
-	oID	        int,
-	aID	        int,
-	location_AO	char(40),
+    oID         int,
+    aID         int,
+    location_AO char(40),
     PRIMARY KEY (aID),
     FOREIGN KEY(oID) REFERENCES Omnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
 
 create table Eats_Plant(
-	aID         int,
-	plantID     int,
+    aID         int,
+    plantID     int,
     PRIMARY KEY (plantID),
     FOREIGN KEY(aID) REFERENCES Animals,
     FOREIGN KEY(plantID) REFERENCES Plants);
 
 create table Habitat(
-    habID			integer,
-    location_H		char(40),
-    type_H			char(40),
-	temperature	    integer,
-	PRIMARY KEY(habID));
+    habID           integer,
+    location_H      char(40),
+    type_H          char(40),
+    temperature     integer,
+    PRIMARY KEY(habID));
 
 create table Organization(
     org_name        char(40),
-    oID			    integer UNIQUE,
-    funds     	 	integer,
-    founded     	integer,
-    size_org			integer,
+    oID             integer UNIQUE,
+    funds           integer,
+    founded         integer,
+    size_org            integer,
     primary key (org_name));
 
 create table Has_Subsidiary(
     org_name        char(40),
     sub_name        char(40),
-	hsID			integer UNIQUE,
-    funds     	 	integer,
-    founded     	integer,
-    size_sub		integer,
+    hsID            integer UNIQUE,
+    funds           integer,
+    founded         integer,
+    size_sub        integer,
     primary key (sub_name),
     foreign key (org_name) REFERENCES Organization);
 
 create table People(
-    name_people 	char(40),
-    pID				integer,
-    age    	 	 	integer,
+    name_people     char(40),
+    pID             integer,
+    age             integer,
     primary key (pID));
 
 create table ArtificialStructures(
-    asID			integer,
-    type_AS			char(40),
-    size_AS			char(20),
-    location_AS 	char(40),
-	PRIMARY KEY(asID));
+    asID            integer,
+    type_AS         char(40),
+    size_AS         char(20),
+    location_AS     char(40),
+    PRIMARY KEY(asID));
 
 create table Resources(
-    resID			integer,
-    type_R			char(40),
-    location_R		char(40),
-	PRIMARY KEY(resID));
+    resID           integer,
+    type_R          char(40),
+    location_R      char(40),
+    PRIMARY KEY(resID));
 
 create table Consume(
-    aID 			integer,
-    resID			integer,
-    species		    char(40),
+    aID             integer,
+    resID           integer,
+    species         char(40),
     PRIMARY KEY(aID, resID),
     FOREIGN KEY(aID) REFERENCES Animals ON DELETE CASCADE,
-	FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE);
+    FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE);
 
 create table Builds_AS(
-    completionYear 	integer,
-    cost_AS			integer,
-    asID			integer,
-	habID 		    integer,
-    org_name		char(40),
-    sub_name		char(40),
+    completionYear  integer,
+    cost_AS         integer,
+    asID            integer,
+    habID           integer,
+    org_name        char(40),
+    sub_name        char(40),
     PRIMARY KEY(asID),
     FOREIGN KEY(habID) REFERENCES Habitat ON DELETE CASCADE,
     FOREIGN KEY(sub_name) REFERENCES Has_Subsidiary ON DELETE CASCADE,
     FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
 create table Extracts(
-	resID 		    integer,
-    asID			integer,
+    resID           integer,
+    asID            integer,
     PRIMARY KEY(resID, asID),
     FOREIGN KEY(resID) REFERENCES Resources ON DELETE CASCADE,
-	FOREIGN KEY(asID) REFERENCES ArtificialStructures ON DELETE CASCADE);
+    FOREIGN KEY(asID) REFERENCES ArtificialStructures ON DELETE CASCADE);
 
 create table Owns(
-	pID			            integer,
-	org_name		        char(40),
-	ownership_percentage    integer,
-	PRIMARY KEY(pID, org_name),
+    pID                     integer,
+    org_name                char(40),
+    ownership_percentage    integer,
+    PRIMARY KEY(pID, org_name),
     FOREIGN KEY(pID) REFERENCES People ON DELETE CASCADE,
-	FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
+    FOREIGN KEY(org_name) REFERENCES Organization ON DELETE CASCADE);
 
 create table Lives_Plant(
-	plantID		    integer,
-    habID			integer,
+    plantID         integer,
+    habID           integer,
     PRIMARY KEY(plantID, habID),
-	FOREIGN KEY(plantID) REFERENCES Plants,
-	FOREIGN KEY(habID) REFERENCES Habitat);
+    FOREIGN KEY(plantID) REFERENCES Plants,
+    FOREIGN KEY(habID) REFERENCES Habitat);
 
 create table Lives_A(
-    aID			    integer,
-    habID			integer,
+    aID             integer,
+    habID           integer,
     PRIMARY KEY(aID, habID),
-	FOREIGN KEY(aID) REFERENCES Animals,
-	FOREIGN KEY(habID) REFERENCES Habitat);
+    FOREIGN KEY(aID) REFERENCES Animals,
+    FOREIGN KEY(habID) REFERENCES Habitat);
 
 insert into Animals
 values(0,'Ailuropoda melanoleuca', 6);
