@@ -21,13 +21,26 @@
     <title>CPSC 304 Habitat Database</title>
 </head>
 
-<!--<body>-->
+<body style="background-color:white;">
+<style>
+    .btn {
+        background-color: #ddd;
+        border: none;
+        color: black;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition: 0.3s;
+    }
 
-<body style="background-color:black;">
+    .btn:hover {
+        background-color: #3e8e41;
+        color: white;
+    }
+</style>
 
-<hr />
-
-<p style="text-align:center;font-size:50px;color:#63ba1e;font-family:'Verdana';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><img src="Habitat.jpg">
+<p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><img src="Habitat.jpg">
 <img src="Habitat.gif">
 
 <div style="position:relative;">
@@ -42,8 +55,8 @@
 </div>
 
 <hr />
-<h2 style="color:white">Reset</h2>
-<p> style="color:white">If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
+<h2>Reset</h2>
+<p> If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
 
 <form method="POST" action="database.php">
     <!-- if you want another page to load after the button is clicked, you have to specify that page in the action parameter -->
@@ -53,7 +66,7 @@
 
 <hr />
 
-<h2 style="color:white">Insert Values into Database</h2>
+<h2>Insert Values into Database</h2>
 <!--        <form method="POST" action="database.php"> refresh page when submitted-->
 <!--            <input type="hidden" id="insertQueryRequest" name="insertQueryRequest">-->
 <!--            Number: <input type="text" name="insNo"> <br /><br />-->
@@ -80,17 +93,17 @@
 
 <hr />
 
-<h2 style="color:white">Delete a Person</h2>
+<h2 >Delete a Person</h2>
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    Person ID: <input type="text" name="pID"> <br /><br />
+    <p> Person ID: <input type="text" name="pID"> <br /> <br />  </p>
 
     <input type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
  
 <hr />
 
-<h2 style="color:white">Update Temperature in Habitat</h2>
+<h2 >Update Temperature in Habitat</h2>
 
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
@@ -106,7 +119,7 @@
 
 <hr />
 
-<h2 style="color:white">Finding Organizations by Funds and Size</h2>
+<h2 >Finding Organizations by Funds and Size</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="selectionRequest" name="selectionRequest">
     <label>Funds</label>
@@ -130,7 +143,7 @@
 </form>
 <hr />
 
-<h2 style="color:white">Projection of Artificial Structures' Details</h2>
+<h2 >Projection of Artificial Structures' Details</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
     <input type="submit" value="Projection" name="updateSubmit"></p>
@@ -138,8 +151,8 @@
 
 <hr />
 
-<h2 style="color:white">Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
-<p style="color:white">The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
+<h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
+<p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="handleJoinRequest" name="handleJoinRequest">
     Resource Type: <label>
@@ -151,19 +164,19 @@
 
 <hr />
 
-<h2 style="color:white">Show the year each organization first founded a subsidiary</h2>
+<h2>Show the year each organization first founded a subsidiary</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="GroupByRequest" name="GroupByRequest">
     <input type="submit" name="GroupBy"></p>
 </form>
 
-<h2 style="color:white">Count the Tuples in DemoTable</h2>
+<h2>Count the Tuples in DemoTable</h2>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="countTupleRequest" name="countTupleRequest">
     <input type="submit" name="countTuples"></p>
 </form>
 
-<h2 style="color:white">Display the Animals in Database</h2>
+<h2>Display the Animals in Database</h2>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="displayTupleRequest" name="displayTupleRequest">
     <input type="submit" name="displayTuples"></p>
