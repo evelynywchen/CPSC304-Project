@@ -30,20 +30,24 @@
             animation-fill-mode: forwards;
         }
         @keyframes example {
-            0%  {opacity: 1;}
-            50%  {opacity: 1;}
-            100%  {opacity: 0;}
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
+            0%  {opacity: 1;}
+            50%  {opacity: 1;}
+            100%  {opacity: 0;}
             0%  {z-index:10001;}
             50%  {z-index:10001;}
             100%  {z-index:-1;}
         }
 
         .loadingScreen2 {
+            opacity: 0;
             z-index:10001;
             position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             animation-name: example2;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -52,6 +56,9 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
+            0%  {opacity: 0;}
+            50%  {opacity: 0;}
+            100%  {opacity: 0.9999;}
             0%  {z-index:10001;}
             50%  {z-index:10001;}
             100%  {z-index:-1;}
