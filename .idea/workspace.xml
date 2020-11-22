@@ -26,9 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="text format test 9">
-      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
-    </list>
+    <list default="true" id="ec3f012a-1e15-4ad9-b950-2cdb3762c019" name="Default Changelist" comment="text format test 10" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -356,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606009035324</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="text format test 10">
+      <created>1606010316655</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1606010316655</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,7 +393,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Modified print result for debugging" />
     <MESSAGE value="Added insert" />
     <MESSAGE value="Corrected insert" />
     <MESSAGE value="Corrected insert2" />
@@ -413,7 +417,8 @@
     <MESSAGE value="text format test 5" />
     <MESSAGE value="text format test 7" />
     <MESSAGE value="text format test 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="text format test 8" />
+    <MESSAGE value="text format test 10" />
+    <option name="LAST_COMMIT_MESSAGE" value="text format test 10" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -437,12 +442,12 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="407" y="174" key="MultipleFileMergeDialog/0.0.1536.824@0.0.1536.824" timestamp="1605595428947" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1606009037488">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1606010318361">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605842541238" />
     <state x="442" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1605595461619" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606009037488" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606010318361" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606007334508">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

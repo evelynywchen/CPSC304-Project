@@ -21,13 +21,26 @@
     <title>CPSC 304 Habitat Database</title>
 </head>
 
-<!--<body>-->
-
 <body style="background-color:white;">
+<style>
+    .btn {
+        background-color: #ddd;
+        border: none;
+        color: black;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition: 0.3s;
+    }
 
-<hr />
+    .btn:hover {
+        background-color: #3e8e41;
+        color: white;
+    }
+</style>
 
-<p style="text-align:center;font-size:50px;color:#63ba1e;font-family:'Verdana';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><img src="Habitat.jpg">
+<p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><img src="Habitat.jpg">
 <img src="Habitat.gif">
 
 <div style="position:relative;">
