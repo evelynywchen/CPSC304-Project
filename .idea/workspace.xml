@@ -26,7 +26,7 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="colour change to hide things">
+    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="abouslute postion">
       <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

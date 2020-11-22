@@ -77,13 +77,14 @@
 
     </style>
 </head>
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
 <body class = loadingScreen2 style="background-color:black;">
 
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
+
 
 <hr />
 
