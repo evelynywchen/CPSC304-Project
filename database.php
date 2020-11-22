@@ -30,10 +30,12 @@
             font-size: 16px;
             margin: 4px 2px;
             transition: 0.3s;
+            z-index:0
         }
         .btn:hover {
             background-color: #3e8e41;
             color: white;
+            z-index:0
         }
         .loadingScreen {
             opacity: 1;
