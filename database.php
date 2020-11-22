@@ -184,6 +184,12 @@
     <input class="btn" type="submit" name="GroupBy"></p>
 </form>
 
+<h2>Having: Show the people who own multiple organizations</h2>
+<form method="GET" action="database.php">
+    <input type="hidden" id="handleHavingRequest" name="handleHavingRequest">
+    <input class="btn" type="submit" name="Having"></p>
+</form>
+
 <h2>Count the Tuples in DemoTable</h2>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="countTupleRequest" name="countTupleRequest">
@@ -370,6 +376,24 @@ function handleGroupByRequest() {
     OCICommit($db_conn);
 }
 
+function handleHavingRequest() {
+    global $db_conn;
+    $result = executePlainSQL("SELECT name_people from people
+								WHERE pID in (
+									SELECT pID from Owns 
+									GROUP BY pID
+									HAVING COUNT(pID)>1)");
+    echo "<br> A list of people who own more than one organization <br>";
+    echo "<table>";
+    echo "<tr><th>Name</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+    OCICommit($db_conn);
+
+}
+
 function handleDisplayRequest() {
     global $db_conn;
 
@@ -469,6 +493,8 @@ function handleGETRequest() {
             handleSelectRequest();
         } else if (array_key_exists('handleGroupByRequest', $_GET)) {
             handleGroupByRequest();
+        } else if (array_key_exists('handleHavingRequest', $_GET)) {
+            handleHavingRequest();
         }
         disconnectFromDB();
     }
@@ -476,7 +502,7 @@ function handleGETRequest() {
 
 if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest']) || isset($_GET['handleHavingRequest'])) {
     handleGETRequest();
 }
 ?>
