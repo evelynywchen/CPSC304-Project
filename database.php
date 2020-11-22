@@ -60,7 +60,6 @@
         }
 
         .loadingScreen2 {
-            position: absolute;
             z-index:10001;
             animation-name: example2;
             animation-duration: 4s;
