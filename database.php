@@ -350,8 +350,11 @@ function handleGroupByRequest() {
     echo "<br> The year of founding its first subsidiary for each organization <br>";
     echo "<table>";
     echo "<tr><th>Year founded</th><th>Organization name</th></tr>";
-    printResult($result);
-
+    echo "<table>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
 }
 
 function handleDisplayRequest() {
