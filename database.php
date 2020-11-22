@@ -164,7 +164,7 @@
 <hr />
 
 <h2>Group By: Show the year each organization first founded a subsidiary</h2>
-<form method="GET" action="database.php">
+<form method="POST" action="database.php">
     <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
     <input class="btn" type="submit" name="GroupBy"></p>
 </form>
@@ -345,7 +345,6 @@ function handleCountRequest() {
 
 function handleGroupByRequest() {
     global $db_conn;
-
     $result = executePlainSQL("SELECT min(founded), org_name FROM has_subsidiary GROUP BY org_name");
     echo "<br> The year of founding its first subsidiary for each organization <br>";
     echo "<table>";
@@ -461,9 +460,9 @@ function handleGETRequest() {
     }
 }
 
-if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
+if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit']) || isset($_POST['handleGroupByRequest'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest'])) {
     handleGETRequest();
 }
 ?>
