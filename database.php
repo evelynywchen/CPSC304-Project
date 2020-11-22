@@ -21,6 +21,8 @@
         .loadingScreen {
             opacity: 1;
             position: fixed;
+            width: 1000%;
+            max-width: 100%;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
@@ -41,29 +43,6 @@
             100%  {z-index:-1;}
         }
 
-        .loadingScreen2 {
-            opacity: 0;
-            z-index:10001;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation-name: example2;
-            animation-duration: 4s;
-            animation-fill-mode: forwards;
-        }
-        @keyframes example2 {
-            0%  {background-color:black;}
-            50%  {background-color:black;}
-            100%  {background-color:white;}
-            0%  {opacity: 0;}
-            50%  {opacity: 0;}
-            100%  {opacity: 0.9999;}
-            0%  {z-index:10001;}
-            50%  {z-index:10001;}
-            100%  {z-index:-1;}
-        }
-
     </style>
 </head>
 <img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" >
@@ -72,8 +51,6 @@
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
 
 <hr />
 
