@@ -31,7 +31,7 @@
             margin: 4px 2px;
             transition: 0.3s;
             z-index:-1
-            position:relative
+            position: absolute;
         }
         .btn:hover {
             background-color: #3e8e41;
