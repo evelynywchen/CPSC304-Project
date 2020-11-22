@@ -67,16 +67,6 @@
 </div>
 
 <hr />
-<h2>Reset</h2>
-<p> If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
-
-<form method="POST" action="database.php">
-    <!-- if you want another page to load after the button is clicked, you have to specify that page in the action parameter -->
-    <input type="hidden" id="resetTablesRequest" name="resetTablesRequest">
-    <p><input class="btn" type="submit" value="Reset" name="reset"></p>
-</form>
-
-<hr />
 
 <h2>Insert Values into Database</h2>
 <!--        <form method="POST" action="database.php"> refresh page when submitted-->

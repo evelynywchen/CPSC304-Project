@@ -153,6 +153,9 @@ insert into Animals
 values(2, 'Brachiosaurus altithorax', 21);
 
 insert into Animals
+values(20, 'Brachiosaurus altithorax', 1);
+
+insert into Animals
 values(3, 'Hydrochoerus hydrochaeris', 35);
 
 insert into Animals
@@ -183,7 +186,22 @@ insert into Animals
 values(12, 'pica pica pica', 2);
 
 insert into Animals
+values(15, 'pica pica pica', 3);
+
+insert into Animals
+values(16, 'pica pica pica', 1);
+
+insert into Animals
+values(17, 'pica pica pica', 3);
+
+insert into Animals
 values(13, 'boops boops', 11);
+
+insert into Animals
+values(18, 'boops boops', 5);
+
+insert into Animals
+values(19, 'boops boops', 9);
 
 insert into Animals
 values(14, 'Chlamyphorus truncatus', 4);
