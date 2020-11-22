@@ -31,11 +31,11 @@
             margin: 4px 2px;
             transition: 0.3s;
             z-index:-1
+            position:relative
         }
         .btn:hover {
             background-color: #3e8e41;
             color: white;
-            z-index:-1
         }
         .loadingScreen {
             opacity: 1;
