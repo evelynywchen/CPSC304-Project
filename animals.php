@@ -30,6 +30,8 @@
             font-size: 16px;
             margin: 4px 2px;
             transition: 0.3s;
+            z-index:-1
+            position:relative
         }
         .btn:hover {
             background-color: #3e8e41;
@@ -41,39 +43,48 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index:1;
+            z-index:1001;
             animation-name: example;
             animation-duration: 4s;
+            animation-fill-mode: forwards;
         }
-
         @keyframes example {
             0%  {opacity: 1;}
             50%  {opacity: 1;}
             100%  {opacity: 0;}
+            0%  {background-color:black;}
+            50%  {background-color:black;}
+            100%  {background-color:white;}
+            0%  {z-index:1001;}
+            50%  {z-index:1001;}
+            100%  {z-index:-1;}
+        }
 
+        .loadingScreen2 {
+            z-index:1;
+            animation-name: example2;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes example2 {
+            0%  {background-color:black;}
+            50%  {background-color:black;}
+            100%  {background-color:white;}
+            0%  {z-index:1001;}
+            50%  {z-index:1001;}
+            100%  {z-index:-1;}
         }
 
     </style>
 </head>
-<body style="background-color:white;">
+<body class = loadingScreen2 style="background-color:black;">
 
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
+
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<img src="https://imgur.com/X6inV5F.jpg">
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif">
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
 
-
-<div style="position:relative;">
-    <div style="opacity:0.5;position:absolute;left:50px;top:-30px;width:300px;height:150px;background-color:#40B3DF"></div>
-    <div style="opacity:0.3;position:absolute;left:120px;top:20px;width:100px;height:170px;background-color:#73AD21"></div>
-    <div style="margin-top:30px;width:360px;height:130px;padding:20px;border-radius:10px;border:10px solid #EE872A;font-size:120%;">
-        <h1>Habitat Database</h1>
-        <div style="letter-spacing:12px;font-size:15px;position:relative;left:25px;top:25px;">Manipulate Text</div>
-        <div style="color:#40B3DF;letter-spacing:12px;font-size:15px;position:relative;left:25px;top:30px;">Colors,
-            <span style="background-color:#B4009E;color:#ffffff;"> Boxes</span></div>
-    </div>
-</div>
 
 <hr />
 
