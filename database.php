@@ -168,7 +168,7 @@
 <hr />
 
 <h2>Group By: Show the year each organization first founded a subsidiary</h2>
-<form method="POST" action="database.php">
+<form method="GET" action="database.php">
     <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
     <input class="btn" type="submit" name="GroupBy"></p>
 </form>
@@ -356,7 +356,7 @@ function handleGroupByRequest() {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
     }
     echo "</table>";
-
+    OCICommit($db_conn);
 }
 
 function handleDisplayRequest() {
@@ -463,9 +463,9 @@ function handleGETRequest() {
     }
 }
 
-if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit']) || isset($_POST['handleGroupByRequest'])) {
+if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest'])) {
     handleGETRequest();
 }
 ?>
