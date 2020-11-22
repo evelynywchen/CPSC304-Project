@@ -23,7 +23,7 @@
     <style>
         .btn {
             background-color: white;
-            border: none;
+            border: black;
             color: black;
             padding: 16px 32px;
             text-align: center;
