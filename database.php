@@ -205,7 +205,7 @@
 </form>
 
 <h2>Division: Find the animals that ate all the plants</h2>
-<form method="GET" action="a.php">
+<form method="GET" action="database.php">
     <input type="hidden" id="handleDivisionRequest" name="handleDivisionRequest">
     <input class="btn" type="submit" name="Division"></p>
 </form>
