@@ -369,7 +369,7 @@ function handleDisplayRequest() {
 }
 
 function handleSelectRequest() {
-    global $db_conn;
+    global $db_conn,$statement;
     $result = 0;
     $fundsOp = $_GET['operators'];
     $sizeOp = $_GET['op2'];
@@ -380,44 +380,45 @@ function handleSelectRequest() {
         case "greater":
             switch($sizeOp) {
                 case "greater":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds>($funds) AND size>($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size>($size)";
                     break;
                 case "smaller":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds>($funds) AND size<($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size<($size)";
                     break;
                 case "equals":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds>($funds) AND size=($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size=($size)";
                     break;
             }
             break;
         case "smaller":
             switch($sizeOp) {
                 case "greater":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds<($funds) AND size>($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size>($size)";
                     break;
                 case "smaller":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds<($funds) AND size<($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size<($size)";
                     break;
                 case "equals":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds<($funds) AND size=($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size=($size)";
                     break;
             }
             break;
         case "equals":
             switch($sizeOp) {
                 case "greater":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds=($funds) AND size>($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size>($size)";
                     break;
                 case "smaller":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds=($funds) AND size<($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size<($size)";
                     break;
                 case "equals":
-                    $result = executePlainSQL("SELECT funds FROM Organization WHERE funds=($funds) AND size=($size)");
+                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size=($size)";
                     break;
             }
             break;
     }
 
+    $result = executePlainSQL($statement);
     OCICommit($db_conn);
     printResult($result);
 }
