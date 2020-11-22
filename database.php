@@ -457,7 +457,7 @@ function handleGETRequest() {
         } else if (array_key_exists('selectSubmit', $_GET)) {
             handleSelectRequest();
         } else if (array_key_exists('handleGroupByRequest', $_GET)) {
-            handleProjectionRequest();
+            handleGroupByRequest();
         }
         disconnectFromDB();
     }
