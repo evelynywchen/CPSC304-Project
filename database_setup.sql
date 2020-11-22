@@ -46,7 +46,7 @@ create table Eats_Animal_O(
 create table Eats_Plant(
     aID         int,
     plantID     int,
-    PRIMARY KEY (plantID),
+    PRIMARY KEY (aID, plantID),
     FOREIGN KEY(aID) REFERENCES Animals,
     FOREIGN KEY(plantID) REFERENCES Plants);
 
