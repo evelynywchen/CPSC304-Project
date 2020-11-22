@@ -163,9 +163,9 @@
 
 <hr />
 
-<h2>Show the year each organization first founded a subsidiary</h2>
+<h2>Group by: Show the year each organization first founded a subsidiary</h2>
 <form method="GET" action="database.php">
-    <input type="hidden" id="GroupByRequest" name="GroupByRequest">
+    <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
     <input type="submit" name="GroupBy"></p>
 </form>
 
