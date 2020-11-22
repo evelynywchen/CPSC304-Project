@@ -31,7 +31,6 @@
             margin: 4px 2px;
             transition: 0.3s;
             z-index:-1
-            position: absolute;
         }
         .btn:hover {
             background-color: #3e8e41;
@@ -61,6 +60,7 @@
         }
 
         .loadingScreen2 {
+            position: absolute;
             z-index:10001;
             animation-name: example2;
             animation-duration: 4s;
