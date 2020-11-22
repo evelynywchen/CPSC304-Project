@@ -388,7 +388,7 @@ function handleHavingRequest() {
 
 function handleDivisionRequest() {
     global $db_conn;
-    $result = executePlainSQL("SELECT aID
+    $result = executePlainSQL("SELECT aID, species
                                         FROM Animals A
                                         WHERE NOT EXISTS 
                                         ((SELECT P.plantID	
@@ -399,9 +399,9 @@ function handleDivisionRequest() {
                                         WHERE E.aID = A.aID))");
     echo "<br> A list of animals that ate all plants <br>";
     echo "<table>";
-    echo "<tr><th>aID</th></tr>";
+    echo "<tr><th>aID</th><th>Species Name</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
-        echo "</p> <tr><td>" . $row[0] . "</td></tr> </p>"; //or just use "echo $row[0]"
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
     }
     echo "</table>";
     OCICommit($db_conn);
