@@ -161,6 +161,12 @@
 
 <hr />
 
+<h2>Show the first subsidiary for each organization</h2>
+<form method="GET" action="database.php">
+    <input type="hidden" id="GroupByRequest" name="GroupByRequest">
+    <input type="submit" name="GroupBy"></p>
+</form>
+
 <h2>Count the Tuples in DemoTable</h2>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="countTupleRequest" name="countTupleRequest">
@@ -335,6 +341,19 @@ function handleCountRequest() {
     }
 }
 
+function handleGroupByRequest() {
+    global $db_conn;
+
+    $result = executePlainSQL("SELECT min(founded), sub_name, org_name FROM has_subsidiary GROUP BY org_name");
+    if (($row = oci_fetch_row($result)) != false) {
+        echo "<br> The first subsidiary for each organization <br>";
+    }
+    echo "<table>";
+    echo "<tr><th>Year founded</th><th>Subsidiary name</th><th>Organization name</th></tr>";
+    printResult($result);
+
+}
+
 function handleDisplayRequest() {
     global $db_conn;
 
@@ -429,9 +448,10 @@ function handleGETRequest() {
             handleJoinRequest();
         } else if (array_key_exists('handleProjectionRequest', $_GET)) {
             handleProjectionRequest();
-        }
-        else if (array_key_exists('selectSubmit', $_GET)) {
+        } else if (array_key_exists('selectSubmit', $_GET)) {
             handleSelectRequest();
+        } else if (array_key_exists('handleGroupByRequest', $_GET)) {
+            handleProjectionRequest();
         }
         disconnectFromDB();
     }
@@ -439,7 +459,7 @@ function handleGETRequest() {
 
 if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['GroupByRequest'])) {
     handleGETRequest();
 }
 ?>
