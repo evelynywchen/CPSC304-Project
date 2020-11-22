@@ -205,6 +205,12 @@
     <input class="btn" type="submit" name="countTuples"></p>
 </form>
 
+<h2>Division: Find the animals that ate all the plants</h2>
+<form method="GET" action="a.php">
+    <input type="hidden" id="handleDivisionRequest" name="handleDivisionRequest">
+    <input class="btn" type="submit" name="Division"></p>
+</form>
+
 <hr />
 
 <?php
@@ -376,8 +382,10 @@ function handleCountRequest() {
                                                             GROUP BY a2.species 
                                                             HAVING a2.species ='". $species. "')");
     OCICommit($db_conn);
+    echo "<table>";
     echo "<tr><th>Species</th><th>Count</th><th>Average age</th></tr>";
     printResult($result);
+    echo "</table>";
 }
 
 function handleGroupByRequest() {
@@ -410,6 +418,30 @@ function handleHavingRequest() {
     OCICommit($db_conn);
 
 }
+
+
+function handleDivisionRequest() {
+    global $db_conn;
+    $result = executePlainSQL("SELECT aID
+                                    FROM Animals A
+                                    WHERE NOT EXISTS 
+                                    ((SELECT P.pID	
+                                    FROM Plants P)
+                                    EXCEPT
+                                    (SELECT E.pID 
+                                    FROM Eats_Plant
+                                    WHERE A.aID = E.aID))");
+    echo "<br> A list of animals that ate all plants <br>";
+    echo "<table>";
+    echo "<tr><th>aID</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+    OCICommit($db_conn);
+
+}
+
 
 function handleDisplayRequest() {
     global $db_conn;
@@ -474,8 +506,10 @@ function handleSelectRequest() {
 
     $result = executePlainSQL($statement);
     OCICommit($db_conn);
+    echo "<table>";
     echo "<tr><th>Name</th><th>ID</th><th>Funds</th><th>Founded</th><th>Size</th></tr>";
     printResult($result);
+    echo "</table>";
 }
 
 // HANDLE ALL POST ROUTES
@@ -511,6 +545,8 @@ function handleGETRequest() {
             handleGroupByRequest();
         } else if (array_key_exists('handleHavingRequest', $_GET)) {
             handleHavingRequest();
+        } else if (array_key_exists('handleDivisionRequest', $_GET)) {
+            handleDivisionRequest();
         }
         disconnectFromDB();
     }
@@ -518,7 +554,7 @@ function handleGETRequest() {
 
 if (isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest']) || isset($_GET['handleHavingRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest']) || isset($_GET['handleHavingRequest']) || isset($_GET['handleDivisionRequest'])) {
     handleGETRequest();
 }
 ?>
