@@ -334,7 +334,7 @@ function handleCountRequest() {
 function handleGroupByRequest() {
     global $db_conn;
 
-    $result = executePlainSQL("SELECT min(founded), org_name FROM has_subsidiary GROUP BY org_name");
+    $result = executeBoundSQL("SELECT min(founded), org_name FROM has_subsidiary GROUP BY org_name");
     if (($row = oci_fetch_row($result)) != false) {
         echo "<br> The year of founding its first subsidiary for each organization <br>";
     }
