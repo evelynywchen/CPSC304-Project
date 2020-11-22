@@ -22,7 +22,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .btn {
-            background-color: #ddd;
+            background-color: antiquewhite;
             border: none;
             color: black;
             padding: 16px 32px;
@@ -31,7 +31,7 @@
             margin: 4px 2px;
             transition: 0.3s;
             z-index:-1
-            position:relative
+            position: absolute;
         }
         .btn:hover {
             background-color: #3e8e41;
@@ -43,7 +43,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index:1001;
+            z-index:10001;
             animation-name: example;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -55,13 +55,13 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1001;}
-            50%  {z-index:1001;}
+            0%  {z-index:10001;}
+            50%  {z-index:10001;}
             100%  {z-index:-1;}
         }
 
         .loadingScreen2 {
-            z-index:1001;
+            z-index:10001;
             animation-name: example2;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -70,20 +70,21 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1001;}
-            50%  {z-index:1001;}
+            0%  {z-index:10001;}
+            50%  {z-index:10001;}
             100%  {z-index:-1;}
         }
 
     </style>
 </head>
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
 <body class = loadingScreen2 style="background-color:black;">
 
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
+
 
 <hr />
 
@@ -118,7 +119,6 @@
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
     <p> Person ID: <input class="btn" type="text" name="pID"> <br /> <br />  </p>
-
     <input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
  
