@@ -26,7 +26,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="fix button?" />
+    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="button?">
+      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,13 +78,6 @@
       <workItem from="1605768783162" duration="2050000" />
       <workItem from="1605835632067" duration="153000" />
       <workItem from="1605838564380" duration="3613000" />
-    </task>
-    <task id="LOCAL-00006" summary="Modified print result for debugging">
-      <created>1605589964034</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1605589964034</updated>
     </task>
     <task id="LOCAL-00007" summary="Added insert">
       <created>1605591469496</created>
@@ -420,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606019447682</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="button?">
+      <created>1606021891704</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1606021891704</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +454,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added deletion statement for eats animal c and o." />
     <MESSAGE value="Join display" />
     <MESSAGE value="join and update" />
     <MESSAGE value="Youtube" />
@@ -477,7 +478,8 @@
     <MESSAGE value="img again" />
     <MESSAGE value="fix scroll" />
     <MESSAGE value="fix button?" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix button?" />
+    <MESSAGE value="button?" />
+    <option name="LAST_COMMIT_MESSAGE" value="button?" />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -509,12 +511,12 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="757" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606016176231" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1606019450099">
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2" timestamp="1606021892697">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1605842541238" />
     <state x="442" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606014203128" />
-    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606019450099" />
+    <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606021892697" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606018955243">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
