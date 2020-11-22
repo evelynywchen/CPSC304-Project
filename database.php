@@ -37,13 +37,11 @@
         }
         .loadingScreen {
             opacity: 0.1;
-        }
-        .centered {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-        }
+
     </style>
 </head>
 <body style="background-color:white;">
@@ -52,7 +50,7 @@
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <img src="https://imgur.com/X6inV5F.jpg">
-<img class = loadingScreen,centered src="https://imgur.com/fJRicHj.gif">
+<img class = loadingScreen src="https://imgur.com/fJRicHj.gif">
 
 
 <div style="position:relative;">
