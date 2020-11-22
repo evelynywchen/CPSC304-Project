@@ -22,9 +22,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .btn {
-            background-color: #ddd;
+            background-color: black;
             border: none;
-            color: black;
+            color: white;
             padding: 16px 32px;
             text-align: center;
             font-size: 16px;
