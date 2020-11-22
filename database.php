@@ -27,8 +27,7 @@
 
 <hr />
 
-<p style="text-align:center;font-size:50px;color:#63ba1e;font-family:'Lucida Console';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<img src="Habitat.jpg">
+<p style="text-align:center;font-size:50px;color:#63ba1e;font-family:'Verdana';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><img src="Habitat.jpg">
 <img src="Habitat.gif">
 
 <div style="position:relative;">
