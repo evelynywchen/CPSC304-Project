@@ -43,7 +43,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index:1;
+            z-index:1001;
             animation-name: example;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -55,8 +55,8 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1;}
-            50%  {z-index:1;}
+            0%  {z-index:1001;}
+            50%  {z-index:1001;}
             100%  {z-index:-1;}
         }
 
@@ -70,8 +70,8 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1;}
-            50%  {z-index:1;}
+            0%  {z-index:1001;}
+            50%  {z-index:1001;}
             100%  {z-index:-1;}
         }
 
