@@ -382,39 +382,39 @@ function handleSelectRequest() {
         case "greater":
             switch($sizeOp) {
                 case "greater":
-                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size>($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size_org>($size)";
                     break;
                 case "smaller":
-                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size<($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size_org<($size)";
                     break;
                 case "equals":
-                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size=($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size_org=($size)";
                     break;
             }
             break;
         case "smaller":
             switch($sizeOp) {
                 case "greater":
-                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size>($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size_org>($size)";
                     break;
                 case "smaller":
-                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size<($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size_org<($size)";
                     break;
                 case "equals":
-                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size=($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size_org=($size)";
                     break;
             }
             break;
         case "equals":
             switch($sizeOp) {
                 case "greater":
-                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size>($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size_org>($size)";
                     break;
                 case "smaller":
-                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size<($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size_org<($size)";
                     break;
                 case "equals":
-                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size=($size)";
+                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size_org=($size)";
                     break;
             }
             break;
