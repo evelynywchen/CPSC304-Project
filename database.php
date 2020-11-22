@@ -369,16 +369,15 @@ function handleCountRequest() {
     global $db_conn;
     $species = $_GET['species'];
 
-    $result = executePlainSQL("SELECT Count(*) FROM Animals 
+    $result = executePlainSQL("SELECT species, Count(*), AVG(age) FROM Animals 
                                         GROUP BY species
                                         HAVING AVG(age) > (SELECT AVG(a2.age) 
                                                             FROM Animals a2 
                                                             GROUP BY a2.species 
                                                             HAVING a2.species ='". $species. "')");
-
-    printResult($result);
-
     OCICommit($db_conn);
+    echo "<tr><th>Species</th><th>Count</th><th>Average age</th></tr>";
+    printResult($result);
 }
 
 function handleGroupByRequest() {
@@ -475,6 +474,7 @@ function handleSelectRequest() {
 
     $result = executePlainSQL($statement);
     OCICommit($db_conn);
+    echo "<tr><th>Name</th><th>ID</th><th>Funds</th><th>Founded</th><th>Size</th></tr>";
     printResult($result);
 }
 
