@@ -23,8 +23,7 @@
             position: fixed;
             width: 1000%;
             max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
+            bottom: 0%;
             z-index:10001;
             animation-name: example;
             animation-duration: 4s;
