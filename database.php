@@ -22,9 +22,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .btn {
-            background-color: black;
+            background-color: antiquewhite;
             border: none;
-            color: white;
+            color: black;
             padding: 16px 32px;
             text-align: center;
             font-size: 16px;
@@ -43,7 +43,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            z-index:1001;
+            z-index:10001;
             animation-name: example;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -55,13 +55,13 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1001;}
-            50%  {z-index:1001;}
+            0%  {z-index:10001;}
+            50%  {z-index:10001;}
             100%  {z-index:-1;}
         }
 
         .loadingScreen2 {
-            z-index:1001;
+            z-index:10001;
             animation-name: example2;
             animation-duration: 4s;
             animation-fill-mode: forwards;
@@ -70,8 +70,8 @@
             0%  {background-color:black;}
             50%  {background-color:black;}
             100%  {background-color:white;}
-            0%  {z-index:1001;}
-            50%  {z-index:1001;}
+            0%  {z-index:10001;}
+            50%  {z-index:10001;}
             100%  {z-index:-1;}
         }
 
