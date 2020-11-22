@@ -352,7 +352,7 @@ function handleCountRequest() {
 function handleGroupByRequest() {
     global $db_conn;
     $result = executePlainSQL("SELECT min(founded), org_name FROM has_subsidiary GROUP BY org_name");
-    echo "<br> The year of founding its first subsidiary for each organization <br>";
+    echo "<br> The year each organization founded its first subsidiary <br>";
     echo "<table>";
     echo "<tr><th>Year founded</th><th>Organization name</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
@@ -385,39 +385,39 @@ function handleSelectRequest() {
         case "greater":
             switch($sizeOp) {
                 case "greater":
-                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size>($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds>($funds) AND size_org>($size)";
                     break;
                 case "smaller":
-                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size<($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds>($funds) AND size_org<($size)";
                     break;
                 case "equals":
-                    $statement = "SELECT funds FROM Organization WHERE funds>($funds) AND size=($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds>($funds) AND size_org=($size)";
                     break;
             }
             break;
         case "smaller":
             switch($sizeOp) {
                 case "greater":
-                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size>($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds<($funds) AND size_org>($size)";
                     break;
                 case "smaller":
-                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size<($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds<($funds) AND size_org<($size)";
                     break;
                 case "equals":
-                    $statement = "SELECT funds FROM Organization WHERE funds<($funds) AND size=($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds<($funds) AND size_org=($size)";
                     break;
             }
             break;
         case "equals":
             switch($sizeOp) {
                 case "greater":
-                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size>($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds=($funds) AND size_org>($size)";
                     break;
                 case "smaller":
-                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size<($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds=($funds) AND size_org<($size)";
                     break;
                 case "equals":
-                    $statement = "SELECT funds FROM Organization WHERE funds=($funds) AND size=($size)";
+                    $statement = "SELECT * FROM Organization WHERE funds=($funds) AND size_org=($size)";
                     break;
             }
             break;
