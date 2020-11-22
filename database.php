@@ -43,7 +43,7 @@
 
 <hr />
 <h2 style="color:white">Reset</h2>
-<p style="color:white">If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</pcolor:>
+<p> style="color:white">If you wish to reset the table press on the reset button. If this is the first time you're running this page, you MUST use reset</p>
 
 <form method="POST" action="database.php">
     <!-- if you want another page to load after the button is clicked, you have to specify that page in the action parameter -->
@@ -151,7 +151,7 @@
 
 <hr />
 
-<h2 style="color:white">Show the first subsidiary for each organization</h2>
+<h2 style="color:white">Show the year each organization first founded a subsidiary</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="GroupByRequest" name="GroupByRequest">
     <input type="submit" name="GroupBy"></p>
@@ -334,12 +334,12 @@ function handleCountRequest() {
 function handleGroupByRequest() {
     global $db_conn;
 
-    $result = executePlainSQL("SELECT min(founded), sub_name, org_name FROM has_subsidiary GROUP BY org_name");
+    $result = executePlainSQL("SELECT min(founded), org_name FROM has_subsidiary GROUP BY org_name");
     if (($row = oci_fetch_row($result)) != false) {
-        echo "<br> The first subsidiary for each organization <br>";
+        echo "<br> The year of founding its first subsidiary for each organization <br>";
     }
     echo "<table>";
-    echo "<tr><th>Year founded</th><th>Subsidiary name</th><th>Organization name</th></tr>";
+    echo "<tr><th>Year founded</th><th>Organization name</th></tr>";
     printResult($result);
 
 }
