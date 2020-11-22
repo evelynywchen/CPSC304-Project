@@ -96,7 +96,7 @@
 <!--            <input type="submit" value="Insert" name="insertSubmit"></p>-->
 <!--        </form>-->
 <form method="POST" action="database.php">
-    <label class="btn" for="table">Choose a table:</label>
+    <label for="table">Choose a table:</label>
     <select class="btn" name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
         <option value="" selected disabled hidden>Pick a table</option>
         <option value="animals.php">Animals</option>
@@ -119,7 +119,7 @@
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
     <p> Person ID: <input class="btn" type="text" name="pID"> <br /> <br />  </p>
 
-    <input type="submit" value="Delete" name="deleteSubmit"></p>
+    <input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
  
 <hr />
