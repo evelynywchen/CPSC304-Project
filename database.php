@@ -118,7 +118,6 @@
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
     <p> Person ID: <input class="btn" type="text" name="pID"> <br /> <br />  </p>
-
     <input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
  
