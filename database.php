@@ -31,7 +31,6 @@
             margin: 4px 2px;
             transition: 0.3s;
         }
-
         .btn:hover {
             background-color: #3e8e41;
             color: white;
@@ -164,9 +163,9 @@
 
 <hr />
 
-<h2>Group by: Show the year each organization first founded a subsidiary</h2>
+<h2>Show the year each organization first founded a subsidiary</h2>
 <form method="GET" action="database.php">
-    <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
+    <input type="hidden" id="GroupByRequest" name="GroupByRequest">
     <input type="submit" name="GroupBy"></p>
 </form>
 
@@ -460,7 +459,7 @@ function handleGETRequest() {
 
 if (isset($_POST['reset']) || isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
-} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest'])) {
+} else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['GroupByRequest'])) {
     handleGETRequest();
 }
 ?>
