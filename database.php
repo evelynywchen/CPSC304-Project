@@ -59,11 +59,6 @@
         }
 
         .loadingScreen2 {
-            opacity: 1;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
             z-index:1;
             animation-name: example2;
             animation-duration: 4s;
