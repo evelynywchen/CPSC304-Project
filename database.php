@@ -27,15 +27,10 @@
 
 <hr />
 
-<h1>Habitat Database</h1>
+<p style="text-align:center;font-size:50px;color:#63ba1e;font-family:'Lucida Console';"><b>Habitat Database</b></p><iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <img src="Habitat.jpg">
 <img src="Habitat.gif">
-<p>I am normal</p>
-<p style="color:red;">I am red</p>
-<p style="color:blue;">I am blue</p>
-<p style="font-size:50px;">I am big</p>
-<h1 style="text-align:center;">Centered Heading</h1>
-<p style="font-family:'Lucida Console'"><b>This is another paragraph.</b></p>
+
 <div style="position:relative;">
     <div style="opacity:0.5;position:absolute;left:50px;top:-30px;width:300px;height:150px;background-color:#40B3DF"></div>
     <div style="opacity:0.3;position:absolute;left:120px;top:20px;width:100px;height:170px;background-color:#73AD21"></div>
@@ -46,10 +41,6 @@
             <span style="background-color:#B4009E;color:#ffffff;"> Boxes</span></div>
     </div>
 </div>
-
-<hr />
-
-<iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60&controls=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
 <h2>Reset</h2>
