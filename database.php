@@ -83,7 +83,7 @@
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?rnd=<%=rnd()%>">
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
 
 <hr />
 
