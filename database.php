@@ -119,7 +119,7 @@
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
     <p> Person ID: <input class="btn" type="text" name="pID"> <br /> <br />  </p>
 
-    <input type="submit" value="Delete" name="deleteSubmit"></p>
+    <input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
  
 <hr />
