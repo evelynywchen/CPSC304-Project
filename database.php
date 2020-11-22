@@ -60,7 +60,7 @@
 <form method="POST" action="database.php">
     <!-- if you want another page to load after the button is clicked, you have to specify that page in the action parameter -->
     <input type="hidden" id="resetTablesRequest" name="resetTablesRequest">
-    <p><input type="submit" value="Reset" name="reset"></p>
+    <p><input class="btn" type="submit" value="Reset" name="reset"></p>
 </form>
 
 <hr />
@@ -74,7 +74,7 @@
 <!--            <input type="submit" value="Insert" name="insertSubmit"></p>-->
 <!--        </form>-->
 <form method="POST" action="database.php">
-    <label for="table">Choose a table:</label>
+    <label class="btn" for="table">Choose a table:</label>
     <select name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
         <option value="" selected disabled hidden>Pick a table</option>
         <option value="animals.php">Animals</option>
@@ -95,7 +95,7 @@
 <h2 >Delete a Person</h2>
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    <p> Person ID: <input type="text" name="pID"> <br /> <br />  </p>
+    <p> Person ID: <input class="btn" type="text" name="pID"> <br /> <br />  </p>
 
     <input type="submit" value="Delete" name="deleteSubmit"></p>
 </form>
@@ -107,13 +107,13 @@
 <form method="POST" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
     Habitat ID: <label>
-        <input type="number" name="habID">
+        <input class="btn" type="number" name="habID">
     </label> <br /><br />
     New Temperature: <label>
-        <input type="number" name="temperature">
+        <input class="btn" type="number" name="temperature">
     </label> <br /><br />
 
-    <input type="submit" value="Update" name="displayTuples"></p>
+    <input class="btn" type="submit" value="Update" name="displayTuples"></p>
 </form>
 
 <hr />
@@ -122,30 +122,30 @@
 <form method="GET" action="database.php">
     <input type="hidden" id="selectionRequest" name="selectionRequest">
     <label>Funds</label>
-    <select name="operators" id="tableForm">
+    <select class="btn" name="operators" id="tableForm">
         <option value="greater">greater than</option>
         <option value="smaller">smaller than</option>
         <option value="equals">equals</option>
     </select>
-    <input type="number" name="funds">
+    <input class="btn" type="number" name="funds">
     <br /><br />
     <label>Size of Organization</label>
-    <select name="op2" id="tableForm">
+    <select class="btn" name="op2" id="tableForm">
         <option value="greater">greater than</option>
         <option value="smaller">smaller than</option>
         <option value="equals">equals</option>
     </select>
-    <input type="number" name="size">
+    <input class="btn" type="number" name="size">
     <br /><br />
 
-    <input type="submit" value="Submit" name="selectSubmit"></p>
+    <input class="btn" type="submit" value="Submit" name="selectSubmit"></p>
 </form>
 <hr />
 
 <h2 >Projection of Artificial Structures' Details</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
-    <input type="submit" value="Projection" name="updateSubmit"></p>
+    <input class="btn" type="submit" value="Projection" name="updateSubmit"></p>
 </form>
 
 <hr />
@@ -155,10 +155,10 @@
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="handleJoinRequest" name="handleJoinRequest">
     Resource Type: <label>
-        <input type="text" name="type_R">
+        <input class="btn" type="text" name="type_R">
     </label> <br /><br />
 
-    <input type="submit" value="Join" name="updateSubmit"></p>
+    <input class="btn" type="submit" value="Join" name="updateSubmit"></p>
 </form>
 
 <hr />
@@ -166,19 +166,19 @@
 <h2>Show the year each organization first founded a subsidiary</h2>
 <form method="GET" action="database.php">
     <input type="hidden" id="GroupByRequest" name="GroupByRequest">
-    <input type="submit" name="GroupBy"></p>
+    <input class="btn" type="submit" name="GroupBy"></p>
 </form>
 
 <h2>Count the Tuples in DemoTable</h2>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="countTupleRequest" name="countTupleRequest">
-    <input type="submit" name="countTuples"></p>
+    <input class="btn" type="submit" name="countTuples"></p>
 </form>
 
 <h2>Display the Animals in Database</h2>
 <form method="GET" action="database.php"> <!--refresh page when submitted-->
     <input type="hidden" id="displayTupleRequest" name="displayTupleRequest">
-    <input type="submit" name="displayTuples"></p>
+    <input class="btn" type="submit" name="displayTuples"></p>
 </form>
 
 <?php
