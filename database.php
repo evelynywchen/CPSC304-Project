@@ -389,14 +389,14 @@ function handleHavingRequest() {
 function handleDivisionRequest() {
     global $db_conn;
     $result = executePlainSQL("SELECT aID
-                                    FROM Animals A
-                                    WHERE NOT EXISTS 
-                                    ((SELECT P.pID	
-                                    FROM Plants P)
-                                    EXCEPT
-                                    (SELECT E.pID 
-                                    FROM Eats_Plant
-                                    WHERE A.aID = E.aID))");
+                                        FROM Animals A
+                                        WHERE NOT EXISTS 
+                                        ((SELECT P.plantID	
+                                        FROM Plants P)
+                                        MINUS
+                                        (SELECT E.plantID 
+                                        FROM Eats_Plant E
+                                        WHERE E.aID = A.aID))");
     echo "<br> A list of animals that ate all plants <br>";
     echo "<table>";
     echo "<tr><th>aID</th></tr>";
