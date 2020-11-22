@@ -36,12 +36,22 @@
             color: white;
         }
         .loadingScreen {
-            opacity: 0.1;
+            opacity: 1;
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index:1;
+            animation-name: example;
+            animation-duration: 4s;
+        }
+
+
+        @keyframes example {
+            0%  {opacity: 1;}
+            50%  {opacity: 1;}
+            100%  {opacity: 0;}
+
         }
 
     </style>
