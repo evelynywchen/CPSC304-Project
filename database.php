@@ -60,7 +60,7 @@
     </style>
 </head>
 <img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" >
-<body class = loadingScreen style="background-color:black;">
+<body class = loadingScreen2 style="background-color:black;">
 
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
 
