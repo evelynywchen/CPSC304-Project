@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
         .btn {
-            background-color: #dddd;
+            background-color: antiquewhite;
             border: none;
             color: black;
             padding: 16px 32px;
@@ -13,6 +13,7 @@
             margin: 4px 2px;
             transition: 0.3s;
             z-index:-1
+            position: absolute;
         }
         .btn:hover {
             background-color: #3e8e41;
@@ -58,13 +59,20 @@
 
     </style>
 </head>
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" width="1080" height="810">
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
+
+<p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
+
+<iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</head>
 <body class = loadingScreen2 style="background-color:black;">
 
 <p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>">
 
 
 <hr />
@@ -158,7 +166,7 @@
                 OCIBindByName($statement, $bind, $val);
                 unset ($val); //make sure you do not remove this. Otherwise $val will remain in an array object wrapper which will not be recognized by Oracle as a proper datatype
             }
-
+            
             $r = OCIExecute($statement, OCI_DEFAULT);
             if (!$r) {
                 echo "<br>Cannot execute the following command: " . $cmdstr . "<br>";

@@ -1,21 +1,3 @@
-<!--Test Oracle file for UBC CPSC304 2018 Winter Term 1
-  Created by Jiemin Zhang
-  Modified by Simona Radu
-  Modified by Jessica Wong (2018-06-22)
-  This file shows the very basics of how to execute PHP commands
-  on Oracle.  
-  Specifically, it will drop a table, create a table, insert values
-  update values, and then query for values
- 
-  IF YOU HAVE A TABLE CALLED "demoTable" IT WILL BE DESTROYED
-
-  The script assumes you already have a server set up
-  All OCI commands are commands to the Oracle libraries
-  To get the file to work, you must place it somewhere where your
-  Apache server can run it, and you must rename it to have a ".php"
-  extension.  You must also change the username and password on the 
-  OCILogon below to be your ORACLE username and password -->
-
 <html>
 <head>
     <title>CPSC 304 Habitat Database</title>
@@ -383,7 +365,9 @@ function handleCountRequest() {
     OCICommit($db_conn);
     echo "<table>";
     echo "<tr><th>Species</th><th>Count</th><th>Average age</th></tr>";
-    printResult($result);
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
     echo "</table>";
 }
 
@@ -507,7 +491,9 @@ function handleSelectRequest() {
     OCICommit($db_conn);
     echo "<table>";
     echo "<tr><th>Name</th><th>ID</th><th>Funds</th><th>Founded</th><th>Size</th></tr>";
-    printResult($result);
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
     echo "</table>";
 }
 
