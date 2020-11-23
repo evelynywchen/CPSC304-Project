@@ -7,19 +7,19 @@ create table Animals(
 create table Carnivores(
     aID int,
     cID int,
-    PRIMARY KEY (aID),
+    PRIMARY KEY (cID),
     FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Omnivores(
     aID int,
     oID int,
-    PRIMARY KEY (aID),
+    PRIMARY KEY (oID),
     FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Herbivores(
     aID int,
     hID int,
-    PRIMARY KEY (aID),
+    PRIMARY KEY (hID),
     FOREIGN KEY (aID) REFERENCES Animals ON DELETE CASCADE);
 
 create table Plants(
@@ -31,7 +31,7 @@ create table Eats_Animal_C(
     cID         int,
     aID         int,
     location_AC    char(40),
-    PRIMARY KEY (aID),
+    PRIMARY KEY (cID, aID),
     FOREIGN KEY(cID) REFERENCES Carnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
 
@@ -39,7 +39,7 @@ create table Eats_Animal_O(
     oID         int,
     aID         int,
     location_AO char(40),
-    PRIMARY KEY (aID),
+    PRIMARY KEY (oID, aID),
     FOREIGN KEY(oID) REFERENCES Omnivores,
     FOREIGN KEY(aID) REFERENCES Animals);
 
