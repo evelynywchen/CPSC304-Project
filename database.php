@@ -2,178 +2,166 @@
 <head>
     <title>CPSC 304 Habitat Database</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .btn {
-            background-color: #dddd;
-            border: none;
-            color: black;
-            padding: 16px 32px;
-            text-align: center;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition: 0.3s;
-            z-index:-1
-        }
-        .btn:hover {
-            background-color: #3e8e41;
-            color: white;
-        }
-        .loadingScreen {
-            opacity: 1;
-            position: fixed;
-            width: 1000%;
-            max-width: 100%;
-            bottom: 0%;
-            z-index:10001;
-            animation-name: example;
-            animation-duration: 4s;
-            animation-fill-mode: forwards;
-        }
-        @keyframes example {
-            0%  {background-color:black;}
-            50%  {background-color:black;}
-            100%  {background-color:white;}
-            0%  {opacity: 1;}
-            50%  {opacity: 1;}
-            100%  {opacity: 0;}
-            0%  {z-index:10001;}
-            50%  {z-index:10001;}
-            100%  {z-index:-1;}
-        }
-
-    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="beautify.css">
 </head>
-<img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" >
-<body style="background-color:white;">
+<img class ="loadingScreen" src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" >
+<body>
 
-<p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
+<p style="text-align:center;font-size:60px;color:#3e8e41;"><b>Habitat Database</b></p>
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr />
 
-<h2>Insert Values into Database</h2>
-<!--        <form method="POST" action="database.php"> refresh page when submitted-->
-<!--            <input type="hidden" id="insertQueryRequest" name="insertQueryRequest">-->
-<!--            Number: <input type="text" name="insNo"> <br /><br />-->
-<!--            Name: <input type="text" name="insName"> <br /><br />-->
-<!---->
-<!--            <input type="submit" value="Insert" name="insertSubmit"></p>-->
-<!--        </form>-->
-<form method="POST" action="database.php">
-    <label for="table">Choose a table:</label>
-    <select class="btn" name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
-        <option value="" selected disabled hidden>Pick a table</option>
-        <option value="animals.php">Animals</option>
-        <option value="plants.php">Plants</option>
-        <option value="hab.php">Habitat</option>
-        <option value="org.php">Organization</option>
-        <option value="people.php">People</option>
-        <option value="res.php">Resources</option>
-        <option value="AS.php">Artificial Structures</option>
-    </select>
-    <!-- <br><br> -->
-    <!-- <input type="submit" value="Submit"> -->
-</form>
+<table class="half">
+    <tr>
+        <td>
+            <h2>Insert Values into Database</h2>
+            <form method="POST" action="database.php">
+                <label for="table">Choose a table:</label>
+                <select class="btn" name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
+                    <option value="" selected disabled hidden>Pick a table</option>
+                    <option value="animals.php">Animals</option>
+                    <option value="plants.php">Plants</option>
+                    <option value="hab.php">Habitat</option>
+                    <option value="org.php">Organization</option>
+                    <option value="people.php">People</option>
+                    <option value="res.php">Resources</option>
+                    <option value="AS.php">Artificial Structures</option>
+                </select>
+            </form>
+        </td>
 
-
-<hr />
-
-<h2 >Delete a Person</h2>
-<form method="POST" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    <p> Person ID: <input class="btn" type="text" name="pID"> <br /> <br />  </p>
-    <input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
-</form>
- 
-<hr />
-
-<h2 >Update Temperature in Habitat</h2>
-
-<form method="POST" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
-    Habitat ID: <label>
-        <input class="btn" type="number" name="habID">
-    </label> <br /><br />
-    New Temperature: <label>
-        <input class="btn" type="number" name="temperature">
-    </label> <br /><br />
-
-    <input class="btn" type="submit" value="Update" name="displayTuples"></p>
-</form>
+        <td>
+            <h2 >Delete a Person</h2>
+            <form method="POST" action="database.php"> <!--refresh page when submitted-->
+                <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
+                Person ID: <input class="btn" type="text" name="pID">
+                &emsp;&emsp;<input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
+            </form>
+        </td>
+    </tr>
+</table>
 
 <hr />
 
-<h2 >Selection: Finding Organizations by Funds and Size</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="selectionRequest" name="selectionRequest">
-    <label>Funds</label>
-    <select class="btn" name="operators" id="tableForm">
-        <option value="greater">greater than</option>
-        <option value="smaller">smaller than</option>
-        <option value="equals">equals</option>
-    </select>
-    <input class="btn" type="number" name="funds">
-    <br /><br />
-    <label>Size of Organization</label>
-    <select class="btn" name="op2" id="tableForm">
-        <option value="greater">greater than</option>
-        <option value="smaller">smaller than</option>
-        <option value="equals">equals</option>
-    </select>
-    <input class="btn" type="number" name="size">
-    <br /><br />
-
-    <input class="btn" type="submit" value="Submit" name="selectSubmit"></p>
-</form>
-<hr />
-
-<h2 >Projection of Artificial Structures' Details</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
-    <input class="btn" type="submit" value="Projection" name="updateSubmit"></p>
-</form>
+<div class="single">
+    <h2 >Update Temperature in Habitat</h2>
+    <form method="POST" action="database.php"> <!--refresh page when submitted-->
+        <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
+        Habitat ID:
+        <label>
+            <input class="btn" type="number" name="habID">
+        </label>
+        &emsp;&emsp;&emsp;New Temperature:
+        <label>
+            <input class="btn" type="number" name="temperature">
+        </label>
+        &emsp;&emsp;<input class="btn" type="submit" value="Update" name="displayTuples"></p>
+    </form>
+</div>
 
 <hr />
 
-<h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
-<p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
-<form method="GET" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="handleJoinRequest" name="handleJoinRequest">
-    Resource Type: <label>
-        <input class="btn" type="text" name="type_R">
-    </label> <br /><br />
+<table class="half">
+    <tr>
+        <td>
+            <h2 >Selection: Finding Organizations by Funds and Size</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="selectionRequest" name="selectionRequest">
+                <label>Funds</label>
+                <select class="btn" name="operators" id="tableForm">
+                    <option value="greater">greater than</option>
+                    <option value="smaller">smaller than</option>
+                    <option value="equals">equals</option>
+                </select>
+                <input class="btn" type="number" name="funds">
+                <br /><br />
+                <label>Size of Organization</label>
+                <select class="btn" name="op2" id="tableForm">
+                    <option value="greater">greater than</option>
+                    <option value="smaller">smaller than</option>
+                    <option value="equals">equals</option>
+                </select>
+                <input class="btn" type="number" name="size">
+                <br /><br />
 
-    <input class="btn" type="submit" value="Join" name="updateSubmit"></p>
-</form>
+                <input class="btn" type="submit" value="Submit" name="selectSubmit"></p>
+            </form>
+        </td>
+        <td>
+            <h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
+            <p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
+            <form method="GET" action="database.php"> <!--refresh page when submitted-->
+                <input type="hidden" id="handleJoinRequest" name="handleJoinRequest">
+                Resource Type: <label>
+                    <input class="btn" type="text" name="type_R">
+                </label> <br /><br />
+
+                <input class="btn" type="submit" value="Join" name="updateSubmit"></p>
+            </form>
+        </td>
+    </tr>
+</table>
 
 <hr />
 
-<h2>Group By: Show the year each organization first founded a subsidiary</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
-    <input class="btn" type="submit" name="GroupBy"></p>
-</form>
+<table class="half">
+    <tr>
+        <td>
+            <h2 >Projection of Artificial Structures' Details</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
+                <input class="btn" type="submit" value="Projection" name="updateSubmit"></p>
+            </form>
+        </td>
 
-<h2>Having: Show the people who own multiple organizations</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleHavingRequest" name="handleHavingRequest">
-    <input class="btn" type="submit" name="Having"></p>
-</form>
+        <td>
+            <h2>Division: Find the animals that ate all the plants</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleDivisionRequest" name="handleDivisionRequest">
+                <input class="btn" type="submit" name="Division"></p>
+            </form>
+        </td>
+    </tr>
+</table>
 
-<h2>Nested aggregation: Count the population of each species where the average age is above the average age of a certain species</h2>
-<form method="GET" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="countTupleRequest" name="countTupleRequest">
-    Species: <label> <input class="btn" type="text" name="species"> </label>
-    <br/><br/>
-    <input class="btn" type="submit" name="countTuples"></p>
-</form>
+<hr />
 
-<h2>Division: Find the animals that ate all the plants</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleDivisionRequest" name="handleDivisionRequest">
-    <input class="btn" type="submit" name="Division"></p>
-</form>
+<table class="half">
+    <tr>
+        <td>
+            <h2>Group By: Show the year each organization first founded a subsidiary</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
+                <input class="btn" type="submit" name="GroupBy"></p>
+            </form>
+        </td>
+
+        <td>
+            <h2>Having: Show the people who own multiple organizations</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleHavingRequest" name="handleHavingRequest">
+                <input class="btn" type="submit" name="Having"></p>
+            </form>
+        </td>
+    </tr>
+</table>
+
+<hr />
+
+<div class="single">
+    <h2>Nested aggregation: Count the population of each species where the average age is above the average age of a certain species</h2>
+    <p>Please use lowercases only.</p>
+    <form method="GET" action="database.php"> <!--refresh page when submitted-->
+        <input type="hidden" id="countTupleRequest" name="countTupleRequest">
+        Species: <label> <input class="btn" type="text" name="species"> </label>
+        &emsp;&emsp;<input class="btn" type="submit" name="countTuples"></p>
+    </form>
+</div>
+
 
 <hr />
 
@@ -220,7 +208,7 @@ function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL com
 function executeBoundSQL($cmdstr, $list) {
     /* Sometimes the same statement will be executed several times with different values for the variables involved in the query.
 In this case you don't need to create the statement several times. Bound variables cause a statement to only be
-parsed once and you can reuse the statement. This is also very useful in protecting against SQL injection. 
+parsed once and you can reuse the statement. This is also very useful in protecting against SQL injection.
 See the sample code below for how this function is used */
 
     global $db_conn, $success;
@@ -265,9 +253,9 @@ function printResult($result) { //prints results from a select statement
 function connectToDB() {
     global $db_conn;
 
-    // Your username is ora_(CWL_ID) and the password is a(student number). For example, 
+    // Your username is ora_(CWL_ID) and the password is a(student number). For example,
     // ora_platypus is the username and a12345678 is the password.
-    $db_conn = OCILogon("ora_evelyncn", "a12898490", "dbhost.students.cs.ubc.ca:1522/stu");
+    $db_conn = OCILogon("ora_jorene", "a73699209", "dbhost.students.cs.ubc.ca:1522/stu");
 
     if ($db_conn) {
         debugAlertMessage("Database is Connected");
@@ -370,10 +358,10 @@ function handleGroupByRequest() {
 function handleHavingRequest() {
     global $db_conn;
     $result = executePlainSQL("SELECT name_people from people
-								WHERE pID in (
-									SELECT pID from Owns 
-									GROUP BY pID
-									HAVING COUNT(pID)>1)");
+                                WHERE pID in (
+                                    SELECT pID from Owns 
+                                    GROUP BY pID
+                                    HAVING COUNT(pID)>1)");
     echo "<br> A list of people who own more than one organization <br>";
     echo "<table>";
     echo "<tr><th>Name</th></tr>";
