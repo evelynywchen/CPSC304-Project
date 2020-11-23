@@ -66,3 +66,9 @@ body{
 .single{
     margin-left: 70px;
 }
+
+#title {
+    text-align:center;
+    font-size:60px;
+    color:#3e8e41;
+}

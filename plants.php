@@ -2,51 +2,14 @@
 <head>
     <title>Insert into Plants</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        .btn {
-            background-color: #dddd;
-            border: none;
-            color: black;
-            padding: 16px 32px;
-            text-align: center;
-            font-size: 16px;
-            margin: 4px 2px;
-            transition: 0.3s;
-            z-index:-1
-        }
-        .btn:hover {
-            background-color: #3e8e41;
-            color: white;
-        }
-        .loadingScreen {
-            opacity: 1;
-            position: fixed;
-            width: 1000%;
-            max-width: 100%;
-            bottom: 0%;
-            z-index:10001;
-            animation-name: example;
-            animation-duration: 4s;
-            animation-fill-mode: forwards;
-        }
-        @keyframes example {
-            0%  {background-color:black;}
-            50%  {background-color:black;}
-            100%  {background-color:white;}
-            0%  {opacity: 1;}
-            50%  {opacity: 1;}
-            100%  {opacity: 0;}
-            0%  {z-index:10001;}
-            50%  {z-index:10001;}
-            100%  {z-index:-1;}
-        }
-
-    </style>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="beautify.css">
 </head>
 <img class = loadingScreen src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" >
 <body style="background-color:white;">
 
-<p style="text-align:center;font-size:50px;color:#3e8e41;font-family:'Verdana';"><b>Habitat Database</b></p>
+<p id="title"><b>Habitat Database</b></p>
 
 <iframe width="1" height="1" src="https://www.youtube.com/embed/ut2KhcNtnm8?autoplay=1&start=60" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
