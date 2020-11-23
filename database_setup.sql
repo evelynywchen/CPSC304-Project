@@ -267,34 +267,34 @@ insert into Plants
 values(4, 'raspberry');
 
 insert into Eats_Animal_C
-values(0, 10, 'Vancouver');
+values(8, 3, 'Vancouver');
 
 insert into Eats_Animal_C
-values(1, 11, 'Berlin');
+values(9, 4, 'Berlin');
 
 insert into Eats_Animal_C
-values(2, 12, 'Brussels');
+values(7, 2, 'Brussels');
 
 insert into Eats_Animal_C
-values(3, 13, 'Seoul');
+values(5, 0, 'Seoul');
 
 insert into Eats_Animal_C
-values(4, 14, 'Madagascar');
+values(6, 1, 'Madagascar');
 
 insert into Eats_Animal_O
-values(0, 0, 'Kuala Lumpur');
+values(10, 0, 'Kuala Lumpur');
 
 insert into Eats_Animal_O
-values(1, 1, 'Chicago');
+values(11, 1, 'Chicago');
 
 insert into Eats_Animal_O
-values(2, 2, 'St. Petersburg');
+values(12, 2, 'St. Petersburg');
 
 insert into Eats_Animal_O
-values(3, 3, 'Ho Chi Minh City');
+values(13, 3, 'Ho Chi Minh City');
 
 insert into Eats_Animal_O
-values(4, 4, 'Manilla');
+values(14, 4, 'Manilla');
 
 insert into Eats_Plant
 values(0, 4);
