@@ -3,7 +3,10 @@
     <title>CPSC 304 Habitat Database</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="beautify.css">
 </head>
 <img class ="loadingScreen" src="https://i.imgur.com/GBCvzL7.gif?<?php echo time();?>" >
@@ -16,150 +19,150 @@
 <hr />
 
 <table class="half">
-	<tr>
-		<td>
-<h2>Insert Values into Database</h2>
-<form method="POST" action="database.php">
-    <label for="table">Choose a table:</label>
-    <select class="btn" name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
-        <option value="" selected disabled hidden>Pick a table</option>
-        <option value="animals.php">Animals</option>
-        <option value="plants.php">Plants</option>
-        <option value="hab.php">Habitat</option>
-        <option value="org.php">Organization</option>
-        <option value="people.php">People</option>
-        <option value="res.php">Resources</option>
-        <option value="AS.php">Artificial Structures</option>
-    </select>
-</form>
-		</td>
+    <tr>
+        <td>
+            <h2>Insert Values into Database</h2>
+            <form method="POST" action="database.php">
+                <label for="table">Choose a table:</label>
+                <select class="btn" name="table" id="tableForm" onchange="if (this.value) window.location.href=this.value">
+                    <option value="" selected disabled hidden>Pick a table</option>
+                    <option value="animals.php">Animals</option>
+                    <option value="plants.php">Plants</option>
+                    <option value="hab.php">Habitat</option>
+                    <option value="org.php">Organization</option>
+                    <option value="people.php">People</option>
+                    <option value="res.php">Resources</option>
+                    <option value="AS.php">Artificial Structures</option>
+                </select>
+            </form>
+        </td>
 
-		<td>
-<h2 >Delete a Person</h2>
-<form method="POST" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
-    Person ID: <input class="btn" type="text" name="pID"> 
-    &emsp;&emsp;<input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
-</form>
-		</td>		
-	</tr>
+        <td>
+            <h2 >Delete a Person</h2>
+            <form method="POST" action="database.php"> <!--refresh page when submitted-->
+                <input type="hidden" id="deleteQueryRequest" name="deleteQueryRequest">
+                Person ID: <input class="btn" type="text" name="pID">
+                &emsp;&emsp;<input class="btn" type="submit" value="Delete" name="deleteSubmit"></p>
+            </form>
+        </td>
+    </tr>
 </table>
 
 <hr />
 
 <div class="single">
-<h2 >Update Temperature in Habitat</h2>
-<form method="POST" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
-    Habitat ID: 
-    <label>
-        <input class="btn" type="number" name="habID">
-    </label> 
-    &emsp;&emsp;&emsp;New Temperature: 
-    <label>
-        <input class="btn" type="number" name="temperature">
-    </label> 
-    &emsp;&emsp;<input class="btn" type="submit" value="Update" name="displayTuples"></p>
-</form>
+    <h2 >Update Temperature in Habitat</h2>
+    <form method="POST" action="database.php"> <!--refresh page when submitted-->
+        <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
+        Habitat ID:
+        <label>
+            <input class="btn" type="number" name="habID">
+        </label>
+        &emsp;&emsp;&emsp;New Temperature:
+        <label>
+            <input class="btn" type="number" name="temperature">
+        </label>
+        &emsp;&emsp;<input class="btn" type="submit" value="Update" name="displayTuples"></p>
+    </form>
 </div>
 
 <hr />
 
 <table class="half">
-	<tr>
-		<td>
-<h2 >Selection: Finding Organizations by Funds and Size</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="selectionRequest" name="selectionRequest">
-    <label>Funds</label>
-    <select class="btn" name="operators" id="tableForm">
-        <option value="greater">greater than</option>
-        <option value="smaller">smaller than</option>
-        <option value="equals">equals</option>
-    </select>
-    <input class="btn" type="number" name="funds">
-    <br /><br />
-    <label>Size of Organization</label>
-    <select class="btn" name="op2" id="tableForm">
-        <option value="greater">greater than</option>
-        <option value="smaller">smaller than</option>
-        <option value="equals">equals</option>
-    </select>
-    <input class="btn" type="number" name="size">
-    <br /><br />
+    <tr>
+        <td>
+            <h2 >Selection: Finding Organizations by Funds and Size</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="selectionRequest" name="selectionRequest">
+                <label>Funds</label>
+                <select class="btn" name="operators" id="tableForm">
+                    <option value="greater">greater than</option>
+                    <option value="smaller">smaller than</option>
+                    <option value="equals">equals</option>
+                </select>
+                <input class="btn" type="number" name="funds">
+                <br /><br />
+                <label>Size of Organization</label>
+                <select class="btn" name="op2" id="tableForm">
+                    <option value="greater">greater than</option>
+                    <option value="smaller">smaller than</option>
+                    <option value="equals">equals</option>
+                </select>
+                <input class="btn" type="number" name="size">
+                <br /><br />
 
-    <input class="btn" type="submit" value="Submit" name="selectSubmit"></p>
-</form>
-		</td>
-		<td>
-<h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
-<p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
-<form method="GET" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="handleJoinRequest" name="handleJoinRequest">
-    Resource Type: <label>
-        <input class="btn" type="text" name="type_R">
-    </label> <br /><br />
+                <input class="btn" type="submit" value="Submit" name="selectSubmit"></p>
+            </form>
+        </td>
+        <td>
+            <h2>Join Resource and Consume to Find Details of Animals Consuming Certain Resource</h2>
+            <p>The values are case sensitive and if you enter in the wrong case, the Join statement will not do anything.</p>
+            <form method="GET" action="database.php"> <!--refresh page when submitted-->
+                <input type="hidden" id="handleJoinRequest" name="handleJoinRequest">
+                Resource Type: <label>
+                    <input class="btn" type="text" name="type_R">
+                </label> <br /><br />
 
-    <input class="btn" type="submit" value="Join" name="updateSubmit"></p>
-</form>
-		</td>
-	</tr>
+                <input class="btn" type="submit" value="Join" name="updateSubmit"></p>
+            </form>
+        </td>
+    </tr>
 </table>
 
 <hr />
 
 <table class="half">
-	<tr>
-		<td>
-<h2 >Projection of Artificial Structures' Details</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
-    <input class="btn" type="submit" value="Projection" name="updateSubmit"></p>
-</form>
-		</td>
+    <tr>
+        <td>
+            <h2 >Projection of Artificial Structures' Details</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleProjectionRequest" name="handleProjectionRequest">
+                <input class="btn" type="submit" value="Projection" name="updateSubmit"></p>
+            </form>
+        </td>
 
-		<td>
-<h2>Division: Find the animals that ate all the plants</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleDivisionRequest" name="handleDivisionRequest">
-    <input class="btn" type="submit" name="Division"></p>
-</form>
-		</td>
-	</tr>
+        <td>
+            <h2>Division: Find the animals that ate all the plants</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleDivisionRequest" name="handleDivisionRequest">
+                <input class="btn" type="submit" name="Division"></p>
+            </form>
+        </td>
+    </tr>
 </table>
 
 <hr />
 
 <table class="half">
-	<tr>
-		<td>
-<h2>Group By: Show the year each organization first founded a subsidiary</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
-    <input class="btn" type="submit" name="GroupBy"></p>
-</form>
-		</td>
+    <tr>
+        <td>
+            <h2>Group By: Show the year each organization first founded a subsidiary</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleGroupByRequest" name="handleGroupByRequest">
+                <input class="btn" type="submit" name="GroupBy"></p>
+            </form>
+        </td>
 
-		<td>
-<h2>Having: Show the people who own multiple organizations</h2>
-<form method="GET" action="database.php">
-    <input type="hidden" id="handleHavingRequest" name="handleHavingRequest">
-    <input class="btn" type="submit" name="Having"></p>
-</form>
-		</td>
-	</tr>
+        <td>
+            <h2>Having: Show the people who own multiple organizations</h2>
+            <form method="GET" action="database.php">
+                <input type="hidden" id="handleHavingRequest" name="handleHavingRequest">
+                <input class="btn" type="submit" name="Having"></p>
+            </form>
+        </td>
+    </tr>
 </table>
 
 <hr />
 
 <div class="single">
-<h2>Nested aggregation: Count the population of each species where the average age is above the average age of a certain species</h2>
-<p>Please use lowercases only.</p>
-<form method="GET" action="database.php"> <!--refresh page when submitted-->
-    <input type="hidden" id="countTupleRequest" name="countTupleRequest">
-    Species: <label> <input class="btn" type="text" name="species"> </label>
-    &emsp;&emsp;<input class="btn" type="submit" name="countTuples"></p>
-</form>
+    <h2>Nested aggregation: Count the population of each species where the average age is above the average age of a certain species</h2>
+    <p>Please use lowercases only.</p>
+    <form method="GET" action="database.php"> <!--refresh page when submitted-->
+        <input type="hidden" id="countTupleRequest" name="countTupleRequest">
+        Species: <label> <input class="btn" type="text" name="species"> </label>
+        &emsp;&emsp;<input class="btn" type="submit" name="countTuples"></p>
+    </form>
 </div>
 
 
@@ -208,7 +211,7 @@ function executePlainSQL($cmdstr) { //takes a plain (no bound variables) SQL com
 function executeBoundSQL($cmdstr, $list) {
     /* Sometimes the same statement will be executed several times with different values for the variables involved in the query.
 In this case you don't need to create the statement several times. Bound variables cause a statement to only be
-parsed once and you can reuse the statement. This is also very useful in protecting against SQL injection. 
+parsed once and you can reuse the statement. This is also very useful in protecting against SQL injection.
 See the sample code below for how this function is used */
 
     global $db_conn, $success;
@@ -253,7 +256,7 @@ function printResult($result) { //prints results from a select statement
 function connectToDB() {
     global $db_conn;
 
-    // Your username is ora_(CWL_ID) and the password is a(student number). For example, 
+    // Your username is ora_(CWL_ID) and the password is a(student number). For example,
     // ora_platypus is the username and a12345678 is the password.
     $db_conn = OCILogon("ora_evelyncn", "a12898490", "dbhost.students.cs.ubc.ca:1522/stu");
 
@@ -281,7 +284,12 @@ function handleJoinRequest() {
     $string = "SELECT Resources.type_R, Consume.aID, Consume.species FROM Resources RIGHT JOIN Consume ON Resources.resID = Consume.resID WHERE Resources.type_R='" . $type_R . "' ORDER BY Resources.resID";
     $result = executePlainSQL($string);
     OCICommit($db_conn);
-    printResult($result);
+    echo "<table class='table table-striped'>";
+    echo "<tr><th>Resource Type</th><th>Animal ID</th><th>Species</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
 }
 
 function handleProjectionRequest() {
@@ -289,7 +297,12 @@ function handleProjectionRequest() {
     $string = "SELECT Builds_AS.org_name, Builds_AS.cost_AS, Builds_AS.completionYear FROM Builds_AS";
     $result = executePlainSQL($string);
     OCICommit($db_conn);
-    printResult($result);
+    echo "<table class='table table-striped'>";
+    echo "<tr><th>Organization Name</th><th>Cost</th><th>completionYear</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
 }
 
 function handleDeleteRequest() {
@@ -298,8 +311,8 @@ function handleDeleteRequest() {
     $pID = $_POST['pID'];
 
     $result = executePlainSQL("SELECT name_people, pID FROM People");
-    echo "<br> A list of people before deleting<br>";
-    echo "<table>";
+    echo "<br> A list of people <b>before</b> deleting<br>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>Name</th><th>pID</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
@@ -310,8 +323,8 @@ function handleDeleteRequest() {
     executePlainSQL("DELETE FROM People WHERE pID ='" . $pID . "'");
 
     $result = executePlainSQL("SELECT name_people, pID FROM People");
-    echo "<br> A list of people after deleting<br>";
-    echo "<table>";
+    echo "<br> A list of people <b>after</b> deleting<br>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>Name</th><th>pID</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
@@ -334,7 +347,7 @@ function handleCountRequest() {
                                                             GROUP BY a2.species 
                                                             HAVING a2.species ='". $species. "')");
     OCICommit($db_conn);
-    echo "<table>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>Species</th><th>Count</th><th>Average age</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr> </p>"; //or just use "echo $row[0]"
@@ -346,7 +359,7 @@ function handleGroupByRequest() {
     global $db_conn;
     $result = executePlainSQL("SELECT min(founded), org_name FROM has_subsidiary GROUP BY org_name");
     echo "<br> The year each organization founded its first subsidiary <br>";
-    echo "<table>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>Year founded</th><th>Organization name</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
@@ -363,7 +376,7 @@ function handleHavingRequest() {
                                     GROUP BY pID
                                     HAVING COUNT(pID)>1)");
     echo "<br> A list of people who own more than one organization <br>";
-    echo "<table>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>Name</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td></tr> </p>"; //or just use "echo $row[0]"
@@ -379,14 +392,14 @@ function handleDivisionRequest() {
     $result = executePlainSQL("SELECT aID, species
                                         FROM Animals A
                                         WHERE NOT EXISTS 
-                                        ((SELECT P.plantID	
+                                        ((SELECT P.plantID  
                                         FROM Plants P)
                                         MINUS
                                         (SELECT E.plantID 
                                         FROM Eats_Plant E
                                         WHERE E.aID = A.aID))");
     echo "<br> A list of animals that ate all plants <br>";
-    echo "<table>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>aID</th><th>Species Name</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
@@ -402,7 +415,7 @@ function handleDisplayRequest() {
 
     $result = executePlainSQL("SELECT * FROM Animals");
     echo "<br>Retrieved data from table Animals:<br>";
-    echo "<table>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>aID</th><th>Species</th><th>Age</th></tr>";
     printResult($result);
 
@@ -460,7 +473,7 @@ function handleSelectRequest() {
 
     $result = executePlainSQL($statement);
     OCICommit($db_conn);
-    echo "<table>";
+    echo "<table class='table table-striped'>";
     echo "<tr><th>Name</th><th>ID</th><th>Funds</th><th>Founded</th><th>Size</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td><td>" . $row[4] . "</td></tr> </p>"; //or just use "echo $row[0]"
