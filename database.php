@@ -380,7 +380,7 @@ function handleCountRequest() {
                                                             HAVING a2.species ='". $species. "')");
     OCICommit($db_conn);
     echo "<table class='table table-striped'>";
-    echo "<tr><th>Species</th><th>Count</th><th>Average age</th></tr>";
+    echo "<tr><th>Species</th><th>Count</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td><td>" . $row[2] . "</td></tr> </p>"; //or just use "echo $row[0]"
     }
