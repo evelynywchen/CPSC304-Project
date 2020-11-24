@@ -323,6 +323,36 @@ values(0, 2);
 insert into Eats_Plant
 values(0, 3);
 
+insert into Eats_Plant
+values(3, 0);
+
+insert into Eats_Plant
+values(3, 1);
+
+insert into Eats_Plant
+values(3, 2);
+
+insert into Eats_Plant
+values(3, 3);
+
+insert into Eats_Plant
+values(3, 4);
+
+insert into Eats_Plant
+values(7, 0);
+
+insert into Eats_Plant
+values(7, 1);
+
+insert into Eats_Plant
+values(7, 2);
+
+insert into Eats_Plant
+values(7, 3);
+
+insert into Eats_Plant
+values(7, 4);
+
 insert into Habitat
 values(0, 'Vancouver', 'Temperate Rainforest', 10);
 

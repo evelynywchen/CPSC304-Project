@@ -319,7 +319,7 @@ function handleDeleteRequest() {
     }
     echo "</table>";
 
-    executePlainSQL("DELETE FROM Owns WHERE pID ='" . $pID . "'");
+    //executePlainSQL("DELETE FROM Owns WHERE pID ='" . $pID . "'");
     executePlainSQL("DELETE FROM People WHERE pID ='" . $pID . "'");
 
     $result = executePlainSQL("SELECT name_people, pID FROM People");
