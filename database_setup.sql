@@ -234,7 +234,7 @@ insert into Animals
 values(30, 'Erethizon dorsatum', 30);
 
 insert into Animals
-values(31, 'Notaden bennettii', 7);
+values(31, 'Erethizon dorsatum', 7);
 
 insert into Animals
 values(32, 'Otocolobus manul', 4);
@@ -243,10 +243,10 @@ insert into Animals
 values(33, 'Ursus maritimus', 3);
 
 insert into Animals
-values(34, 'atelopus zeteki', 3);
+values(34, 'Ursus maritimus', 3);
 
 insert into Animals
-values(35, 'Ambystoma mexicanum', 8);
+values(35, 'Ursus maritimus', 8);
 
 insert into Animals
 values(37, 'gorilla gorilla gorilla', 21);
