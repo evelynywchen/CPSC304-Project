@@ -16,20 +16,10 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:origin/main" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="- Changed division query&#10;- Modified database_setup.sql">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
-    </list>
+    <list default="true" id="408bf4c3-7aaa-40bb-8cfe-791734a1c86e" name="Default Changelist" comment="Updated group by to show subsidiary name as well." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,13 +69,6 @@
       <workItem from="1605768783162" duration="2050000" />
       <workItem from="1605835632067" duration="153000" />
       <workItem from="1605838564380" duration="3613000" />
-    </task>
-    <task id="LOCAL-00018" summary="Youtube Video">
-      <created>1605841414621</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1605841414621</updated>
     </task>
     <task id="LOCAL-00019" summary="Youtube Video">
       <created>1605841873805</created>
@@ -423,7 +406,14 @@
       <option name="project" value="LOCAL" />
       <updated>1606087262429</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Updated group by to show subsidiary name as well.">
+      <created>1606184532337</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1606184532337</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -455,7 +445,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="text format test" />
     <MESSAGE value="text format test 2" />
     <MESSAGE value="text format test 3 and printresult fix" />
     <MESSAGE value="text format test 4" />
@@ -480,7 +469,8 @@
     <MESSAGE value="absolute position" />
     <MESSAGE value="change dimentions" />
     <MESSAGE value="- Changed division query&#10;- Modified database_setup.sql" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Changed division query&#10;- Modified database_setup.sql" />
+    <MESSAGE value="Updated group by to show subsidiary name as well." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated group by to show subsidiary name as well." />
   </component>
   <component name="WindowStateProjectService">
     <state x="667" y="168" key="#PHP" timestamp="1605577643891">
@@ -512,16 +502,16 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="757" y="227" key="RollbackChangesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1606028274203" />
-    <state x="368" y="121" key="Vcs.Push.Dialog.v2" timestamp="1606087264352">
+    <state x="368" y="121" key="Vcs.Push.Dialog.v2" timestamp="1606184533917">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606087264352" />
+    <state x="368" y="121" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606184533917" />
     <state x="442" y="147" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1606014203128" />
     <state x="552" y="245" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606026861647" />
-    <state x="687" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606024111200">
-      <screen x="0" y="0" width="1920" height="1050" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606185203865">
+      <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606018955243" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606185203865" />
     <state x="550" y="309" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1606014812169" />
     <state x="687" y="394" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1050@0.0.1920.1050" timestamp="1606024111200" />
   </component>

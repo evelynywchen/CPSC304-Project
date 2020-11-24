@@ -389,10 +389,10 @@ function handleCountRequest() {
 
 function handleGroupByRequest() {
     global $db_conn;
-    $result = executePlainSQL("SELECT min(founded), sub_name, org_name FROM has_subsidiary GROUP BY org_name");
+    $result = executePlainSQL("SELECT min(founded), org_name FROM has_subsidiary GROUP BY org_name");
     echo "<br> The year each organization founded its first subsidiary <br>";
     echo "<table class='table table-striped'>";
-    echo "<tr><th>Year founded</th><th>Subsidiary name</th><th>Organization name</th></tr>";
+    echo "<tr><th>Year founded</th><th>Organization name</th></tr>";
     while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
         echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
     }
