@@ -327,9 +327,6 @@ insert into Eats_Plant
 values(3, 0);
 
 insert into Eats_Plant
-values(3, 1);
-
-insert into Eats_Plant
 values(3, 2);
 
 insert into Eats_Plant
