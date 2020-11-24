@@ -462,6 +462,9 @@ insert into Owns
 values(4, 'dino oil ltd', 20);
 
 insert into Owns
+values(4, 'death to pandas ltd', 20);
+
+insert into Owns
 values(3, 'dino oil ltd', 10);
 
 insert into Owns
@@ -472,6 +475,9 @@ values(2, 'save the axolotls ltd', 30);
 
 insert into Owns
 values(2, 'roasted axolotls ltd', 30);
+
+insert into Owns
+values(1, 'roasted axolotls ltd', 30);
 
 insert into Builds_AS
 values(2000, 60000, 0, 0, 'kil kill killl ltd', 'mass extinction ltd');
