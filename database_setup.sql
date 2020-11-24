@@ -249,9 +249,6 @@ insert into Animals
 values(35, 'Ambystoma mexicanum', 8);
 
 insert into Animals
-values(36, 'mola mola', 3);
-
-insert into Animals
 values(37, 'gorilla gorilla gorilla', 21);
 
 insert into Animals
@@ -513,7 +510,7 @@ insert into Organization
 values('we love money ltd', 8, 600000, 2000, 2000);
 
 insert into Organization
-values('we dont love money ltd', 8, 25000, 1700, 200);
+values('we dont love money ltd', 9, 25000, 1700, 200);
 
 insert into Has_Subsidiary
 values('save the axolotls ltd', 'save the pandas ltd', 5, 1000, 1982, 40);
