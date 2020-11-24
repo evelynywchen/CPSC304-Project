@@ -147,6 +147,9 @@ insert into Animals
 values(0,'Ailuropoda melanoleuca', 6);
 
 insert into Animals
+values(22,'Ailuropoda melanoleuca', 8);
+
+insert into Animals
 values(1, 'Phascolarctos cinereus', 3);
 
 insert into Animals
@@ -205,6 +208,78 @@ values(19, 'boops boops', 9);
 
 insert into Animals
 values(14, 'Chlamyphorus truncatus', 4);
+
+insert into Animals
+values(21, 'Chlamyphorus truncatus', 8);
+
+insert into Animals
+values(24,'Ailuropoda melanoleuca', 6);
+
+insert into Animals
+values(25,'Ailuropoda melanoleuca', 8);
+
+insert into Animals
+values(26, 'Phascolarctos cinereus', 3);
+
+insert into Animals
+values(27, 'Brachiosaurus altithorax', 21);
+
+insert into Animals
+values(28, 'Brachiosaurus altithorax', 1);
+
+insert into Animals
+values(29, 'Hydrochoerus hydrochaeris', 35);
+
+insert into Animals
+values(30, 'Erethizon dorsatum', 30);
+
+insert into Animals
+values(31, 'Notaden bennettii', 7);
+
+insert into Animals
+values(32, 'Otocolobus manul', 4);
+
+insert into Animals
+values(33, 'Ursus maritimus', 3);
+
+insert into Animals
+values(34, 'atelopus zeteki', 3);
+
+insert into Animals
+values(35, 'Ambystoma mexicanum', 8);
+
+insert into Animals
+values(36, 'mola mola', 3);
+
+insert into Animals
+values(37, 'gorilla gorilla gorilla', 21);
+
+insert into Animals
+values(38, 'pica pica pica', 2);
+
+insert into Animals
+values(39, 'pica pica pica', 3);
+
+insert into Animals
+values(40, 'pica pica pica', 1);
+
+insert into Animals
+values(41, 'pica pica pica', 3);
+
+insert into Animals
+values(42, 'boops boops', 11);
+
+insert into Animals
+values(43, 'boops boops', 5);
+
+insert into Animals
+values(44, 'boops boops', 9);
+
+insert into Animals
+values(45, 'Chlamyphorus truncatus', 4);
+
+insert into Animals
+values(46, 'Chlamyphorus truncatus', 8);
 
 insert into Herbivores
 values(0, 0);
@@ -423,7 +498,22 @@ insert into Organization
 values('save the axolotls ltd', 3, 4000, 1968,100);
 
 insert into Organization
-values('kil kill killl ltd', 4, 12000000, 1865,30000);
+values('kil kill killl ltd', 4, 12000000, 1865, 30000);
+
+insert into Organization
+values('save save save ltd', 5, 2000000, 1999, 20000);
+
+insert into Organization
+values('we love plastics ltd', 6, 60000, 2000, 200);
+
+insert into Organization
+values('we dont love plastics ltd', 7, 40000, 2003, 300);
+
+insert into Organization
+values('we love money ltd', 8, 600000, 2000, 2000);
+
+insert into Organization
+values('we dont love money ltd', 8, 25000, 1700, 200);
 
 insert into Has_Subsidiary
 values('save the axolotls ltd', 'save the pandas ltd', 5, 1000, 1982, 40);

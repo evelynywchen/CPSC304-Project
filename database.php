@@ -156,7 +156,7 @@
 <hr />
 
 <div class="single">
-    <h2>Nested aggregation: Count the population of each species where the average age is above the average age of a certain species</h2>
+    <h2>Nested aggregation: List the species who have populations greater than a user specified species</h2>
     <p>Please use lowercases only.</p>
     <form method="GET" action="database.php"> <!--refresh page when submitted-->
         <input type="hidden" id="countTupleRequest" name="countTupleRequest">
@@ -367,14 +367,14 @@ function handleDeleteRequest() {
 
 }
 
-//Nested aggregation: Count the population of each species where the average age is above the average age of a certain species
+//Nested aggregation: List the species with population greater than the certain species
 function handleCountRequest() {
     global $db_conn;
     $species = $_GET['species'];
 
-    $result = executePlainSQL("SELECT species, Count(*), AVG(age) FROM Animals 
+    $result = executePlainSQL("SELECT species, Count(*) FROM Animals 
                                         GROUP BY species
-                                        HAVING AVG(age) > (SELECT AVG(a2.age) 
+                                        HAVING Count(*) > (SELECT Count(*) 
                                                             FROM Animals a2 
                                                             GROUP BY a2.species 
                                                             HAVING a2.species ='". $species. "')");
