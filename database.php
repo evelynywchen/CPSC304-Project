@@ -53,7 +53,7 @@
 <div class="single">
     <h2 >Update Temperature in Habitat</h2>
     <form method="POST" action="database.php"> <!--refresh page when submitted-->
-        <input type="hidden" id="updateQueryRequest" name="updateQueryRequest">
+        <input type="hidden" id="handleUpdateRequest" name="handleUpdateRequest">
         Habitat ID:
         <label>
             <input class="btn" type="number" name="habID">
@@ -278,6 +278,38 @@ function disconnectFromDB() {
     OCILogoff($db_conn);
 }
 
+function handleUpdateRequest() {
+    global $db_conn;
+
+    $habitat_id = $_POST['habID'];
+    $new_temperature = $_POST['temperature'];
+
+    // you need the wrap the old name and new name values with single quotations
+
+
+
+    $result = executePlainSQL("SELECT habID, temperature FROM Habitat");
+    echo "<br> Temperature of habitat <b>before</b> updating<br>";
+    echo "<table class='table table-striped'>";
+    echo "<tr><th>Habitat ID</th><th>Temperature</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+
+    executePlainSQL("UPDATE Habitat SET temperature='" . $new_temperature . "' WHERE habID='" . $habitat_id . "'");
+    OCICommit($db_conn);
+
+    $result = executePlainSQL("SELECT habID, temperature FROM Habitat");
+    echo "<br> Temperature of habitat <b>after</b>  updating<br>";
+    echo "<table class='table table-striped'>";
+    echo "<tr><th>Habitat ID</th><th>Temperature</th></tr>";
+    while ($row = OCI_Fetch_Array($result, OCI_BOTH)) {
+        echo "</p> <tr><td>" . $row[0] . "</td><td>" . $row[1] . "</td></tr> </p>"; //or just use "echo $row[0]"
+    }
+    echo "</table>";
+}
+
 function handleJoinRequest() {
     global $db_conn;
     $type_R = $_GET['type_R'];
@@ -485,7 +517,7 @@ function handleSelectRequest() {
 // A better coding practice is to have one method that reroutes your requests accordingly. It will make it easier to add/remove functionality.
 function handlePOSTRequest() {
     if (connectToDB()) {
-        if (array_key_exists('updateQueryRequest', $_POST)) {
+        if (array_key_exists('handleUpdateRequest', $_POST)) {
             handleUpdateRequest();
         } else if (array_key_exists('insertQueryRequest', $_POST)) {
             handleInsertRequest();
@@ -521,7 +553,7 @@ function handleGETRequest() {
     }
 }
 
-if (isset($_POST['updateSubmit']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
+if (isset($_POST['handleUpdateRequest']) || isset($_POST['insertSubmit']) || isset($_POST['deleteSubmit'])) {
     handlePOSTRequest();
 } else if (isset($_GET['countTupleRequest']) || isset($_GET['displayTupleRequest']) || isset($_GET['handleJoinRequest']) || isset($_GET['handleProjectionRequest']) || isset($_GET['selectionRequest']) || isset($_GET['handleGroupByRequest']) || isset($_GET['handleHavingRequest']) || isset($_GET['handleDivisionRequest'])) {
     handleGETRequest();
